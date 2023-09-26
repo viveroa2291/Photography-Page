@@ -1,0 +1,319 @@
+.arkansas-top-section {
+    background-image: url(states-images/arkansas-images/lake.jpeg);
+    height: 750px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.arkansas-date {
+  bottom: 0;
+}
+.arkansas-header {
+    line-height: 750px;
+    text-align: center;
+    color: white;
+    font-size: 75px;
+    animation: color-change 30s infinite;
+}
+.body-headers {
+    text-align: center;
+    margin-top: 1rem;
+    animation: body-color-change 30s infinite;
+}
+.body-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.arkansas-images {
+    height: 350px;
+    margin: .5rem 3rem;
+    cursor: zoom-in;
+    transition: .3s;
+}
+.arkansas-images:hover {
+    opacity: .7;
+}
+.hello {
+    margin-right: 5rem;
+}
+.header-hr {
+    width: 25%;
+}   
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+.box-image{
+    height: 100px;
+    cursor: pointer;
+    transition: .3s;
+    margin-left: 2px;
+}
+.box-image:hover
+{
+    opacity: .7;
+    border: white solid 1px;
+}
+div.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    z-index: 1; /* Sit on top */
+    padding-top: 5px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal-content {
+  margin: auto;
+  margin-bottom: 3px;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+.wide-click {
+    margin: auto;
+    margin-bottom: 3px;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.not-wide {
+  margin: auto;
+  margin-bottom: 3px;
+  display: block;
+  width: 80%;
+  max-width: 450px;  
+}
+#caption {
+    margin: auto;
+    display: block;
+    width: 95%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+    margin-bottom: 1rem;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.modal-content, #caption, .row{  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    overflow: auto;
+}
+.other-states {
+  text-align: center;
+  color: rgb(74, 74, 74);
+  font-size: 25px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  align-self: flex-end;
+}
+.bottom-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.previous-state, .next-state {
+  font-size: 45px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 15%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: .5rem;
+}
+.previous-state:hover, .next-state:hover {
+  background-color: black;
+  color: white;
+  border: solid 2px white;
+  cursor: pointer;
+  text-decoration: none;
+}
+.top {
+  text-align: center;
+  font-size: 25px;
+  color: black;
+  margin-bottom: 1rem;
+}
+.top a {
+  color: black;
+}
+.top a:hover {
+  text-decoration: none;
+}
+.section-selection {
+  display: flex;
+  flex-direction: row;
+}
+.area-selector {
+  text-align: center;
+}
+.year {
+  position: absolute;
+  margin-top: 1rem;
+  margin-left: 5rem;
+}
+.arkansas-section {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+}
+.arkansas-about {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 50%;
+}
+.brief-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.hide-section {
+  background-color: white;
+  color: black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+}
+.hide-section:hover {
+    color: gray;
+    cursor: pointer;
+}
+.button-center {  
+    margin-left: 17rem;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+} 
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+@keyframes color-change {
+    0% {
+        color: white;
+    }
+    33% {
+        color: brown;
+    }
+    66% {
+        color: black;
+    }
+    100% {
+      color: white;
+    }
+}
+@keyframes body-color-change {
+  0% {
+      color: black;
+  }
+  33% {
+      color: brown;
+  }
+  66% {
+      color: skyblue;
+  }
+  100% {
+    color: black;
+  }
+}
+  /* The Close Button */
+  .close {
+    position: absolute; 
+    top: 15px;
+    right: 35px;
+    transition: 0.3s;
+  }
+  .close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  @media (max-width: 1300px)
+  {
+    br {
+      display: none;
+    }
+    .body-images {
+      flex-direction: column;
+    }
+    .not-wide-card {
+      width: 325px;
+    }
+    .not-wide {
+      height: 400px;
+      margin: .5rem;
+    }
+  }
+@media (max-width: 700px) {
+  .arkansas-header {
+      font-size: 50px;
+      color: white;
+      font-weight: 200;
+  }
+  .body-images {
+      flex-direction: column;
+  }
+  .not-wide-card {
+      width: 300px;
+  }
+  .wide {
+      height: 375px;
+      margin: .5rem;
+  }
+  .not-wide {
+      height: 300px;
+      margin: .5rem;
+  }
+  p {
+      font-size: 14px;
+  }
+  .mid-wide {
+      height: 400px;
+      margin: .5rem;
+  }
+}
+@media (max-width: 650px) {
+  .arkansas-header {
+    font-size: 50px;
+    color: white;
+    font-weight: 200;
+  }
+  .body-images {
+    flex-direction: column;
+  }
+  .wide {
+    height: 275px;
+    margin: .5rem;
+  }
+  .not-wide {
+    height: 350px;
+    margin: .5rem;
+  }
+  p {
+      font-size: 13px;
+  }
+  .mid-wide {
+      height: 400px;
+      margin: .5rem;
+  }
+}

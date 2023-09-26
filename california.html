@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Page</title>
+</head>
+<body>
+    <main>
+        <section class="california-top-section" id="top">
+            <h2 class="california-header">California</h2>
+        </section>
+        <section class="section-selection">
+            <form  action="">
+                <label for="">Choose a section of California:  </label>
+                <br>
+                <select name="arkansas-areas" class="area-selector" id="area-selector" onchange="sectionSelected()">
+                    <option value="all">All</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Disneyland">Disneyland</option>
+                    <option value="Huntington">Huntington Beach</option>
+                </select>
+            </form> 
+        </section>
+        <section id="demo"></section>
+
+        <section class="bottom-section">
+            <span><a class="previous-state" href="arkansas.html">&#60;</a></span>
+            <p class="other-states"><b>Check out the other states</b></p>
+            <span><a class="next-state" href="florida.html">&#62;</a></span>
+        </section>
+        <section class="top" >
+             <a href="#top"><b>TOP</b></a>
+        </section>
+        <div id="myModal" class="modal">
+            <span class="close" style="font-size: 50px; color: white;">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+            <div class="row">
+                    <img class="box-image" src="states-images/california-images/downtown.jpeg" onclick="image(1)" alt="This is a picture of my friends and I in downtown Los Angeles. I was on their shoulders preparing to do an 'L', which is a skill that is performed in mens gymnastics on the parallel bars.">
+                    <img class="box-image" src="states-images/california-images/pbars.jpeg" onclick="image(2)" alt="This is the picture of me doing the 'L' on top of my friends shoulders in downtown Los Angeles.">
+                    <img class="box-image" src="states-images/california-images/disneyland-jon.jpeg" onclick="image(3)" alt="This is a picture of my friend Jon and I at Disneyland.">
+                    <img class="box-image" src="states-images/california-images/disneyland-jon2.jpeg" onclick="image(4)" alt="This is an image of my friend Jon and I at Disneyland in front of the infamous Mickey Mouse roller coaster.">
+                    <img class="box-image" src="states-images/california-images/disneyland-kristin.jpeg" onclick="image(5)" alt="This is an image of my friend Jon and Kristin and I at Disneyland. <br><br> <b> Fun fact, they are twins.</b>">
+                    <img class="box-image" src="states-images/california-images/huntington-jon.jpeg" onclick="image(6)" alt="This is an image of my friend Jon and I at Huntington Beach.">
+                    <img class="box-image" src="states-images/california-images/huntington-jon2.jpeg" onclick="image(7)" alt="This is an image of my friend Jon and I at Huntington Beach.">
+                    <img class="box-image" src="states-images/california-images/huntington-karina.jpeg" onclick="image(8)" alt="This is an image of my friend Karina and I at Huntington Beach.">
+                    <img class="box-image" src="states-images/california-images/pyramid.jpeg" onclick="image(9)" alt="This is an image of my friends and I attempting to do a pyramid.">
+                    <img class="box-image" src="states-images/california-images/huntington-holly.jpeg" onclick="image(10)" alt="This is an image of my friend Holly and I at Huntington Beach.">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+<script src="california.js"></script>
