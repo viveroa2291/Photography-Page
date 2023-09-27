@@ -1,5 +1,5 @@
 .arkansas-top-section {
-    background-image: url(states-images/arkansas-images/lake.jpeg);
+    background-image: url('states-images/arkansas-images/lake.jpeg');
     height: 750px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -163,7 +163,9 @@ div.modal {
   text-align: center;
 }
 .year {
+  /*
   position: absolute;
+  */
   margin-top: 1rem;
   margin-left: 5rem;
 }
@@ -248,8 +250,8 @@ div.modal {
     text-decoration: none;
     cursor: pointer;
   }
-  @media (max-width: 1300px)
-  {
+@media (max-width: 1300px)
+{
     br {
       display: none;
     }
@@ -263,8 +265,8 @@ div.modal {
       height: 400px;
       margin: .5rem;
     }
-  }
-@media (max-width: 700px) {
+}
+@media (max-width: 890px) {
   .arkansas-header {
       font-size: 50px;
       color: white;
@@ -276,44 +278,37 @@ div.modal {
   .not-wide-card {
       width: 300px;
   }
-  .wide {
-      height: 375px;
-      margin: .5rem;
+  .wide-card {
+    margin-left: 4rem;
+    width: 350px;
   }
   .not-wide {
-      height: 300px;
-      margin: .5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    width: 85%;
   }
-  p {
-      font-size: 14px;
+  .wide {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 225px;
+    
   }
-  .mid-wide {
-      height: 400px;
-      margin: .5rem;
-  }
-}
-@media (max-width: 650px) {
-  .arkansas-header {
-    font-size: 50px;
-    color: white;
-    font-weight: 200;
-  }
-  .body-images {
+  .section-selection {
     flex-direction: column;
   }
-  .wide {
-    height: 275px;
-    margin: .5rem;
+  .year {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .not-wide {
-    height: 350px;
-    margin: .5rem;
+  .body-images {
+    margin-left: 4rem;
   }
   p {
       font-size: 13px;
   }
-  .mid-wide {
-      height: 400px;
-      margin: .5rem;
-  }
+  
 }
