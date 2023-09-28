@@ -471,7 +471,7 @@ function myRotate(x) {
       }
       if(imageWidth[b] === "wide") {
         var element_content_element = document.createElement("div");
-        element_content_element.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+        element_content_element.classList.add('card', 'm-2', 'mx-sm-auto', 'wide-card');  // original is m-5
         element_div_element.appendChild(element_content_element);
         
   
