@@ -113,36 +113,11 @@ div.modal {
     animation-duration: 0.6s;
     overflow: auto;
 }
-
-.other-states {
-    text-align: center;
-    color: rgb(74, 74, 74);
-    font-size: 25px;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    align-self: flex-end;
-}
 .bottom-section {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-bottom: 1rem;
-}
-.previous-state, .next-state {
-    font-size: 45px;
-    color: black;
-    border: 2px solid black;
-    border-radius: 15%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: .5rem;
-}
-.previous-state:hover, .next-state:hover {
-    background-color: black;
-    color: white;
-    border: solid 2px white;
-    cursor: pointer;
-    text-decoration: none;
 }
 .top {
     text-align: center;
@@ -171,43 +146,43 @@ div.modal {
     margin-right: auto;
     margin-left: auto;
     margin-top: 1rem;
-  }
-  .south-dakota-about {
+}
+.south-dakota-about {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
     margin-bottom: 2rem;
     width: 50%;
-  }
-  .brief-overview {
+}
+.brief-overview {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  .hide-section {
+}
+.hide-section {
     background-color: white;
     color: black;
     padding-left: 1rem;
     padding-right: 1rem;
     border: none;
-  }
-  .hide-section:hover {
+}
+.hide-section:hover {
       color: gray;
       cursor: pointer;
-  }
-  .button-center {  
+}
+.button-center {  
       margin-left: 17rem;
-  }
-  @-webkit-keyframes zoom {
+}
+@-webkit-keyframes zoom {
       from {-webkit-transform:scale(0)} 
       to {-webkit-transform:scale(1)}
-  } 
-  @keyframes zoom {
+} 
+@keyframes zoom {
       from {transform:scale(0)} 
       to {transform:scale(1)}
-  }
-  @keyframes color-change {
+}
+@keyframes color-change {
       0% {
           color: white;
       }
@@ -220,8 +195,8 @@ div.modal {
       100% {
         color: white;
       }
-  }
-  @keyframes body-color-change {
+}
+@keyframes body-color-change {
     0% {
         color: black;
     }
@@ -234,20 +209,20 @@ div.modal {
     100% {
       color: black;
     }
-  }
-    /* The Close Button */
-    .close {
+}
+/* The Close Button */
+.close {
       position: absolute; 
       top: 15px;
       right: 35px;
       transition: 0.3s;
-    }
-    .close:hover, .close:focus {
+}
+.close:hover, .close:focus {
       color: #bbb;
       text-decoration: none;
       cursor: pointer;
-    }
-    @media (max-width: 1300px)
+}
+@media (max-width: 1300px)
     {
       br {
         display: none;
@@ -263,7 +238,7 @@ div.modal {
         margin: .5rem;
       }
     }
-  @media (max-width: 700px) {
+@media (max-width: 700px) {
     .south-dakota-header {
         font-size: 50px;
         color: white;
@@ -290,8 +265,8 @@ div.modal {
         height: 400px;
         margin: .5rem;
     }
-  }
-  @media (max-width: 650px) {
+}
+@media (max-width: 650px) {
     .south-dakota-header {
       font-size: 50px;
       color: white;
@@ -315,4 +290,4 @@ div.modal {
         height: 400px;
         margin: .5rem;
     }
-  }
+}

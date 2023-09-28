@@ -52,7 +52,7 @@
     opacity: .7;
     border: white solid 1px;
 }
-  div.modal {
+div.modal {
     display: none; /* Hidden by default */
     position: fixed;
     top: 0;
@@ -65,15 +65,15 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
-  .modal-content {
+}
+.modal-content {
     margin: auto;
     margin-bottom: 3px;
     display: block;
     width: 80%;
     max-width: 700px; 
-  }
-  #caption {
+}
+#caption {
     margin: auto;
     display: block;
     width: 95%;
@@ -86,24 +86,24 @@
     color: black;
     border-radius: 5px;
     font-size: 18px;
-  }
-  .modal-content, #caption, .row{  
+}
+.modal-content, #caption, .row{  
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
     animation-duration: 0.6s;
     overflow: auto;
-  }
-  @-webkit-keyframes zoom {
+}
+@-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
     to {-webkit-transform:scale(1)}
-  } 
-  @keyframes zoom {
+} 
+@keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
-  }
-  /* The Close Button */
-  .close {
+}
+/* The Close Button */
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -111,43 +111,19 @@
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
-  }
-  .close:hover, .close:focus {
+}
+.close:hover, .close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-  }
-  .other-states {
-    text-align: center;
-    color: rgb(74, 74, 74);
-    font-size: 25px;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    align-self: flex-end;
-  }
-  .bottom-section {
+}
+.bottom-section {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-bottom: 1rem;
-  }
-  .previous-state, .next-state {
-    font-size: 45px;
-    color: black;
-    border: 2px solid black;
-    border-radius: 15%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: .5rem;
-  }
-  .previous-state:hover, .next-state:hover {
-    background-color: black;
-    color: white;
-    border: solid 2px white;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .top {
+}
+.top {
     text-align: center;
     font-size: 25px;
     color: black;
@@ -166,6 +142,13 @@
 }
 .area-selector {
   text-align: center;
+}
+.not-wide {
+    margin: auto;
+    margin-bottom: 3px;
+    display: block;
+    width: 80%;
+    max-width: 450px;  
 }
 @media only screen and (max-width: 700px){
     .modal-content {
@@ -198,5 +181,17 @@
     .mid-wide {
         height: 400px;
         margin: .5rem 1.75rem;
+    }
+}
+@media (max-width: 890px) {
+    .not-wide {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        width: 85%;
+      }
+    .not-wide-card {
+        width: 300px;
     }
 }

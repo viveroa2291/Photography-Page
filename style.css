@@ -17,9 +17,53 @@
     background-color: green;
     cursor: pointer;
 }
+.other-states {
+    text-align: center;
+    color: rgb(74, 74, 74);
+    font-size: 25px;
+    margin-top: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-self: flex-end;
+}
+span>.previous-state, span>.next-state {
+    position: absolute;
+    margin-top: 4.5rem;
+}
+span>.previous-state {
+    margin-left: -3rem;
+}
+.previous-state, .next-state {
+    font-size: 25px;
+    color: black;
+    border: 2px solid black;
+    border-radius: 15%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .25rem;
+    padding-bottom: .5rem;
+}
+.previous-state:hover, .next-state:hover {
+    background-color: black;
+    color: white;
+    border: solid 2px white;
+    cursor: pointer;
+    text-decoration: none;
+}
 @media (max-width: 890px){
     .united-states-map {
         height: 350px;
         width: 500px;
     }
+    .previous-state, .next-state {
+        font-size: 15px;
+        
+        margin-top: 5rem;
+        padding: 5px 10px 7px 10px;
+      }
+      .other-states {
+        font-size: 20px;
+        margin-top: 4.75rem;
+        align-self: flex-end;
+      } 
 }
