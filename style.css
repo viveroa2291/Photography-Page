@@ -1,21 +1,62 @@
-.united-states-map {
+div.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    z-index: 1; /* Sit on top */
+    padding-top: 5px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal-content {
+    margin: auto;
+    margin-bottom: 3px;
     display: block;
-    margin-left: auto;
-    margin-right: auto; 
-    z-index: 2;
-    margin-top: 1rem;
+    width: 80%;
+    max-width: 700px; 
 }
-.AR, .AZ, .CA, .DC, .FL, .GA, .IL, .IN, .MI, .MN, .MO, .OH, .SD, .TN, .TX, .UT, .WV, .WI {
-    fill: red;
+#caption {
+    margin: auto;
+    display: block;
+    width: 95%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+    margin-bottom: 1rem;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    font-size: 18px;
 }
-.AR:hover, .AZ:hover, .CA:hover, .DC:hover, .FL:hover, .GA:hover, .IL:hover, .IN:hover, .MI:hover, .MN:hover, .MO:hover, .OH:hover, .SD:hover, .TN:hover, .TX:hover, .UT:hover, .WV:hover, .WI:hover {
-    z-index: -100;
-    fill: green;
-    cursor: pointer;
+.modal-content, #caption, .row{  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    overflow: auto;
 }
-.arkansas:hover, .california:hover, .florida:hover, .georgia:hover, .illinois:hover, .indiana:hover, .michigan:hover, .minnesota:hover, .missouri:hover, .ohio:hover, .south-dakota:hover, .tennesseee:hover, .texas:hover, .utah:hover, .washington-dc:hover, .west-virginia:hover, .wisconsin:hover {
-    background-color: green;
-    cursor: pointer;
+.bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.top {
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    margin-bottom: 1rem;
+}
+.top a {
+    color: black;
+}
+.top a:hover {
+    text-decoration: none;
 }
 .other-states {
     text-align: center;

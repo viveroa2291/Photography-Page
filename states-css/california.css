@@ -52,48 +52,6 @@
     opacity: .7;
     border: white solid 1px;
 }
-div.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    z-index: 1; /* Sit on top */
-    padding-top: 5px;
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-.modal-content {
-    margin: auto;
-    margin-bottom: 3px;
-    display: block;
-    width: 80%;
-    max-width: 700px; 
-}
-#caption {
-    margin: auto;
-    display: block;
-    width: 95%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px;
-    margin-bottom: 1rem;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    font-size: 18px;
-}
-.modal-content, #caption, .row{  
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-    overflow: auto;
-}
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
     to {-webkit-transform:scale(1)}
@@ -101,39 +59,6 @@ div.modal {
 @keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
-}
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.close:hover, .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-.bottom-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-.top {
-    text-align: center;
-    font-size: 25px;
-    color: black;
-    margin-bottom: 1rem;
-}
-.top a {
-    color: black;
-}
-.top a:hover {
-    text-decoration: none;
 }
 .section-selection {
   display: flex;
