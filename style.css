@@ -58,6 +58,18 @@ div.modal {
 .top a:hover {
     text-decoration: none;
 }
+  /* The Close Button */
+  .close {
+    position: absolute; 
+    top: 15px;
+    right: 35px;
+    transition: 0.3s;
+}
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
 .other-states {
     text-align: center;
     color: rgb(74, 74, 74);
