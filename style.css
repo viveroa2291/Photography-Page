@@ -103,6 +103,14 @@ span>.previous-state {
     cursor: pointer;
     text-decoration: none;
 }
+.search {
+    position: absolute;
+    right: 5rem;
+}
+.search-button {
+    position: absolute;
+    right: 1rem;
+}
 @media (max-width: 890px){
     .united-states-map {
         height: 350px;
