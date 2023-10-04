@@ -1,5 +1,5 @@
 .ohio-top-section {
-    background-image: url(states-images/ohio-images/beach-view.jpeg);
+    background-image: url('../states-images/ohio-images/beach-view.jpeg');
     height: 750px;
     background-size: cover;
     background-repeat: no-repeat;

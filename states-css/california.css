@@ -1,5 +1,5 @@
 .california-top-section {
-    background-image: url(states-images/california-images/city.jpeg);
+    background-image: url('../states-images/california-images/city.jpeg');
     height: 750px;
     background-size: cover;
     background-repeat: no-repeat;

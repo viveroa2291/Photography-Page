@@ -1,5 +1,5 @@
 .utah-top-section {
-    background-image: url(states-images/utah-images/salt-lake-city.jpeg);
+    background-image: url('../states-images/utah-images/salt-lake-city.jpeg');
     height: 750px;
     background-size: cover;
     background-repeat: no-repeat;

@@ -1,5 +1,5 @@
 .west-virginia-top-section {
-    background-image: url(states-images/west-virginia-images/mountain.jpeg);
+    background-image: url('../states-images/west-virginia-images/mountain.jpeg');
     height: 750px;
     background-size: cover;
     background-repeat: no-repeat;

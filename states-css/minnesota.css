@@ -1,5 +1,5 @@
 .minnesota-top-section {
-    background-image: url(states-images/minnesota-images/city.jpeg);
+    background-image: url('../states-images/minnesota-images/city.jpeg');
     height: 750px;
     background-size: cover;
     background-repeat: no-repeat;

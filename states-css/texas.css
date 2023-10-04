@@ -1,5 +1,5 @@
 .texas-top-section {
-    background-image: url(states-images/texas-images/san-antonio.jpeg);
+    background-image: url('../states-images/texas-images/san-antonio.jpeg');
     height: 750px;
     background-size: cover;
     background-repeat: no-repeat;
