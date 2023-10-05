@@ -59,10 +59,10 @@ div.modal {
     text-decoration: none;
 }
   /* The Close Button */
-  .close {
+.close {
     position: absolute; 
     top: 15px;
-    right: 35px;
+    right: 55px;
     transition: 0.3s;
 }
 .close:hover, .close:focus {
@@ -111,7 +111,11 @@ span>.previous-state {
     position: absolute;
     right: 1rem;
 }
-@media (max-width: 890px){
+span>.close {
+    font-size: 50px; 
+    color: white; 
+}
+@media (max-width: 890px) {
     .united-states-map {
         height: 350px;
         width: 500px;
@@ -127,4 +131,13 @@ span>.previous-state {
         margin-top: 4.75rem;
         align-self: flex-end;
       } 
+      
+      .modal-content {
+        z-index: -1;
+      }
+      span>.close {
+        right: 25px;
+        font-size: 25px; 
+        color: white;
+      }
 }

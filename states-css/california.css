@@ -70,7 +70,7 @@
 }
 .not-wide {
     margin: auto;
-    margin-bottom: 3px;
+    margin-bottom: 1px;
     display: block;
     width: 80%;
     max-width: 450px;  
@@ -96,16 +96,8 @@
         height: 300px;
         margin: .5rem 1rem;
     }
-    .not-wide {
-        height: 450px;
-        margin: .5rem 1.5rem;
-    }
     p {
         font-size: 14px;
-    }
-    .mid-wide {
-        height: 400px;
-        margin: .5rem 1.75rem;
     }
 }
 @media (max-width: 890px) {
@@ -118,5 +110,11 @@
       }
     .not-wide-card {
         width: 300px;
+    }
+    .not-wide-card {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4rem;
     }
 }
