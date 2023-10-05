@@ -1,3 +1,25 @@
+.views {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.map-view-button {
+    margin-right: 2rem;
+}
+.list-view {
+    display: none;
+}
+.card-body {
+    width: 18rem;
+}
+.card-images {
+    height: 250px;
+}
+.card-images:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
 .united-states-map {
     display: block;
     margin-left: auto;
