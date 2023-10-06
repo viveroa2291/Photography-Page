@@ -10,8 +10,10 @@
 .list-view {
     display: none;
 }
-.card-body {
-    width: 18rem;
+.arizona-card, .arkansas-card, .california-card, .florida-card, .georgia-card, .illinois-card, .indiana-card, .michigan-card, .minnesota-card, .missouri-card, .ohio-card, .south-dakota-card, .tennessee-card, .texas-card, .utah-card, .washington-dc-card, .west-virginia-card, .wisconsin-card {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-top: 2rem;
 }
 .card-images {
     height: 250px;
@@ -26,6 +28,12 @@
     margin-right: auto; 
     z-index: 2;
     margin-top: 1rem;
+}
+.first-row, .second-row, .third-row, .fourth-row, .fifth-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
 }
 .AR, .AZ, .CA, .DC, .FL, .GA, .IL, .IN, .MI, .MN, .MO, .OH, .SD, .TN, .TX, .UT, .WV, .WI {
     fill: red;
