@@ -1,3 +1,12 @@
+.header-main {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 2rem;
+}
+.header-hr {
+    width: 25%;
+    color: black;
+}
 .views {
     display: flex;
     flex-direction: row;
@@ -7,6 +16,10 @@
 .map-view-button {
     margin-right: 2rem;
 }
+.map-view-button:hover, .list-view-button:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
 .list-view {
     display: none;
 }
@@ -14,6 +27,8 @@
     border: 1px solid lightgray;
     border-radius: 5px;
     margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .card-images {
     height: 250px;
@@ -32,6 +47,8 @@
 .first-row, .second-row, .third-row, .fourth-row, .fifth-row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    
     margin-top: 1px;
 }
 .AR, .AZ, .CA, .DC, .FL, .GA, .IL, .IN, .MI, .MN, .MO, .OH, .SD, .TN, .TX, .UT, .WV, .WI {
