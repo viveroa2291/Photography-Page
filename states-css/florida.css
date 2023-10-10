@@ -70,10 +70,12 @@
     display: flex;
     justify-content: center;
 }
-@media only screen and (max-width: 700px){
-    .modal-content {
-      width: 100%;
-    }
+.not-wide {
+    margin: auto;
+    margin-bottom: 1px;
+    display: block;
+    width: 80%;
+    max-width: 450px;  
 }
 @media (max-width: 1000px){
     br {
@@ -87,19 +89,40 @@
     .body-images {
         flex-direction: column;
     }
-    .wide {
-        height: 300px;
-        margin: .5rem 1rem;
-    }
-    .not-wide {
-        height: 450px;
-        margin: .5rem 1.5rem;
-    }
     p {
         font-size: 14px;
     }
     .mid-wide {
         height: 400px;
         margin: .5rem 1.75rem;
+    }
+}
+@media (max-width: 890px) { 
+    .modal-content {
+      width: 100%;
+    }
+    .not-wide {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        width: 85%;
+    }
+    .not-wide-card {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-bottom: 4rem;
+    }
+    .mid-wide {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        width: 85%;
+    }
+    .mid-wide-card {
+        margin-bottom: 4rem;
     }
 }

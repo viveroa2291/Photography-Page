@@ -109,12 +109,15 @@
         width: 85%;
       }
     .not-wide-card {
-        width: 300px;
-    }
-    .not-wide-card {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        width: 300px;
         margin-bottom: 4rem;
+    }
+    .mid-wide {
+        height: 350px;
+        width: 90%;
+        margin-left: 1rem;
     }
 }
