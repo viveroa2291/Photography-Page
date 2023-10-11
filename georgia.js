@@ -30,7 +30,7 @@ function myRotate(x) {
   const atlantaDescription = ["This is a picture of me in downtown Atlanta. I really liked the city <br> and what it had to offer.",
   "This is the picture of me in downtown Atlanta."];
   const atlantaTitle = ["Downtown Atlanta", "Downtown Atlanta"];
-  const atlantaImageWidth = ["mid", "mid"];
+  const atlantaImageWidth = ["mid-wide", "mid-wide"];
   
   sections("Atlanta", atlantaImages, atlantaImagesAlt, atlantaDates, atlantaDescription, atlantaTitle, atlantaImageWidth);
   /**
@@ -43,7 +43,7 @@ function myRotate(x) {
   const cnnDescription = ["This is a picture of me standing outside of the CNN building next <br> to the sign.",
   "This is a selfie of me inside of the CNN building next to an <br> anchor's chair and table where the news is reported."];
   const cnnTitle = ["CNN Building", "Inside CNN"];
-  const cnnImageWidth = ["mid", "mid"];
+  const cnnImageWidth = ["mid-wide", "mid-wide"];
   
   sections("CNN", cnnImages, cnnImagesAlt, cnnDates, cnnDescription, cnnTitle, cnnImageWidth);
   /**
@@ -58,7 +58,7 @@ function myRotate(x) {
   "This is a picture of me inside of the World of Coca-Cola. I thought <br> this looked cool.",
   "This is an image of me jumping outside <br> of the World of Coca Cola sign."];
   const cocaTitle = ["Inside the World of Coca-Cola", "Inside the World of Coca-Cola", "Outside of the World of Coca-Cola"];
-  const cocaImageWidth = ["wide", "wide", "not-wide"];
+  const cocaImageWidth = ["mid-wide", "mid-wide", "not-wide"];
   
   sections("World of Coca-Cola", cocaImages, cocaImagesAlt, cocaDates, cocaDescription, cocaTitle, cocaImageWidth);
   /**
@@ -75,7 +75,7 @@ function myRotate(x) {
   "This is a picture of me sitting pool side <br> by my hotel.",
   "This is a mirror picture of me in the hotel."];
   const georgiaTitle = ["Airport", "Marietta Diner", "Pool", "Mirror Picture"];
-  const georgiaImageWidth = ["wide", "wide", "not-wide", "not-wide"];
+  const georgiaImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide"];
   
   sections("Other Georgia Pictures", georgiaImages, georgiaImagesAlt, georgiaDates, georgiaDescription, georgiaTitle, georgiaImageWidth);
   
@@ -150,9 +150,9 @@ function myRotate(x) {
       document.getElementById("demo").appendChild(element_div);
       count = 0.0;
     }
-    if(imageWidth[a] != "wide") {
+    if(imageWidth[a] != "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
+      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
       element_div.appendChild(element_content);
   
       element_card = document.createElement("div");
@@ -161,7 +161,7 @@ function myRotate(x) {
       element_content.appendChild(element_card);
   
       element_image = document.createElement("img");
-      element_image.classList.add('georgia-images', 'mid-wide');
+      element_image.classList.add('georgia-images', 'not-wide');
       element_image.src = image[a];
       element_image.alt = imageAlt[a];
       element_content.appendChild(element_image);
@@ -185,9 +185,9 @@ function myRotate(x) {
       element_card_body.appendChild(element_date);
       count = count + 1.5;
     }
-    if(imageWidth[a] === "wide") {
+    if(imageWidth[a] === "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
       element_div.appendChild(element_content);
       
       element_card = document.createElement("div");
@@ -196,7 +196,7 @@ function myRotate(x) {
       element_content.appendChild(element_card);
   
       element_image = document.createElement("img");
-      element_image.classList.add('georgia-images', 'wide');
+      element_image.classList.add('georgia-images', 'mid-wide');
       element_image.src = image[a];
       element_image.alt = imageAlt[a];
       element_content.appendChild(element_image);

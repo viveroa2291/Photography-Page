@@ -106,7 +106,7 @@ const cedarTitle = ["Cedar Point Beach", "Cedar Point Beach", "Cedar Point Water
 "Cedar Point Beach", "Cedar Point", "Top Thrill Dragster", "Valravn", "Cedar Point", "Maverick", "Steel of Vengeance", "Cedar Point Beach", "Cedar Point Beach", "Cedar Point Beach", "Cedar Point Beach", "Cedar Point Beach", "Cedar Point Beach", 
 "Cedar Point Beach", "Cedar Point Beach"];
 const cedarImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "wide",
-"not-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "not-wide", "wide",
+"not-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "not-wide", "ultra-wide",
 "not-wide", "not-wide", "not-wide", "wide", 
 "not-wide", "not-wide", "not-wide"];
 sections("Sandusky (Cedar Point)", cedarImages, cedarImageAlt, cedarDates, cedarDescription, cedarTitle, cedarImageWidth);
@@ -507,7 +507,7 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
     }
     if(imageWidth[a] === "not-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
       element_div.appendChild(element_content);
   
       element_card = document.createElement("div");
@@ -599,6 +599,41 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
   
       element_image = document.createElement("img");
       element_image.classList.add('ohio-images', 'wide');
+      element_image.src = image[a];
+      element_image.alt = imageAlt[a];
+      element_content.appendChild(element_image);
+  
+      element_card_body = document.createElement("div");
+      element_card_body.classList.add('card-body', 'm-1');
+      element_content.append(element_card_body);
+  
+      element_text = document.createElement("p");
+      element_text.classList.add('card-text');
+      element_text.innerHTML = description[a];
+      element_card_body.appendChild(element_text);
+  
+      element_date = document.createElement("p");
+      element_date.classList.add('card-text');
+      element_date_small = document.createElement("small");
+      element_date_small.classList.add('text-muted');
+      element_date_small.innerHTML = dates[a];
+      element_date.appendChild(element_date_small);
+  
+      element_card_body.appendChild(element_date);
+      count = count + 4.0;
+    }
+    if(imageWidth[a] === "ultra-wide") {
+      var element_content = document.createElement("div");
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'ultra-wide-card');
+      element_div.appendChild(element_content);
+      
+      element_card = document.createElement("div");
+      element_card.classList.add('card-header', 'text-center');
+      element_card.innerHTML = title[a];
+      element_content.appendChild(element_card);
+  
+      element_image = document.createElement("img");
+      element_image.classList.add('ohio-images', 'ultra-wide');
       element_image.src = image[a];
       element_image.alt = imageAlt[a];
       element_content.appendChild(element_image);
@@ -779,7 +814,41 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
         element_card_body.appendChild(element_date);
         count = count + 4.0;
       }
+      if(imageWidth[a] === "ultra-wide") {
+        var element_content = document.createElement("div");
+        element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'ultra-wide-card');
+        element_div.appendChild(element_content);
+        
+        element_card = document.createElement("div");
+        element_card.classList.add('card-header', 'text-center');
+        element_card.innerHTML = title[a];
+        element_content.appendChild(element_card);
     
+        element_image = document.createElement("img");
+        element_image.classList.add('ohio-images', 'ultra-wide');
+        element_image.src = image[a];
+        element_image.alt = imageAlt[a];
+        element_content.appendChild(element_image);
+    
+        element_card_body = document.createElement("div");
+        element_card_body.classList.add('card-body', 'm-1');
+        element_content.append(element_card_body);
+    
+        element_text = document.createElement("p");
+        element_text.classList.add('card-text');
+        element_text.innerHTML = description[a];
+        element_card_body.appendChild(element_text);
+    
+        element_date = document.createElement("p");
+        element_date.classList.add('card-text');
+        element_date_small = document.createElement("small");
+        element_date_small.classList.add('text-muted');
+        element_date_small.innerHTML = dates[a];
+        element_date.appendChild(element_date_small);
+    
+        element_card_body.appendChild(element_date);
+        count = count + 4.0;
+      }
       }
       function images() {
         modal.style.display = "block";

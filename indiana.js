@@ -46,7 +46,7 @@ function myRotate(x) {
   "This is an image inside of a restaurant <br> in Bloomington with cool wall art and <br> a sign that says 'Make Tacos Not War', <br> which is a message I enjoy.",
   "This is a picture of me standing in front <br> of a grassy wall art that I always wanted <br> to take in my lifetime. I was never able to <br> find a place that had such thing, but <br> found it inside La Una Cantina and had <br> the urge to make my friend take a picture <br> of me."];
   const indianaTitle = ["Nikki's Dorm", "Indiana University", "Nikki's Dorm", "Kelley's School of Business", "Bear's Place", "Indiana University", "Upstairs Pub (Indiana University)", "Bloomington Indiana", "La Una Cantina", "La Una Cantina"];
-  const indianaImageWidth = ["not-wide", "not-wide", "not-wide", "wide", "wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
+  const indianaImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
   sections("Indiana University", indianaImages, indianaImageAlt, indianaDates, indianaDescription, indianaTitle, indianaImageWidth);
   
   function yearSelected() {
@@ -166,9 +166,9 @@ function myRotate(x) {
       document.getElementById("demo").appendChild(element_div);
       count = 0.0;
     }
-    if(imageWidth[a] != "wide") {
+    if(imageWidth[a] != "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
       element_div.appendChild(element_content);
   
       element_card = document.createElement("div");
@@ -201,9 +201,9 @@ function myRotate(x) {
       element_card_body.appendChild(element_date);
       count = count + 1.5;
     }
-    if(imageWidth[a] === "wide") {
+    if(imageWidth[a] === "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
       element_div.appendChild(element_content);
       
       element_card = document.createElement("div");
@@ -212,7 +212,7 @@ function myRotate(x) {
       element_content.appendChild(element_card);
   
       element_image = document.createElement("img");
-      element_image.classList.add('indiana-images', 'wide');
+      element_image.classList.add('indiana-images', 'mid-wide');
       element_image.src = image[a];
       element_image.alt = imageAlt[a];
       element_content.appendChild(element_image);

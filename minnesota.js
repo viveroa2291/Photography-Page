@@ -36,7 +36,7 @@ function myRotate(x) {
   "This is an image of me at U.S Bank Stadium, <br> where the Minnesota Vikings play.",
   "This is another image of me in downtown <br> Minneapolis during a walk around the city."];
   const minneapolisTitle = ["Downtown Minneapolis", "Downtown Minneapolis", "Downtown Minneapolis", "US Bank Stadium Minneapolis", "Downtown Minneapolis"];
-  const minneapolisImageWidth = ["wide", "wide", "not-wide", "not-wide", "not-wide"];
+  const minneapolisImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"];
   sections("Minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
   /**
    * Minneapolis Arcade Lists
@@ -50,7 +50,7 @@ function myRotate(x) {
   "This is an image of my friends and I at an arcade in the <br> outskirts of Minneapolis.", 
   "This is an image of me at an arcade in the <br> outskirts of Minneapolis with a wall of art."];
   const arcadeTitle = ["Minneapolis Arcade (Rooftop)","Minneapolis Arcade", "Minneapolis Arcade"];
-  const arcadeImageWidth = ["wide", "wide", "not-wide"];
+  const arcadeImageWidth = ["mid-wide", "mid-wide", "not-wide"];
   sections("Minneapolis Arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
   /**
    * Other Minnesota Lists
@@ -67,7 +67,7 @@ function myRotate(x) {
   "This is an image of my friends in Eden Prarie Minnesota. <br> One of my friends is from Ohio and we haven't seen each <br> other in years and was in town, therefore we met up and <br> merged our friend groups together.", 
   "This is an image of me skiing at Afton Alps in Minnesota. <br> I enjoyed skiing here very much and would recommend <br> to give this place a visit if you like to ski or snowboard."];
   const minnesotaTitle = ["Mall of America", "Minneapolis", "Eden Prarie, Minnesota", "Afton Alps"];
-  const minnesotaImageWidth = ["wide", "wide", "wide", "wide"];
+  const minnesotaImageWidth = ["mid-wide", "mid-wide", "mid-wide", "mid-wide"];
   sections("Other Minnesota Parts", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
   
   function sectionSelected() {
@@ -301,9 +301,9 @@ function myRotate(x) {
       document.getElementById("demo").appendChild(element_div);
       count = 0.0;
     }
-    if(imageWidth[a] != "wide") {
+    if(imageWidth[a] != "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
       element_div.appendChild(element_content);
   
       element_card = document.createElement("div");
@@ -336,9 +336,9 @@ function myRotate(x) {
       element_card_body.appendChild(element_date);
       count = count + 1.5;
     }
-    if(imageWidth[a] === "wide") {
+    if(imageWidth[a] === "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
       element_div.appendChild(element_content);
       
       element_card = document.createElement("div");
@@ -347,7 +347,7 @@ function myRotate(x) {
       element_content.appendChild(element_card);
   
       element_image = document.createElement("img");
-      element_image.classList.add('minnesota-images', 'wide');
+      element_image.classList.add('minnesota-images', 'mid-wide');
       element_image.src = image[a];
       element_image.alt = imageAlt[a];
       element_content.appendChild(element_image);

@@ -63,7 +63,7 @@ function myRotate(x) {
   "This is a group picture of my friends Nikki, <br> Sami, Cesar, and I inside the cave that <br> we went to visit while in Missouri.",
   "This is the picture of the cave that we went <br> to visit while in Missouri."];
   const eldonTitle = ["Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves"];
-  const eldonImageWidth = ["wide", "wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
+  const eldonImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
   
   sections("Eldon Caves", eldonImages, eldonImagesAlt, eldonDates, eldonDescription, eldonTitle, eldonImageWidth);
   
@@ -209,9 +209,9 @@ function myRotate(x) {
         document.getElementById("demo").appendChild(element_div);
         count = 0.0;
       }
-    if(imageWidth[d] != "wide") {
+    if(imageWidth[d] != "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
       element_div.appendChild(element_content);
   
       element_card = document.createElement("div");
@@ -244,9 +244,9 @@ function myRotate(x) {
       element_card_body.appendChild(element_date);
       count = count + 1.5;
     }
-    if(imageWidth[d] === "wide") {
+    if(imageWidth[d] === "mid-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
       element_div.appendChild(element_content);
   
       element_card = document.createElement("div");
@@ -255,7 +255,7 @@ function myRotate(x) {
       element_content.appendChild(element_card);
   
       element_image = document.createElement("img");
-      element_image.classList.add('missouri-images', 'wide');
+      element_image.classList.add('missouri-images', 'mid-wide');
       element_image.src = image[d];
       element_image.alt = imagesAlt[d];
       element_content.appendChild(element_image);
