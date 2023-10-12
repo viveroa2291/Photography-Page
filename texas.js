@@ -36,7 +36,7 @@ const hotelDescription = ["This is a picture of me sitting on a fence during our
 "This is an image of me standing outside <br> my hotel holding two dorsal fins from <br> an orca.",
 "This is a picture of me outside my hotel <br> room enjoying the landscaping outside."];
 const hotelTitle = ["San Antonio suburb", "Hotel Pool", "Hotel", "Hotel", "Hotel"];
-const hotelImageWidth = ["wide", "ultra-wide", "not-wide", "not-wide", "not-wide"];
+const hotelImageWidth = ["mid-wide", "ultra-wide", "not-wide", "not-wide", "not-wide"];
 
 sections("Hotel", hotelImage, hotelImageAlt, hotelDates, hotelDescription, hotelTitle, hotelImageWidth);
 /**
@@ -63,7 +63,7 @@ const seaworldDescription = ["This is a picture of me of my <br> first visit at 
 "This is a picture of an orca at the <br> SeaWorld San Antonio park. They <br> were performing a show for us.",
 "This is a selfie of me with the orca <br> and their trainer at Shamu Stadium."];
 const seaworldTitle = ["Seaworld", "The Great White Roller Coaster", "Seaworld", "Seaworld Park", "Seaworld", "Seaworld", "Seaworld", "Shamu Stadium", "Shamu Stadium"];
-const seaworldImageWidth = ["not-wide", "not-wide", "not-wide", "ultra-wide", "wide", "wide", "not-wide", "not-wide", "not-wide"];
+const seaworldImageWidth = ["not-wide", "not-wide", "not-wide", "ultra-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"];
 
 sections("Seaworld", seaworldImage, seaworldImageAlt, seaworldDates, seaworldDescription, seaworldTitle, seaworldImageWidth);
 /**
@@ -82,7 +82,7 @@ const discoveryDescription = ["This is a picture of two turtoises at SeaWorld's 
 "This is a picture of me in Discovery Cove <br> posing in front of the landscaping.",
 "This is a picture of a dolphin in <br> Discovery Cove."];
 const discoveryTitle = ["Discovery Cove Turtoises", "Discovery Cove waterpark", "Discovery Cove Dolphin", "Discovery Cove", "Discovery Cove"];
-const discoveryImageWidth = ["wide", "wide", "not-wide", "not-wide", "not-wide"];
+const discoveryImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"];
 
 sections("Discovery Cove", discoveryImage, discoveryImageAlt, discoveryDates, discoveryDescription, discoveryTitle, discoveryImageWidth);
 /**
@@ -132,7 +132,7 @@ const sanAntonioDescription = ["This a picture of me in the river walk in downto
 "This is a picture of corn surrounding a tire inside the San Antonio <br> cultural art display.",
 "This is a picture of me taking a picture <br> of myself off a round mirror inside the <br> cultural art display in downtown <br> San Antonio."];
 const sanAntonioTitle = ["San Antonio River Walk", "San Antonio River Walk", "San Antonio River Walk", "San Antonio River Walk", "Alamo", "Alamo", "Downtown San Antonio", "Instituto Cultural De Mexico", "Instituto Cultural De Mexico", "Instituto Cultural De Mexico", "Instituto Cultural De Mexico", "Instituto Cultural De Mexico"];
-const sanAntonioImageWidth = ["wide", "wide", "not-wide", "not-wide", "wide", "not-wide", "ultra-wide", "wide", "wide", "not-wide", "wide", "not-wide"];
+const sanAntonioImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "wide", "mid-wide", "mid-wide", "not-wide", "mid-wide", "not-wide"];
 
 sections("San Antonio", sanAntonioImage, sanAntonioImageAlt, sanAntonioDates, sanAntonioDescription, sanAntonioTitle, sanAntonioImageWidth);
 
@@ -219,7 +219,7 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
     }
     if(imageWidth[a] === "not-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
       element_div.appendChild(element_content);
   
       element_card = document.createElement("div");
@@ -258,7 +258,48 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
          count = count + 1.5;
       }
     }
-    if(imageWidth[a] === "wide") {
+    else if(imageWidth[a] === "mid-wide") {
+      var element_content = document.createElement("div");
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
+      element_div.appendChild(element_content);
+      
+      element_card = document.createElement("div");
+      element_card.classList.add('card-header', 'text-center');
+      element_card.innerHTML = title[a];
+      element_content.appendChild(element_card);
+  
+      element_image = document.createElement("img");
+      element_image.classList.add('texas-images', 'mid-wide');
+      element_image.src = image[a];
+      element_image.alt = imageAlt[a];
+      element_content.appendChild(element_image);
+  
+      element_card_body = document.createElement("div");
+      element_card_body.classList.add('card-body', 'm-1');
+      element_content.append(element_card_body);
+  
+      element_text = document.createElement("p");
+      element_text.classList.add('card-text');
+      element_text.innerHTML = description[a];
+      element_card_body.appendChild(element_text);
+  
+      element_date = document.createElement("p");
+      element_date.classList.add('card-text');
+      element_date_small = document.createElement("small");
+      element_date_small.classList.add('text-muted');
+      element_date_small.innerHTML = dates[a];
+      element_date.appendChild(element_date_small);
+  
+      element_card_body.appendChild(element_date);
+      if((imageWidth[a+1] === "wide" || imageWidth[a+1] === "ultra-wide")) 
+          {
+            count = count + 4.0;
+          }
+          else {
+             count = count + 2.0;
+          }
+    }
+    else if(imageWidth[a] === "wide") {
       var element_content = document.createElement("div");
       element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
       element_div.appendChild(element_content);
@@ -291,11 +332,11 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
       element_date.appendChild(element_date_small);
   
       element_card_body.appendChild(element_date);
-      count = count + 2.0;
+      count = count + 4.0;
     }
-    if(imageWidth[a] === "ultra-wide") {
+    else if(imageWidth[a] === "ultra-wide") {
       var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'ultra-wide-card');
       element_div.appendChild(element_content);
       
       element_card = document.createElement("div");
@@ -304,7 +345,7 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
       element_content.appendChild(element_card);
   
       element_image = document.createElement("img");
-      element_image.classList.add('texas-images', 'wide');
+      element_image.classList.add('texas-images', 'ultra-wide');
       element_image.src = image[a];
       element_image.alt = imageAlt[a];
       element_content.appendChild(element_image);

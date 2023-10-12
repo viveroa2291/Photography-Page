@@ -70,11 +70,6 @@
     from {transform:scale(0)} 
     to {transform:scale(1)}
 }
-@media only screen and (max-width: 700px){
-    .modal-content {
-      width: 100%;
-    }
-  }
 @media (max-width: 1000px)
 {
     br {
@@ -82,5 +77,34 @@
     }
     .body-images {
         flex-direction: column;
+    }
+}
+@media (max-width: 890px) { 
+    .modal-content {
+      width: 100%;
+    }
+    .not-wide {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        width: 85%;
+    }
+    .not-wide-card {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-bottom: 4rem;
+    }
+    .mid-wide {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        width: 100%;
+    }
+    .mid-wide-card {
+        margin-bottom: 4rem;
     }
 }

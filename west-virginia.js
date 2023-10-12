@@ -42,7 +42,7 @@ function myRotate(x) {
   "This is an image of Harpers Ferry mountain.",
   "This is a picture of a different view of Harpers Ferry in West Virginia."];
   const westVirginiaTitle = ["Harpers Ferry", "Lewis and Clark sign", "Harpers Ferry", "Harpers Ferry Mountain", "Harpers Ferry", "Harpers Ferry", "Harpers Ferry", "Harpers Ferry Views"];
-  const westVirginiaImageWidth = ["not-wide", "not-wide", "not-wide", "wide", "wide", "not-wide", "not-wide", "ultra-wide"];
+  const westVirginiaImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "wide"];
   
   sections("Harper's Ferry", westVirginiaImages, westVirginiaImageAlt, westVirginiaDates, westVirginiaDescription, westVirginiaTitle, westVirginiaImageWidth);
   
@@ -79,7 +79,7 @@ function myRotate(x) {
       }
       if(imageWidth[a] === "not-wide") {
         var element_content = document.createElement("div");
-        element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+        element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
         element_div.appendChild(element_content);
     
         element_card = document.createElement("div");
@@ -118,9 +118,9 @@ function myRotate(x) {
            count = count + 1.5;
         }
       }
-      if(imageWidth[a] === "wide") {
+      if(imageWidth[a] === "mid-wide") {
         var element_content = document.createElement("div");
-        element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+        element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
         element_div.appendChild(element_content);
         
         element_card = document.createElement("div");
@@ -129,7 +129,7 @@ function myRotate(x) {
         element_content.appendChild(element_card);
     
         element_image = document.createElement("img");
-        element_image.classList.add('west-virginia-images', 'wide');
+        element_image.classList.add('west-virginia-images', 'mid-wide');
         element_image.src = image[a];
         element_image.alt = imageAlt[a];
         element_content.appendChild(element_image);
@@ -153,7 +153,7 @@ function myRotate(x) {
         element_card_body.appendChild(element_date);
         count = count + 2.0;
       }
-      if(imageWidth[a] === "ultra-wide") {
+      if(imageWidth[a] === "wide") {
         var element_content = document.createElement("div");
         element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
         element_div.appendChild(element_content);

@@ -36,7 +36,7 @@ function myRotate(x) {
   "This is an image of a mormon church in downtown Salt Lake City.",
   "This is an image of downtown Salt Lake City."];
   const saltTitle = ["Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Downtown Salt Lake City"];
-  const saltImageWidth = ["not-wide", "not-wide", "not-wide", "wide", "wide"];
+  const saltImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide"];
   
   sections("Salt Lake City", saltImages, saltImageAlt, saltDates, saltDescription, saltTitle, saltImageWidth);
   /**
@@ -61,7 +61,7 @@ function myRotate(x) {
   "This is an image of me at the Arches National Park.",
   "This is an image of me at an open area <br> at the Arches National Park."];
   const archesTitle = ["Arches National Park Sign", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park"];
-  const archesImageWidth = ["wide", "wide", "not-wide", "not-wide", "not-wide", "wide", "wide", "not-wide"];
+  const archesImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide"];
   
   sections("Arches National Park", archesImages, archesImageAlt, archesDates, archesDescription, archesTitle, archesImageWidth);
   /**
@@ -80,7 +80,7 @@ function myRotate(x) {
   "This is an image of me at Springville Utah <br> standing at the center of the mountains.",
   "This is an image of me at Springville Utah <br> standing at the bottom of the mountains."];
   const springvilleTitle = ["Springville, Utah", "Springville, Utah", "Springville, Utah", "Springville, Utah", "Springville, Utah"];
-  const springvilleImageWidth = ["wide", "wide", "not-wide", "not-wide", "not-wide"];
+  const springvilleImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"];
   
   sections("Springville, Utah", springvilleImages, springvilleImageAlt, springvilleDates, springvilleDescription, springvilleTitle, springvilleImageWidth);
   /**
@@ -95,7 +95,7 @@ function myRotate(x) {
   "This is an image of me standing outside <br> of my cousins house in Utah. I really like <br> the cool view of the mountains.",
   "This is an image of me standing outside my other cousins house <br> in Utah. Again, I really find the mountains a view cool view right <br> outside their house."];
   const utahTitle = ["Draper, Utah", "Utah", "Utah"];
-  const utahImageWidth = ["not-wide", "not-wide", "wide"];
+  const utahImageWidth = ["not-wide", "not-wide", "mid-wide"];
   
   sections("Other parts of Utah", utahImages, utahImageAlt, utahDates, utahDescription, utahTitle, utahImageWidth);
   function sectionSelected() {
@@ -172,7 +172,7 @@ function myRotate(x) {
       }
       if(imageWidth[a] === "not-wide") {
         var element_content = document.createElement("div");
-        element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+        element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
         element_div.appendChild(element_content);
     
         element_card = document.createElement("div");

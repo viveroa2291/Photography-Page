@@ -151,71 +151,47 @@
     }
 }
 @media (max-width: 1300px)
-    {
-      br {
+{
+    br {
         display: none;
-      }
-      .body-images {
-        flex-direction: column;
-      }
-      .not-wide-card {
-        width: 325px;
-      }
-      .not-wide {
-        height: 400px;
-        margin: .5rem;
-      }
-    }
-@media (max-width: 700px) {
-    .south-dakota-header {
-        font-size: 50px;
-        color: white;
-        font-weight: 200;
     }
     .body-images {
         flex-direction: column;
     }
     .not-wide-card {
-        width: 300px;
-    }
-    .wide {
-        height: 375px;
-        margin: .5rem;
+        width: 325px;
     }
     .not-wide {
-        height: 300px;
-        margin: .5rem;
-    }
-    p {
-        font-size: 14px;
-    }
-    .mid-wide {
         height: 400px;
         margin: .5rem;
     }
 }
-@media (max-width: 650px) {
-    .south-dakota-header {
-      font-size: 50px;
-      color: white;
-      font-weight: 200;
-    }
-    .body-images {
-      flex-direction: column;
-    }
-    .wide {
-      height: 275px;
-      margin: .5rem;
+@media (max-width: 890px) { 
+    .modal-content {
+      width: 100%;
     }
     .not-wide {
-      height: 350px;
-      margin: .5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        width: 85%;
     }
-    p {
-        font-size: 13px;
+    .not-wide-card {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-bottom: 4rem;
     }
     .mid-wide {
-        height: 400px;
-        margin: .5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        width: 100%;
+    }
+    .mid-wide-card {
+        margin-bottom: 4rem;
     }
 }

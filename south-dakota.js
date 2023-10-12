@@ -60,7 +60,7 @@ const rushmoreDescription = ["This is a picture of my friends and I <br> at Moun
 "This is a picture of the Mount Rushmore monument from a different angle.",
 "This is a picture of my friends Sean and Cesar at the Mount Rushmore <br> monument."];
 const rushmoreTitle = ["Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument"];
-const rushmoreImageWidth = ["not-wide", "not-wide", "not-wide", "wide", "wide", "wide"];
+const rushmoreImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"];
 
 /**
  * Custer State Park Lists
@@ -80,7 +80,7 @@ const custerDescription = ["This is a picture of me at Custer State <br>Park wit
 "This is a picture of a field of Custer State Park with a buffalo in the frame.", 
 "This is a picture of me on top of a rock at a peak of Custer State Park. <br> I am unsure if I was intentionally trying to pose or if this was a candid picture."];
 const custerTitle = ["Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park"];
-const custerImageWidth = ["not-wide", "not-wide", "not-wide", "wide", "wide", "wide"];
+const custerImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"];
 
 /**
  * Rapid City Lists
@@ -96,7 +96,7 @@ const rapidDescription = ["This is a picture of my friend Sean and I <br>pointin
 "This is a picture of me giving a president <br>who I believe is Jimmy Carter a high five.",
 "This is a picture of my friend Cesar and Sean and I in some alley of <br> Downtown Rapid City."];
 const rapidTitle = ["Downtown Rapid City", "Downtown Rapid City", "Downtown Rapid City", "Downtown Rapid City"];
-const rapidImageWidth = ["not-wide", "not-wide", "not-wide", "wide"];
+const rapidImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide"];
 
 /**
  * Other South Dakota Lists
@@ -109,7 +109,7 @@ const dakotaDates = ["August 13, 2020", "August 13, 2020"];
 const dakotaDescription = ["This is a picture of me at a lake in <br> Keystone on our way to the <br> Mount Rushmore Monument.", 
 "This is a picture of a project that they're working on in Crazy Horse. <br> The final project looks spectactular but won't be complete for decades to come. <br> It would be nice to visit when I'm older."];
 const dakotaTitle = ["Keystone", "Crazy Horse"];
-const dakotaImageWidth = ["not-wide", "wide"];
+const dakotaImageWidth = ["not-wide", "mid-wide"];
 
 sections("Mount Rushmore", rushmoreImage, rushmoreImageAlt, rushmoreDates, rushmoreDescription, rushmoreTitle, rushmoreImageWidth);
 sections("Custer State Park", custerImage, custerImageAlt, custerDates, custerDescription, custerTitle, custerImageWidth);
@@ -187,9 +187,9 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
         document.getElementById("demo").appendChild(element_div_element);
         count = 0.0;
       }
-        if(imageWidth[b] != "wide") {
+        if(imageWidth[b] != "mid-wide") {
           var element_content_element = document.createElement("div");
-          element_content_element.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
+          element_content_element.classList.add('card', 'mx-sm-auto', 'not-wide-card');
           element_div_element.appendChild(element_content_element);
           
     
@@ -229,9 +229,9 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
              count = count + 1.5;
           }
         }
-        if(imageWidth[b] === "wide") {
+        if(imageWidth[b] === "mid-wide") {
           var element_content_element = document.createElement("div");
-          element_content_element.classList.add('card', 'm-5', 'mx-sm-auto', 'wide-card');
+          element_content_element.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
           element_div_element.appendChild(element_content_element);
           
     
@@ -241,7 +241,7 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
           element_content_element.appendChild(element_card_element);
     
           element_image_element = document.createElement("img");
-          element_image_element.classList.add('south-dakota-images', 'wide');
+          element_image_element.classList.add('south-dakota-images', 'mid-wide');
           element_image_element.src = image[b];
           element_image_element.alt = imageAlt[b];
           element_content_element.appendChild(element_image_element);
