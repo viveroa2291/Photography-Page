@@ -125,19 +125,30 @@ span>.close {
         
         margin-top: 5rem;
         padding: 5px 10px 7px 10px;
-      }
-      .other-states {
+    }
+    .other-states {
         font-size: 20px;
         margin-top: 4.75rem;
         align-self: flex-end;
-      } 
-      
-      .modal-content {
+    } 
+    .modal-content {
         z-index: -1;
-      }
-      span>.close {
+    }
+    span>.close {
         right: 25px;
         font-size: 25px; 
         color: white;
-      }
+    }
+    .home {
+        font-size: 14px;
+        align-self: center;
+    }
+    .about, .contact {
+        font-size: 12px;
+        align-self: center;    
+    }
+    .search {
+        height: 25px;
+        align-self: center;
+    }
 }
