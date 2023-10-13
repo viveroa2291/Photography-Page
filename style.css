@@ -148,7 +148,15 @@ span>.close {
         align-self: center;    
     }
     .search {
+        right: 3.5rem;
         height: 25px;
+        align-self: center;
+    }
+    .search-button {
+        right: 2px;
+        height: 25px;
+        font-size: 12px;
+        border-radius: 5px;
         align-self: center;
     }
 }
