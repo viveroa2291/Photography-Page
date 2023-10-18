@@ -1,7 +1,7 @@
 const searchInput = document.getElementById("search-input");
 
-const namesFromStates = document.getElementsByClassName("card-header");
-
+const namesFromStates = document.getElementsByClassName("state");
+ 
 searchInput.addEventListener("keyup", (e) => {
     const {value} = e.target;
 
@@ -11,9 +11,9 @@ searchInput.addEventListener("keyup", (e) => {
         let state = states.textContent.toLowerCase();
 
         if(state.includes(searchQuery)) {
-            state.style.display = "block";
+            states.style.display = "block";
         } else {
-            state.style.display = "none";
+            states.style.display = "none";
         }
     }
 });

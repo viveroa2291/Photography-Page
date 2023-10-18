@@ -115,6 +115,21 @@ span>.close {
     font-size: 50px; 
     color: white; 
 }
+/* Span Tag */
+.search-states {
+    position: absolute;
+    right: 6rem;
+}
+/* UL Tag */
+.states-list {
+    border: 2px black solid;
+    text-align: center;
+}
+/* Span */
+.state-list {
+    list-style-type: none;
+    border: 2px black solid;
+}
 @media (max-width: 890px) {
     .united-states-map {
         height: 350px;
