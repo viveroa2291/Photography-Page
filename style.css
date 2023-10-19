@@ -118,17 +118,15 @@ span>.close {
 /* Span Tag */
 .search-states {
     position: absolute;
-    right: 6rem;
+    right: 5rem;
+    top: 2.25rem;
 }
-/* UL Tag */
-.states-list {
-    border: 2px black solid;
-    text-align: center;
-}
-/* Span */
+/* Li Tag */
 .state-list {
-    list-style-type: none;
-    border: 2px black solid;
+    border: 3px black solid;
+    text-align: center;
+    padding: .5rem 2.15rem;
+    background-color: gainsboro;
 }
 @media (max-width: 890px) {
     .united-states-map {
