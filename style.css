@@ -117,11 +117,12 @@ span>.close {
 }
 /* Span Tag */
 .search-states {
+    display: none;
     position: absolute;
     right: 5rem;
     top: 2.25rem;
 }
-/* Li Tag */
+/* Div Tag */
 .state-list {
     border: 3px black solid;
     text-align: center;

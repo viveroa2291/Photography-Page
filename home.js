@@ -10,56 +10,56 @@ function map() {
     mapview.style.display = "block"; 
 }
 function arizona() {
-    document.location.href="arizona.html";
+    document.location.href="states-html/arizona.html";
 }
 function arkansas() {
-    document.location.href="arkansas.html";
+    document.location.href="states-html/arkansas.html";
 }
 function california() {
-    document.location.href="california.html";
+    document.location.href="states-html/california.html";
 }
 function florida() {
-    document.location.href="florida.html";
+    document.location.href="states-html/florida.html";
 }
 function georgia() {
-    document.location.href="georgia.html";
+    document.location.href="states-html/georgia.html";
 }
 function illinois() {
-    document.location.href="illinois.html"
+    document.location.href="states-html/illinois.html"
 }
 function indiana() {
-    document.location.href="indiana.html";
+    document.location.href="states-html/indiana.html";
 }
 function michigan() {
-    document.location.href="michigan.html";
+    document.location.href="states-html/michigan.html";
 }
 function minnesota() {
-    document.location.href="minnesota.html";
+    document.location.href="states-html/minnesota.html";
 }
 function missouri() {
-    document.location.href="missouri.html";
+    document.location.href="states-html/missouri.html";
 }
 function ohio() {
-    document.location.href="ohio.html";    
+    document.location.href="states-html/ohio.html";    
 }
 function southDakota() {
-    document.location.href="south-dakota.html";
+    document.location.href="states-html/south-dakota.html";
 }
 function tennessee() {
-    document.location.href="tennessee.html";
+    document.location.href="states-html/tennessee.html";
 } 
 function texas() {
-    document.location.href="texas.html";
+    document.location.href="states-html/texas.html";
 }
 function utah() {
-    document.location.href="utah.html";  
+    document.location.href="states-html/utah.html";  
 }
 function washingtonDC() {
-    document.location.href="washington-dc.html";
+    document.location.href="states-html/washington-dc.html";
 }
 function westVirginia() {
-    document.location.href="west-virginia.html";
+    document.location.href="states-html/west-virginia.html";
 }
 function wisconsin() {
-    document.location.href="wisconsin.html";
+    document.location.href="states-html/wisconsin.html";
 }

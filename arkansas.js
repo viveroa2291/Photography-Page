@@ -101,7 +101,7 @@ function myRotate(x) {
   const arkansasDescription = ["This is a picture of my cousins and I <br> at their house.", 
   "This is an image of me at a Lake <br> Horsehead in Clarksville Arkansas.", 
   "This is an image of my cousins and I a year and a half later <br> from the image on the left."];
-  const arkansasTitle = ["Altus (Cousin's House", "Clarksville Lake", "Waldron"];
+  const arkansasTitle = ["Altus (Cousin's House)", "Clarksville Lake", "Waldron"];
   const arkansasImageWidth = ["not-wide", "not-wide", "wide"];
   
   /**
