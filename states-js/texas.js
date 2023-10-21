@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * Hotel Lists
    */
-const hotelImage = ["states-images/texas-images/texas.jpeg", "states-images/texas-images/hotel3.jpeg", "states-images/texas-images/hotel2.jpeg", "states-images/texas-images/hotel4.jpeg", "states-images/texas-images/hotel.jpeg"];
+const hotelImage = ["../states-images/texas-images/texas.jpeg", "../states-images/texas-images/hotel3.jpeg", "../states-images/texas-images/hotel2.jpeg", "../states-images/texas-images/hotel4.jpeg", "../states-images/texas-images/hotel.jpeg"];
 const hotelImageAlt = ["This is a picture of me sitting on a fence during our walk to walmart in the suburbs of San Antonio Texas. We were walking in a neighborhood with nice homes and golf courses.",
 "This is an image of the pool of my hotel.", 
 "This is a picture of me in my swimsuit on a photoshoot outside my hotel.",                  
@@ -42,7 +42,7 @@ sections("Hotel", hotelImage, hotelImageAlt, hotelDates, hotelDescription, hotel
 /**
  * SeaWorld Lists 
  */
-const seaworldImage = ["states-images/texas-images/seaworld3.jpeg", "states-images/texas-images/great-white.jpeg", "states-images/texas-images/seaworld2.jpeg", "states-images/texas-images/seaworld-park.jpeg", "states-images/texas-images/seaworld.jpeg", "states-images/texas-images/snake.jpeg", "states-images/texas-images/seaworld-park2.jpeg", "states-images/texas-images/orca.jpeg", "states-images/texas-images/orca-selfie.jpeg"];
+const seaworldImage = ["../states-images/texas-images/seaworld3.jpeg", "../states-images/texas-images/great-white.jpeg", "../states-images/texas-images/seaworld2.jpeg", "../states-images/texas-images/seaworld-park.jpeg", "../states-images/texas-images/seaworld.jpeg", "../states-images/texas-images/snake.jpeg", "../states-images/texas-images/seaworld-park2.jpeg", "../states-images/texas-images/orca.jpeg", "../states-images/texas-images/orca-selfie.jpeg"];
 const seaworldImageAlt = ["This is a picture of me of my first visit at Seaworld in Texas.",
 "This is a picture of me standing in front of the Great White Roller Coaster.",
 "This is a picture standing at the entrance of Seaworld's park holding a map.",
@@ -69,7 +69,7 @@ sections("Seaworld", seaworldImage, seaworldImageAlt, seaworldDates, seaworldDes
 /**
  * Discovery Cove Lists 
  */
-const discoveryImage = ["states-images/texas-images/turtoise.jpeg", "states-images/texas-images/discovery-cove2.jpeg", "states-images/texas-images/dolphin.jpeg", "states-images/texas-images/discovery-cove.jpeg", "states-images/texas-images/dolphin2.jpeg"];
+const discoveryImage = ["../states-images/texas-images/turtoise.jpeg", "../states-images/texas-images/discovery-cove2.jpeg", "../states-images/texas-images/dolphin.jpeg", "../states-images/texas-images/discovery-cove.jpeg", "../states-images/texas-images/dolphin2.jpeg"];
 const discoveryImageAlt = ["This is a picture of two turtoises at SeaWorld's San Antonio park Discovery Cove. They were pretty large and I thought they were turtles at first.",
 "This is a picture of me in Discovery Cove. I really enjoyed the park.", 
 "This is a selfie of me posing in front of a dolphin.",
@@ -88,7 +88,7 @@ sections("Discovery Cove", discoveryImage, discoveryImageAlt, discoveryDates, di
 /**
  * Six Flags Lists
  */
-const sixImage = ["states-images/texas-images/fiesta-texas.jpeg", "states-images/texas-images/fiesta-texas2.jpeg", "states-images/texas-images/america.jpeg", "states-images/texas-images/fiesta-texas-statue.jpeg"];
+const sixImage = ["../states-images/texas-images/fiesta-texas.jpeg", "../states-images/texas-images/fiesta-texas2.jpeg", "../states-images/texas-images/america.jpeg", "../states-images/texas-images/fiesta-texas-statue.jpeg"];
 const sixImageAlt = ["This a picture of me in front of the sign of Six Flags Fiesta Texas.",
 "This is a picture of me at the Six Flags Fiesta Texas park. I thought the scenery was pretty nice.",
 "This is a picture of me at the Six Flags Fiesta Texas in front of a 'America the Beautiful' sign. I thought it was a cool billboard.",
@@ -105,7 +105,7 @@ sections("Six Flags Fiesta Texas", sixImage, sixImageAlt, sixDates, sixDescripti
 /**
  * San Antonio Lists
  */
-const sanAntonioImage = ["states-images/texas-images/river-walk2.jpeg", "states-images/texas-images/river-walk.jpeg", "states-images/texas-images/city.jpeg", "states-images/texas-images/san-antonio2.jpeg", "states-images/texas-images/alamo.jpeg", "states-images/texas-images/alamo-selfie.jpeg", "states-images/texas-images/san-antonio.jpeg", "states-images/texas-images/art4.jpeg", "states-images/texas-images/art2.jpeg", "states-images/texas-images/art.jpeg", "states-images/texas-images/art3.jpeg", "states-images/texas-images/musuem.jpeg"];
+const sanAntonioImage = ["../states-images/texas-images/river-walk2.jpeg", "../states-images/texas-images/river-walk.jpeg", "../states-images/texas-images/city.jpeg", "../states-images/texas-images/san-antonio2.jpeg", "../states-images/texas-images/alamo.jpeg", "../states-images/texas-images/alamo-selfie.jpeg", "../states-images/texas-images/san-antonio.jpeg", "../states-images/texas-images/art4.jpeg", "../states-images/texas-images/art2.jpeg", "../states-images/texas-images/art.jpeg", "../states-images/texas-images/art3.jpeg", "../states-images/texas-images/musuem.jpeg"];
 const sanAntonioImageAlt = ["This a picture of me in the river walk in downtown San Antonio. There were lots of stores and restaurants next to the river and was a nice peaceful walk to go through.",
 "This is a picture of me in San Antonio's river walk in the middle of a tour.",
 "This is a picture of me by the San Antonio River Walk.",
