@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * Minneapolis Lists
    */
-  const minneapolisImages = ["states-images/minnesota-images/minneapolis-self.jpeg", "states-images/minnesota-images/minneapolis.jpeg", "states-images/minnesota-images/minneapolis-self2.jpeg", "states-images/minnesota-images/us-bank.jpeg", "states-images/minnesota-images/minneapolis-self3.jpeg"];
+  const minneapolisImages = ["../states-images/minnesota-images/minneapolis-self.jpeg", "../states-images/minnesota-images/minneapolis.jpeg", "../states-images/minnesota-images/minneapolis-self2.jpeg", "../states-images/minnesota-images/us-bank.jpeg", "../states-images/minnesota-images/minneapolis-self3.jpeg"];
   const minneapolisImageAlt = ["This is an image of me in downtown Minneapolis. My friends and I were doing a photoshoot.", 
   "This is an image of my friends and I in downtown Minneapolis during our photoshoot.",
   "This is an image of me in downtown Minneapolis during a photoshoot.",
@@ -41,7 +41,7 @@ function myRotate(x) {
   /**
    * Minneapolis Arcade Lists
    */
-  const arcadeImages = ["states-images/minnesota-images/rooftop.jpeg", "states-images/minnesota-images/arcade.jpeg", "states-images/minnesota-images/arcade-self.jpeg"];
+  const arcadeImages = ["../states-images/minnesota-images/rooftop.jpeg", "../states-images/minnesota-images/arcade.jpeg", "../states-images/minnesota-images/arcade-self.jpeg"];
   const arcadeImageAlt = ["This is an image of my friends and I at an arcade in the outskirts of Minneapolis.",
   "This is an image of my friends and I at an arcade in the outskirts of Minneapolis.",
   "This is an image of me at an arcade in the outskirts of Minneapolis with a wall of art."];
@@ -56,7 +56,7 @@ function myRotate(x) {
    * Other Minnesota Lists
    */
   
-  const minnesotaImages = ["states-images/minnesota-images/mallofamerica.jpeg", "states-images/minnesota-images/george-floyd.jpeg", "states-images/minnesota-images/minnesota-friends.jpeg", "states-images/minnesota-images/skiing.jpeg"];
+  const minnesotaImages = ["../states-images/minnesota-images/mallofamerica.jpeg", "../states-images/minnesota-images/george-floyd.jpeg", "../states-images/minnesota-images/minnesota-friends.jpeg", "../states-images/minnesota-images/skiing.jpeg"];
   const minnesotaImageAlt = ["This is an image of me at the Mall of America in Saint Paul Minnesota.", 
   "This is an image of a George Floyd mural located in the outskirts of Minneapolis.",
   "This is an image of my friends in Eden Prarie Minnesota. One of my friends is from Ohio and we haven't seen each other in years and was in town, therefore we met up and merged our friend groups together.",

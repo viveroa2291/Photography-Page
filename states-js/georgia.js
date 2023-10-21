@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * Atlanta's Lists
    */
-  const atlantaImages = ["states-images/georgia-images/atlanta.jpeg", "states-images/georgia-images/atlanta2.jpeg"];
+  const atlantaImages = ["../states-images/georgia-images/atlanta.jpeg", "../states-images/georgia-images/atlanta2.jpeg"];
   const atlantaImagesAlt = ["This is a picture of me in downtown Atlanta. I really liked the city and what it had to offer.",
   "This is the picture of me in downtown Atlanta."];
   const atlantaDates = ["May 06, 2018", "May 06, 2018"];
@@ -36,7 +36,7 @@ function myRotate(x) {
   /**
    * CNN Lists
    */
-  const cnnImages = ["states-images/georgia-images/cnn.jpeg", "states-images/georgia-images/cnn2.jpeg"];
+  const cnnImages = ["../states-images/georgia-images/cnn.jpeg", "../states-images/georgia-images/cnn2.jpeg"];
   const cnnImagesAlt = ["This is a picture of me standing outside of the CNN building next to the sign.",
   "This is a selfie of me inside of the CNN building next to an anchor's chair and table where the news is reported."];
   const cnnDates = ["May 06, 2018", "May 06, 2018"];
@@ -49,7 +49,7 @@ function myRotate(x) {
   /**
    * Coca-Cola Lists
    */
-  const cocaImages = ["states-images/georgia-images/coca-cola.jpeg", "states-images/georgia-images/coca-cola3.jpeg", "states-images/georgia-images/coca-cola2.jpeg"];
+  const cocaImages = ["../states-images/georgia-images/coca-cola.jpeg", "../states-images/georgia-images/coca-cola3.jpeg", "../states-images/georgia-images/coca-cola2.jpeg"];
   const cocaImagesAlt = ["This is a picture of me sitting on a couch enjoying a coke drink inside the World of Coca-Cola located in Atlanta.",
   "This is a picture of me inside of the World of Coca-Cola. I thought this looked cool.",
   "This is an image of me jumping outside of the World of Coca Cola sign."];
@@ -64,7 +64,7 @@ function myRotate(x) {
   /**
    * Other Georgia Lists
    */
-  const georgiaImages = ["states-images/georgia-images/airport.jpeg", "states-images/georgia-images/dinner.jpeg", "states-images/georgia-images/pool.jpeg", "states-images/georgia-images/hotel.jpeg"];
+  const georgiaImages = ["../states-images/georgia-images/airport.jpeg", "../states-images/georgia-images/dinner.jpeg", "../states-images/georgia-images/pool.jpeg", "../states-images/georgia-images/hotel.jpeg"];
   const georgiaImagesAlt = ["This is a picture of my sister's national team for gymnastics. She is part of the special olympics and I was there to help coach the boys. We took a group picture in the airport and I believe this airport ranks in the United States for being one of the biggest airports in the United States.",
   "This is a picture of me standing outside of the Marietta Diner which was where we ate for dinner.",
   "This is a picture of me sitting pool side by my hotel",

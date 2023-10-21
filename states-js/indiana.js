@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * Indiana Lists 
    */
-  const indianaImages = ["states-images/indiana-images/nikki-sami.jpeg", "states-images/indiana-images/nikki-sami2.jpeg", "states-images/indiana-images/nikki.jpeg", "states-images/indiana-images/kelleys.jpeg", "states-images/indiana-images/bears.jpeg", "states-images/indiana-images/sean.jpeg", "states-images/indiana-images/upstairs.jpeg", "states-images/indiana-images/street.jpeg", "states-images/indiana-images/la-una.jpeg", "states-images/indiana-images/la-una2.jpeg"];
+  const indianaImages = ["../states-images/indiana-images/nikki-sami.jpeg", "../states-images/indiana-images/nikki-sami2.jpeg", "../states-images/indiana-images/nikki.jpeg", "../states-images/indiana-images/kelleys.jpeg", "../states-images/indiana-images/bears.jpeg", "../states-images/indiana-images/sean.jpeg", "../states-images/indiana-images/upstairs.jpeg", "../states-images/indiana-images/street.jpeg", "../states-images/indiana-images/la-una.jpeg", "../states-images/indiana-images/la-una2.jpeg"];
   const indianaImageAlt = ["This is a picture of me and my friends Nikki and Sami inside of Nikki's room at Indiana University for her move in day.",
   "This is the picture of my friends Nikki, Sami, and I standing outside an Indiana University sign.",
   "This is the picture of my friend Nikki and I in a Halloween costume posing before going out to a party.",

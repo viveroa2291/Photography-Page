@@ -44,7 +44,7 @@ function myRotate(x) {
   /**
    * Vandervoort Lists
    */
-  const vandervoortImages = ["states-images/arkansas-images/me.jpeg", "states-images/arkansas-images/hunting.jpeg", "states-images/arkansas-images/goats.jpeg", "states-images/arkansas-images/cows.jpeg", "states-images/arkansas-images/lake-me.jpeg", "states-images/arkansas-images/goat-me2.jpeg", "states-images/arkansas-images/goat-me.jpeg", "states-images/arkansas-images/cow-me.jpeg"];
+  const vandervoortImages = ["../states-images/arkansas-images/me.jpeg", "../states-images/arkansas-images/hunting.jpeg", "../states-images/arkansas-images/goats.jpeg", "../states-images/arkansas-images/cows.jpeg", "../states-images/arkansas-images/lake-me.jpeg", "../states-images/arkansas-images/goat-me2.jpeg", "../states-images/arkansas-images/goat-me.jpeg", "../states-images/arkansas-images/cow-me.jpeg"];
   const vandervoortImagesAlt = ["This is a mirror picture that I took in my cousins newly remodeled bathroom and was a time when taking mirror pictures was popular on the iphone.", 
   "This is an image of me holding a hunting rifle at my cousins house where we went target shooting on their land <b>safely</b>. It was a fun experience and learned information on gun safety.",
   "This is an image of goats eating their food in my cousins farm.",
@@ -69,7 +69,7 @@ function myRotate(x) {
   /**
    * Ozark Lists
    */
-  const ozarkImages = ["states-images/arkansas-images/view.jpeg", "states-images/arkansas-images/restaurant.jpeg"];
+  const ozarkImages = ["../states-images/arkansas-images/view.jpeg", "../states-images/arkansas-images/restaurant.jpeg"];
   const ozarkImagesAlt = ["This is a picture of me on the side of the road. We were driving and decided to take a picture of the view which is difficult to see with the barricade in the way.", 
   "This is a picture of me outside of one of my favorite Mexican restaurant when visiting my cousins. They provide very delicious food and give you large portions."];
   const ozarkDates = ["August 16, 2017", "August 16, 2017"];
@@ -81,7 +81,7 @@ function myRotate(x) {
   /**
    * Henderson Lists
    */
-  const hendersonImages = ["states-images/arkansas-images/university.jpeg", "states-images/arkansas-images/university2.jpeg"];
+  const hendersonImages = ["../states-images/arkansas-images/university.jpeg", "../states-images/arkansas-images/university2.jpeg"];
   const hendersonImagesAlt = ["This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school.", 
   "This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school."];
   const hendersonDates = ["December 31, 2020", "December 31, 2020"];
@@ -93,7 +93,7 @@ function myRotate(x) {
   /**
    * Other Parts of Arkansas Lists
    */
-  const arkansasImages = ["states-images/arkansas-images/cousins.jpeg", "states-images/arkansas-images/lake-me2.jpeg", "states-images/arkansas-images/cousins2.jpeg"];
+  const arkansasImages = ["../states-images/arkansas-images/cousins.jpeg", "../states-images/arkansas-images/lake-me2.jpeg", "../states-images/arkansas-images/cousins2.jpeg"];
   const arkansasImageAlt = ["This is a picture of my cousins and I at their house.", 
   "This is an image of me at a Lake Horsehead in Clarksville Arkansas.",
   "This is an image of my cousins and I a year and a half later from the image on the left."];

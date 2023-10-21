@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * Tennessee Lists
    */
-  const tennesseeImages = ["states-images/tennessee-images/nikki.jpeg", "states-images/tennessee-images/group.jpeg", "states-images/tennessee-images/sami.jpeg", "states-images/tennessee-images/me.jpeg", "states-images/tennessee-images/sami-nikki.jpeg", "states-images/tennessee-images/group-selfie.jpeg", "states-images/tennessee-images/group-selfie2.jpeg", "states-images/tennessee-images/mikayla.jpeg"];
+  const tennesseeImages = ["../states-images/tennessee-images/nikki.jpeg", "../states-images/tennessee-images/group.jpeg", "../states-images/tennessee-images/sami.jpeg", "../states-images/tennessee-images/me.jpeg", "../states-images/tennessee-images/sami-nikki.jpeg", "../states-images/tennessee-images/group-selfie.jpeg", "../states-images/tennessee-images/group-selfie2.jpeg", "../states-images/tennessee-images/mikayla.jpeg"];
   const tennesseeImageAlt = ["This is a picture of my friend Nikki and I taking a selfie on our way down from the infamous bridge in Gaitlinburg.", 
   "This is a group picture of my friends in Gaitlinburg.",
   "This is a picture of my friend Sami and I in Gaitlinburg.",

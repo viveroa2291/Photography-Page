@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * West-Virginia Lists
    */
-  const westVirginiaImages = ["states-images/west-virginia-images/me.jpeg", "states-images/west-virginia-images/Lewis-and-Clark.jpeg", "states-images/west-virginia-images/me2.jpeg", "states-images/west-virginia-images/mountain.jpeg", "states-images/west-virginia-images/alex-sean.jpeg", "states-images/west-virginia-images/sean.jpeg", "states-images/west-virginia-images/mountain2.jpeg", "states-images/west-virginia-images/views.jpeg"];
+  const westVirginiaImages = ["../states-images/west-virginia-images/me.jpeg", "../states-images/west-virginia-images/Lewis-and-Clark.jpeg", "../states-images/west-virginia-images/me2.jpeg", "../states-images/west-virginia-images/mountain.jpeg", "../states-images/west-virginia-images/alex-sean.jpeg", "../states-images/west-virginia-images/sean.jpeg", "../states-images/west-virginia-images/mountain2.jpeg", "../states-images/west-virginia-images/views.jpeg"];
   const westVirginiaImageAlt = ["This is the picture of me on top of a mountain at Harpers Ferry striking a pose.", 
   "This is a picture of me standing next to the Lewis and Clark sign.",
   "This is the picture of me on top of a mountain at Harpers Ferry striking a pose.",

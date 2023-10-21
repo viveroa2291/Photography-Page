@@ -21,7 +21,7 @@ function myRotate(x) {
   /**
    * Sawyer Lists
    */
-  const sawyerImages = ["states-images/michigan-images/sami.jpeg", "states-images/michigan-images/nicole.jpeg", "states-images/michigan-images/sami2.jpeg", "states-images/michigan-images/nicole-sami.jpeg", "states-images/michigan-images/gabi-nora.jpeg", "states-images/michigan-images/sawyer2.jpeg", "states-images/michigan-images/alex.jpeg", "states-images/michigan-images/kaitlin-alex.jpeg", "states-images/michigan-images/sawyer.jpeg", "states-images/michigan-images/alex2.jpeg"];
+  const sawyerImages = ["../states-images/michigan-images/sami.jpeg", "../states-images/michigan-images/nicole.jpeg", "../states-images/michigan-images/sami2.jpeg", "../states-images/michigan-images/nicole-sami.jpeg", "../states-images/michigan-images/gabi-nora.jpeg", "../states-images/michigan-images/sawyer2.jpeg", "../states-images/michigan-images/alex.jpeg", "../states-images/michigan-images/kaitlin-alex.jpeg", "../states-images/michigan-images/sawyer.jpeg", "../states-images/michigan-images/alex2.jpeg"];
   const sawyerImagesAlt = ["This is the picture of my friend Sami and I sitting on a tree at The Dunes in Sawyer Michigan.",
   "This is the picture of my friend Nicole and I sitting on a tree at The Dunes in Sawyer Michigan.",
   "This is the picture of my friend Sami and I in the clean mud of The Dunes in Sawyer Michigan.",
@@ -50,7 +50,7 @@ function myRotate(x) {
   /**
    * Chloe's Lakehouse Lists
    */
-  const lakehouseImages = ["states-images/michigan-images/nikki.jpeg", "states-images/michigan-images/nikki-chloe.jpeg", "states-images/michigan-images/nikki2.jpeg", "states-images/michigan-images/fireworks.jpeg"];
+  const lakehouseImages = ["../states-images/michigan-images/nikki.jpeg", "../states-images/michigan-images/nikki-chloe.jpeg", "../states-images/michigan-images/nikki2.jpeg", "../states-images/michigan-images/fireworks.jpeg"];
   const lakehouseImagesAlt = ["This is a picture of my friend Nikki and I at Lake Michigan Beach on the Fourth of July.",
   "This is an image of my friends Nikki, Chloe, and I at Lake Michigan Beach on the Fourth of July.",
   "This is an image of my friends Nikki and I at Lake Michigan Beach on the Fourth of July.",
@@ -67,7 +67,7 @@ function myRotate(x) {
   /**
    * Wakefield Lists
    */
-  const wakefieldImages = ["states-images/michigan-images/cabin.jpeg", "states-images/michigan-images/wakefield3.jpeg", "states-images/michigan-images/ski.jpeg", "states-images/michigan-images/wakefield4.jpeg", "states-images/michigan-images/wakefield.jpeg", "states-images/michigan-images/wakefield2.jpeg"];
+  const wakefieldImages = ["../states-images/michigan-images/cabin.jpeg", "../states-images/michigan-images/wakefield3.jpeg", "../states-images/michigan-images/ski.jpeg", "../states-images/michigan-images/wakefield4.jpeg", "../states-images/michigan-images/wakefield.jpeg", "../states-images/michigan-images/wakefield2.jpeg"];
   const wakefieldImagesAlt = ["This is an image of me sitting inside my cabin before skiing.", 
   "This is an image of me skiing in Wakefield Michigan.", 
   "This is an image of where I was skiing in Wakefield Michigan.",
@@ -88,7 +88,7 @@ function myRotate(x) {
   /**
    * Detroit List
    */
-  const detroitImages = ["states-images/michigan-images/me.jpeg"];
+  const detroitImages = ["../states-images/michigan-images/me.jpeg"];
   const detroitImagesAlt = ["This is an image of me sitting inside a bus on a way to a German event."];
   const detroitDates = ["August 31, 2013"];
   const detroitDescription = ["This is an image of me sitting inside <br> a bus on a way to a German event."];

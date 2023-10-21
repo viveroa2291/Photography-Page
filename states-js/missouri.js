@@ -22,7 +22,7 @@ function myRotate(x) {
   /**
    * Mizzou Lists
    */
-  const mizzouImages = ["states-images/missouri-images/sami.jpeg", "states-images/missouri-images/me.jpeg", "states-images/missouri-images/mikayla.jpeg", "states-images/missouri-images/sami3.jpeg", "states-images/missouri-images/sami2.jpeg", "states-images/missouri-images/sami-rise.jpeg", "states-images/missouri-images/stadium.jpeg"];
+  const mizzouImages = ["../states-images/missouri-images/sami.jpeg", "../states-images/missouri-images/me.jpeg", "../states-images/missouri-images/mikayla.jpeg", "../states-images/missouri-images/sami3.jpeg", "../states-images/missouri-images/sami2.jpeg", "../states-images/missouri-images/sami-rise.jpeg", "../states-images/missouri-images/stadium.jpeg"];
   const mizzouImagesAlt = ["This is a picture of my friend Sami and I at the Mizzou commons.", 
   "This is the picture of me holding a 'Fight Tiger' sign at the commons at the University of Missouri.",
   "This is the picture of my friend Mikayla and I at the University of Missouri commons holding a 'Fight Tiger' sign.",
@@ -46,7 +46,7 @@ function myRotate(x) {
   /**
    * Eldon Caves Lists
    */
-  const eldonImages = ["states-images/missouri-images/cave.jpeg", "states-images/missouri-images/cave2.jpeg", "states-images/missouri-images/sami-cave.jpeg", "states-images/missouri-images/cesar.jpeg", "states-images/missouri-images/sami-nikki.jpeg", "states-images/missouri-images/group.jpeg", "states-images/missouri-images/cave-red.jpeg"];
+  const eldonImages = ["../states-images/missouri-images/cave.jpeg", "../states-images/missouri-images/cave2.jpeg", "../states-images/missouri-images/sami-cave.jpeg", "../states-images/missouri-images/cesar.jpeg", "../states-images/missouri-images/sami-nikki.jpeg", "../states-images/missouri-images/group.jpeg", "../states-images/missouri-images/cave-red.jpeg"];
   const eldonImagesAlt = ["This is a picture of the cave that we went to visit while we were in Missouri.",
   "This is a picture of the cave that we went to visit while we were in Missouri.",
   "This is the picture of my friend Sami and I inside the cave that we went to visit while in Missouri.",

@@ -23,10 +23,10 @@ function myRotate(x) {
 /**
  * Cedar Point List
  */
-const cedarImages = ["states-images/ohio-images/2015-beach.jpeg", "states-images/ohio-images/handstand.jpeg", "states-images/ohio-images/sean-pool.jpeg", "states-images/ohio-images/sean-pool2.jpeg", "states-images/ohio-images/sean-beach.jpeg", "states-images/ohio-images/sean-millennium.jpeg", "states-images/ohio-images/thumbs-up3.jpeg", "states-images/ohio-images/sean-dinner.jpeg", "states-images/ohio-images/hotel-view.jpeg", "states-images/ohio-images/hotel2.jpeg",
-"states-images/ohio-images/cedar-point.jpeg", "states-images/ohio-images/dinosaur.jpeg", "states-images/ohio-images/dinosaur-group.jpeg", "states-images/ohio-images/2017-cedar-point-sign.jpeg", "states-images/ohio-images/2017-millennium.jpeg", "states-images/ohio-images/2017-top-thrill.jpeg", "states-images/ohio-images/2017-thumbs-up.jpeg", "states-images/ohio-images/2018-cedar-point-sign.jpeg", "states-images/ohio-images/2018-thumbs-up.jpeg", "states-images/ohio-images/valravn.jpeg", 
-"states-images/ohio-images/millennium.jpeg", "states-images/ohio-images/2018-top-thrill.jpeg", "states-images/ohio-images/2018-beach.jpeg", "states-images/ohio-images/2019-thumbs-up.jpeg", "states-images/ohio-images/2019-top-thrill.jpeg", "states-images/ohio-images/valravn-group.jpeg", "states-images/ohio-images/alex-sean.jpeg", "states-images/ohio-images/maverick.jpeg", "states-images/ohio-images/steel.jpeg", "states-images/ohio-images/beach.jpeg",
-"states-images/ohio-images/2021-beach4.jpeg","states-images/ohio-images/2021-beach2.jpeg", "states-images/ohio-images/2021-beach3.jpeg", "states-images/ohio-images/beach-view.jpeg", "states-images/ohio-images/2021-beach.jpeg", "states-images/ohio-images/jetski2.jpeg", "states-images/ohio-images/jetski.jpeg", "states-images/ohio-images/maverick.jpeg", "states-images/ohio-images/steel.jpeg", "states-images/ohio-images/beach.jpeg"];
+const cedarImages = ["../states-images/ohio-images/2015-beach.jpeg", "../states-images/ohio-images/handstand.jpeg", "../states-images/ohio-images/sean-pool.jpeg", "../states-images/ohio-images/sean-pool2.jpeg", "../states-images/ohio-images/sean-beach.jpeg", "../states-images/ohio-images/sean-millennium.jpeg", "../states-images/ohio-images/thumbs-up3.jpeg", "../states-images/ohio-images/sean-dinner.jpeg", "../states-images/ohio-images/hotel-view.jpeg", "../states-images/ohio-images/hotel2.jpeg",
+"../states-images/ohio-images/cedar-point.jpeg", "../states-images/ohio-images/dinosaur.jpeg", "../states-images/ohio-images/dinosaur-group.jpeg", "../states-images/ohio-images/2017-cedar-point-sign.jpeg", "../states-images/ohio-images/2017-millennium.jpeg", "../states-images/ohio-images/2017-top-thrill.jpeg", "../states-images/ohio-images/2017-thumbs-up.jpeg", "../states-images/ohio-images/2018-cedar-point-sign.jpeg", "../states-images/ohio-images/2018-thumbs-up.jpeg", "../states-images/ohio-images/valravn.jpeg", 
+"../states-images/ohio-images/millennium.jpeg", "../states-images/ohio-images/2018-top-thrill.jpeg", "../states-images/ohio-images/2018-beach.jpeg", "../states-images/ohio-images/2019-thumbs-up.jpeg", "../states-images/ohio-images/2019-top-thrill.jpeg", "../states-images/ohio-images/valravn-group.jpeg", "../states-images/ohio-images/alex-sean.jpeg", "../states-images/ohio-images/maverick.jpeg", "../states-images/ohio-images/steel.jpeg", "../states-images/ohio-images/beach.jpeg",
+"../states-images/ohio-images/2021-beach4.jpeg","../states-images/ohio-images/2021-beach2.jpeg", "../states-images/ohio-images/2021-beach3.jpeg", "../states-images/ohio-images/beach-view.jpeg", "../states-images/ohio-images/2021-beach.jpeg", "../states-images/ohio-images/jetski2.jpeg", "../states-images/ohio-images/jetski.jpeg", "../states-images/ohio-images/maverick.jpeg", "../states-images/ohio-images/steel.jpeg", "../states-images/ohio-images/beach.jpeg"];
 const cedarImageAlt = ["This is a picture of me by the beach of Cedar Point enjoying a photoshoot.", "This is the picture of me doing a handstand at the beach in Cedar Point.",
 "This is a picture of my friend sean and I in front of a water park of Cedar Point.", "This is a picture of Sean and I at the water park in Cedar Point.",
 "This is a picture of my friend Sean and I at the beach of Cedar Point on our last day of our vacation.", "This is a picture of my friend Sean and I in front of the Millennium Force ride. It was also my first time riding the ride, meanwhile Sean has ridden the ride before.",
@@ -115,7 +115,7 @@ sections("Sandusky (Cedar Point)", cedarImages, cedarImageAlt, cedarDates, cedar
  * Akron Lists
  */
 
-const akronImage = ["states-images/ohio-images/akron.jpeg", "states-images/ohio-images/akron-downtown.jpeg", "states-images/ohio-images/akron2.jpeg", "states-images/ohio-images/group.jpeg", "states-images/ohio-images/jon.jpeg"];
+const akronImage = ["../states-images/ohio-images/akron.jpeg", "../states-images/ohio-images/akron-downtown.jpeg", "../states-images/ohio-images/akron2.jpeg", "../states-images/ohio-images/group.jpeg", "../states-images/ohio-images/jon.jpeg"];
 const akronImageAlt = ["This is an image of me putting up the peace sign outside a church in Akron.", 
 "This is a low quality picture of downtown Akron.",
 "This is a picture of me by the Akron river.",
@@ -135,11 +135,11 @@ sections("Akron", akronImage, akronImageAlt, akronDates, akronDescription, akron
 /**
  * Cleveland Lists
  */
-const clevelandImage = ["states-images/ohio-images/jim-brown.jpeg", "states-images/ohio-images/downtown-cleveland.jpeg", "states-images/ohio-images/cleveland-sign2.jpeg", "states-images/ohio-images/musuem.jpeg", "states-images/ohio-images/michael-jackson.jpeg","states-images/ohio-images/elvis.jpeg",  "states-images/ohio-images/michael-jackson2.jpeg", "states-images/ohio-images/golf.jpeg",
-"states-images/ohio-images/browns-practice.jpeg", 
-"states-images/ohio-images/cleveland-cliffs.jpeg", 
-"states-images/ohio-images/cleveland-sign-group.jpeg", 
-"states-images/ohio-images/cleveland-sign.jpeg"
+const clevelandImage = ["../states-images/ohio-images/jim-brown.jpeg", "../states-images/ohio-images/downtown-cleveland.jpeg", "../states-images/ohio-images/cleveland-sign2.jpeg", "../states-images/ohio-images/musuem.jpeg", "../states-images/ohio-images/michael-jackson.jpeg","../states-images/ohio-images/elvis.jpeg",  "../states-images/ohio-images/michael-jackson2.jpeg", "../states-images/ohio-images/golf.jpeg",
+"../states-images/ohio-images/browns-practice.jpeg", 
+"../states-images/ohio-images/cleveland-cliffs.jpeg", 
+"../states-images/ohio-images/cleveland-sign-group.jpeg", 
+"../states-images/ohio-images/cleveland-sign.jpeg"
 ];
 const clevelandImageAlt = ["This is a picture of me outside the Browns stadium next to the Jim Brown statue.",
 "This is a picture of me standing outside in downtown Cleveland.",
@@ -175,7 +175,7 @@ sections("Cleveland", clevelandImage, clevelandImageAlt, clevelandDates, clevela
  * Cincinnati Lists 
  */
 
-const cincinnatiImage = ["states-images/ohio-images/hotel3.jpeg", "states-images/ohio-images/labor-day.jpeg", "states-images/ohio-images/maria.jpeg", "states-images/ohio-images/hotel.jpeg"];
+const cincinnatiImage = ["../states-images/ohio-images/hotel3.jpeg", "../states-images/ohio-images/labor-day.jpeg", "../states-images/ohio-images/maria.jpeg", "../states-images/ohio-images/hotel.jpeg"];
 const cincinnatiImageAlt = ["This is a picture of me taking a mirror picture in my hotel.", 
 "This is a group picture of my friends Evan, Jonathan, and Rachel at the event.",
 "This is a picture of Maria and I at the labor day event.",

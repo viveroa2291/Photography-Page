@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * Los Angeles Lists
    */
-  const losAngelesImages = ["states-images/california-images/downtown.jpeg", "states-images/california-images/pbars.jpeg"];
+  const losAngelesImages = ["../states-images/california-images/downtown.jpeg", "../states-images/california-images/pbars.jpeg"];
   const losAngelesImagesAlt = ["This is a picture of my friends and I in downtown Los Angeles. I was on their shoulders preparing to do an 'L', which is a skill that is performed in mens gymnastics on the parallel bars.",
   "This is the picture of me doing the 'L' on top of my friends shoulders in downtown Los Angeles."];
   const losAngelesDates = ["August 6, 2015", "August 6, 2015"];
@@ -35,7 +35,7 @@ function myRotate(x) {
   /**
    * DisneyLand Lists
    */
-  const disneylandImages = ["states-images/california-images/disneyland-jon.jpeg", "states-images/california-images/disneyland-jon2.jpeg", "states-images/california-images/disneyland-kristin.jpeg"];
+  const disneylandImages = ["../states-images/california-images/disneyland-jon.jpeg", "../states-images/california-images/disneyland-jon2.jpeg", "../states-images/california-images/disneyland-kristin.jpeg"];
   const disneylandImagesAlt = ["This is a picture of my friend Jon and I at Disneyland.",
   "This is an image of my friend Jon and I at Disneyland in front of the infamous Mickey Mouse roller coaster.",
   "This is an image of my friend Jon and Kristin and I at Disneyland. <br><br><b> Fun fact, they are twins.</b>"];
@@ -49,7 +49,7 @@ function myRotate(x) {
   /**
    * Huntington Beach Lists
    */
-  const huntingtonImages = ["states-images/california-images/huntington-jon.jpeg", "states-images/california-images/huntington-jon2.jpeg", "states-images/california-images/huntington-karina.jpeg", "states-images/california-images/pyramid.jpeg", "states-images/california-images/huntington-holly.jpeg"];
+  const huntingtonImages = ["../states-images/california-images/huntington-jon.jpeg", "../states-images/california-images/huntington-jon2.jpeg", "../states-images/california-images/huntington-karina.jpeg", "../states-images/california-images/pyramid.jpeg", "../states-images/california-images/huntington-holly.jpeg"];
   const huntingtonImagesAlt = ["This is an image of my friend Jon and I at Huntington Beach.",
   "This is an image of my friend Jon and I at Huntington Beach.",
   "This is an image of my friend Karina and I at Huntington Beach.",

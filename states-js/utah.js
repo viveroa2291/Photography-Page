@@ -23,7 +23,7 @@ function myRotate(x) {
   /**
    * Salt Lake City Lists
    */
-  const saltImages = ["states-images/utah-images/church-me.jpeg", "states-images/utah-images/church.jpeg", "states-images/utah-images/church-mom.jpeg", "states-images/utah-images/salt-lake-city2.jpeg", "states-images/utah-images/salt-lake-city3.jpeg"];
+  const saltImages = ["../states-images/utah-images/church-me.jpeg", "../states-images/utah-images/church.jpeg", "../states-images/utah-images/church-mom.jpeg", "../states-images/utah-images/salt-lake-city2.jpeg", "../states-images/utah-images/salt-lake-city3.jpeg"];
   const saltImageAlt = ["This is a picture of me in front of a mormon church in Salt Lake City.",
   "This is an image of a mormon church in Salt Lake City.",
   "This is a picture of my mother and I at a mormon church in Salt Lake City.",
@@ -42,7 +42,7 @@ function myRotate(x) {
   /**
    * Arches lists
    */
-  const archesImages = ["states-images/utah-images/arches-sign.jpeg", "states-images/utah-images/arches2.jpeg", "states-images/utah-images/arches.jpeg", "states-images/utah-images/big-arch.jpeg", "states-images/utah-images/small-arch.jpeg", "states-images/utah-images/arch-field.jpeg", "states-images/utah-images/arches4.jpeg", "states-images/utah-images/arches3.jpeg" ];
+  const archesImages = ["../states-images/utah-images/arches-sign.jpeg", "../states-images/utah-images/arches2.jpeg", "../states-images/utah-images/arches.jpeg", "../states-images/utah-images/big-arch.jpeg", "../states-images/utah-images/small-arch.jpeg", "../states-images/utah-images/arch-field.jpeg", "../states-images/utah-images/arches4.jpeg", "../states-images/utah-images/arches3.jpeg" ];
   const archesImageAlt = ["This is an image of me on the sign of the Arches National Park.",
   "This is an image of me at the Arches National Park.",
   "This is an image of me at the Arches National Park.",
@@ -67,7 +67,7 @@ function myRotate(x) {
   /**
    * Springville Lists
    */
-  const springvilleImages = ["states-images/utah-images/mountains.jpeg", "states-images/utah-images/mountains3.jpeg", "states-images/utah-images/mountains2.jpeg", "states-images/utah-images/mountains4.jpeg", "states-images/utah-images/mountains5.jpeg"];
+  const springvilleImages = ["../states-images/utah-images/mountains.jpeg", "../states-images/utah-images/mountains3.jpeg", "../states-images/utah-images/mountains2.jpeg", "../states-images/utah-images/mountains4.jpeg", "../states-images/utah-images/mountains5.jpeg"];
   const springvilleImageAlt = ["This is an image of me at Springville Utah standing at the middle of a mountain.",
   "This is an image of me at Springville Utah standing at the middle of a mountain.",
   "This is an image of me at Springville Utah standing at the bottom of the mountains.",
@@ -86,7 +86,7 @@ function myRotate(x) {
   /**
    * Other Utah lists
    */
-  const utahImages = ["states-images/utah-images/draper.jpeg", "states-images/utah-images/outside.jpeg", "states-images/utah-images/pauls-house.jpeg"];
+  const utahImages = ["../states-images/utah-images/draper.jpeg", "../states-images/utah-images/outside.jpeg", "../states-images/utah-images/pauls-house.jpeg"];
   const utahImageAlt = ["This is an image of me at Draper, Utah which was a nice view of the city.",
   "This is an image of me standing outside of my cousins house in Utah. I really like the cool view of the mountains.",
   "This is an image of me standing outside my other cousins house in Utah. Again, I really find the mountains a view cool view right outside their house."];

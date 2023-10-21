@@ -22,7 +22,7 @@ function myRotate(x) {
   /**
    * Disneyworld Lists
    */
-  const disneyworldImages = ["states-images/florida-images/epcot.jpeg", "states-images/florida-images/disney.jpeg", "states-images/florida-images/disney-family.jpeg", "states-images/florida-images/castle.jpeg", "states-images/florida-images/president.jpeg", "states-images/florida-images/disney2.jpeg"];
+  const disneyworldImages = ["../states-images/florida-images/epcot.jpeg", "../states-images/florida-images/disney.jpeg", "../states-images/florida-images/disney-family.jpeg", "../states-images/florida-images/castle.jpeg", "../states-images/florida-images/president.jpeg", "../states-images/florida-images/disney2.jpeg"];
   const disneyworldImagesAlt = ["This is a picture of me standing outside of Epcot. I did not have a chance to go into Epcot, but wanted to take a picture since I found the entrance very cool.",
   "This is a picture of a statue of Walt Disney and Mickey Mouse at the Disneyworld Magic Kingdom park.",
   "This is a picture of my family and I at the entrance of Disneyworld's Magic Kingdom park.",
@@ -43,7 +43,7 @@ function myRotate(x) {
   /**
     * Universal Lists
     */
-  const universalImages = ["states-images/florida-images/jurassic.jpeg", "states-images/florida-images/nbc.jpeg", "states-images/florida-images/jurassic2.jpeg", "states-images/florida-images/harrypotter.jpeg", "states-images/florida-images/universal-sign.jpeg", "states-images/florida-images/universal.jpeg"];
+  const universalImages = ["../states-images/florida-images/jurassic.jpeg", "../states-images/florida-images/nbc.jpeg", "../states-images/florida-images/jurassic2.jpeg", "../states-images/florida-images/harrypotter.jpeg", "../states-images/florida-images/universal-sign.jpeg", "../states-images/florida-images/universal.jpeg"];
   const universalImagesAlt = ["This is an image of me looking up at the Jurassic Park sign.",
   "This is an image of me outside of the NBC building after watching a 'Tonight's Show'.",
   "This is an image of me looking at the dinosaur acting in shock. I thought the display was very well done and was my favorite park.",
@@ -64,7 +64,7 @@ function myRotate(x) {
   /**
    * Seaworld Lists
    */
-  const seaworldImages = ["states-images/florida-images/seaworld2.jpeg", "states-images/florida-images/penguin.jpeg", "states-images/florida-images/penguin-me.jpeg", "states-images/florida-images/orca.jpeg", "states-images/florida-images/orcas-glass.jpeg", "states-images/florida-images/seaworld-green.jpeg", "states-images/florida-images/seaworld.jpeg", "states-images/florida-images/fish.jpeg", "states-images/florida-images/seahorses.jpeg"];
+  const seaworldImages = ["../states-images/florida-images/seaworld2.jpeg", "../states-images/florida-images/penguin.jpeg", "../states-images/florida-images/penguin-me.jpeg", "../states-images/florida-images/orca.jpeg", "../states-images/florida-images/orcas-glass.jpeg", "../states-images/florida-images/seaworld-green.jpeg", "../states-images/florida-images/seaworld.jpeg", "../states-images/florida-images/fish.jpeg", "../states-images/florida-images/seahorses.jpeg"];
   const seaworldImagesAlt = ["This is an image of me standing by the Seaworld lake of the theme park.",
   "This is an image of penguins inside a penguin exhibit.",
   "This is an image of me interacting with a penguin from the glass. I thought it was pretty cool that the penguin came up to me and made eye contact.",
@@ -91,7 +91,7 @@ function myRotate(x) {
   /**
    * Other Parts of Florida Lists
    */
-  const floridaImages = ["states-images/florida-images/hotel.jpeg", "states-images/florida-images/bathroom.jpeg"];
+  const floridaImages = ["../states-images/florida-images/hotel.jpeg", "../states-images/florida-images/bathroom.jpeg"];
   const floridaImagesAlt = ["This is an image of me standing outside of my hotel.", "This is a bathroom picture that I took in the bathroom of the hotel I was staying at."];
   const floridaDates = ["March 19, 2017", "March 23, 2017"];
   const floridaDescription = ["This is an image of me standing outside <br> of my hotel.",
