@@ -93,7 +93,42 @@ function hide() {
   sections("Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
   sections("Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
   sections("Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+ 
+function cardView() {
+      document.getElementById("image-view-demo").style.display = "none";
+      document.getElementById("demo").style.display = "block";
+ } 
+function imageView() {
+  document.getElementById("demo").style.display = "none";
+  document.getElementById("image-view-demo").style.display = "block";
+
+  var imagediv = document.createElement("div"); 
+  var imageViewHeader = document.createElement("h1");
+  imageViewHeader.innerHTML = "This is the Image View";
+  document.getElementById("image-view-demo").appendChild(imagediv);      
+  document.getElementById("image-view-demo").appendChild(imageViewHeader);      
   
+    for(var i = 0; i < vandervoortImages.length; i++) {
+        var imagesPoo = document.createElement("img");
+        imagesPoo.src = vandervoortImages[i];
+        imagediv.appendChild(imagesPoo);
+    }
+    for(var b = 0; b <  ozarkImages.length; b++) {
+        var imagesPoo = document.createElement("img");
+        imagesPoo.src = ozarkImages[b];
+        imagediv.appendChild(imagesPoo);
+    }
+    for(var c = 0; c < hendersonImages.length; c++) {
+        var imagesPoo = document.createElement("img");
+        imagesPoo.src = hendersonImages[c];
+        imagediv.appendChild(imagesPoo);
+    }
+    for(var d = 0; d < arkansasImages.length; d++) {
+        var imagesPoo = document.createElement("img");
+        imagesPoo.src = arkansasImages[d];
+        imagediv.appendChild(imagesPoo);
+    }
+}
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x =="Vandervoort") 
@@ -627,7 +662,4 @@ function hide() {
   span.onclick = function() { 
     modal.style.display = "none";
   }
-}
-function imageView() {
-
 }
