@@ -88,9 +88,7 @@
   text-align: center;
 }
 .year {
-  /*
   position: absolute;
-  */
   margin-top: 1rem;
   margin-left: 5rem;
 }
@@ -126,6 +124,21 @@
 }
 .button-center {  
     margin-left: 17rem;
+}
+.image-view-demo {
+  display: none;
+}
+.view-div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.view-images {
+  height: 200px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border: solid black .5px;
 }
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 

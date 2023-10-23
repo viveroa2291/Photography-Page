@@ -23,6 +23,8 @@ function hide() {
   var boxImage = document.getElementsByClassName("box-image");
   var modalImg = document.getElementById("img01");
   var captionText = document.getElementById("caption");
+
+  var sectionSelection = document.getElementById("section-selection");
   /**
    * Vandervoort Lists
    */
@@ -101,34 +103,37 @@ function cardView() {
 function imageView() {
   document.getElementById("demo").style.display = "none";
   document.getElementById("image-view-demo").style.display = "block";
+}
 
   var imagediv = document.createElement("div"); 
-  var imageViewHeader = document.createElement("h1");
-  imageViewHeader.innerHTML = "This is the Image View";
-  document.getElementById("image-view-demo").appendChild(imagediv);      
-  document.getElementById("image-view-demo").appendChild(imageViewHeader);      
+  imagediv.classList.add('view-div');
+  document.getElementById("image-view-demo").appendChild(imagediv);        
   
     for(var i = 0; i < vandervoortImages.length; i++) {
-        var imagesPoo = document.createElement("img");
-        imagesPoo.src = vandervoortImages[i];
-        imagediv.appendChild(imagesPoo);
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = vandervoortImages[i];
+        imagediv.appendChild(viewImages);
     }
     for(var b = 0; b <  ozarkImages.length; b++) {
-        var imagesPoo = document.createElement("img");
-        imagesPoo.src = ozarkImages[b];
-        imagediv.appendChild(imagesPoo);
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = ozarkImages[b];
+        imagediv.appendChild(viewImages);
     }
     for(var c = 0; c < hendersonImages.length; c++) {
-        var imagesPoo = document.createElement("img");
-        imagesPoo.src = hendersonImages[c];
-        imagediv.appendChild(imagesPoo);
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = hendersonImages[c];
+        imagediv.appendChild(viewImages);
     }
     for(var d = 0; d < arkansasImages.length; d++) {
-        var imagesPoo = document.createElement("img");
-        imagesPoo.src = arkansasImages[d];
-        imagediv.appendChild(imagesPoo);
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = arkansasImages[d];
+        imagediv.appendChild(viewImages);
     }
-}
+
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x =="Vandervoort") 
