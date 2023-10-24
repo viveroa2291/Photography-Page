@@ -138,7 +138,43 @@ function sectionSelected() {
     sections("Other Parts of South Dakota", dakotaImage, dakotaImageAlt, dakotaDates, dakotaDescription, dakotaTitle, dakotaImageWidth);
   }
 }
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);    
 
+  function images() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+  }
+  for(var a = 0; a < rushmoreImage.length; a++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = rushmoreImage[a];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+  for(var b = 0; b <  custerImage.length; b++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = custerImage[b];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+  for(var c = 0; c < rapidImage.length; c++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = rapidImage[c];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+  for(var d = 0; d < dakotaImage.length; d++) {
+    var viewImages = document.createElement("img");
+    viewImages.classList.add('view-images');
+    viewImages.src = dakotaImage[d];
+    imagediv.appendChild(viewImages);
+    viewImages.onclick = images; 
+}
 function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
     

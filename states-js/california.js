@@ -81,6 +81,36 @@ var modal = document.getElementById("myModal");
       sections("Huntington Beach", huntingtonImages, huntingtonImagesAlt, huntingtonDates, huntingtonDescription, huntingtonTitle, huntingtonImageWidth);
     }
   }
+  var imagediv = document.createElement("div"); 
+  imagediv.classList.add('view-div');
+  document.getElementById("image-view-demo").appendChild(imagediv);    
+
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    for(var a = 0; a < losAngelesImages.length; a++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = losAngelesImages[a];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var b = 0; b <  disneylandImages.length; b++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = disneylandImages[b];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var c = 0; c < huntingtonImages.length; c++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = huntingtonImages[c];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
   // ------------------------------------------------------------------------------
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0;

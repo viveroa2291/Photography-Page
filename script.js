@@ -15,3 +15,11 @@ function toggleNav() {
         elements[i].classList.toggle('show');
     }
 }
+function cardView() {
+    document.getElementById("image-view-demo").style.display = "none";
+    document.getElementById("demo").style.display = "block";
+} 
+function imageView() {
+    document.getElementById("demo").style.display = "none";
+    document.getElementById("image-view-demo").style.display = "block";
+}

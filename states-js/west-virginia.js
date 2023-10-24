@@ -29,7 +29,24 @@ var captionText = document.getElementById("caption");
   const westVirginiaImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "wide"];
   
   sections("Harper's Ferry", westVirginiaImages, westVirginiaImageAlt, westVirginiaDates, westVirginiaDescription, westVirginiaTitle, westVirginiaImageWidth);
-  
+ 
+  var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);    
+
+  function images() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+  }
+  for(var a = 0; a < westVirginiaImages.length; a++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = westVirginiaImages[a];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
   

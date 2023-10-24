@@ -169,7 +169,50 @@ function sectionSelected() {
     sections("San Antonio", sanAntonioImage, sanAntonioImageAlt, sanAntonioDates, sanAntonioDescription, sanAntonioTitle, sanAntonioImageWidth);
   }
 }
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);    
 
+  function images() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+  }
+  for(var a = 0; a < hotelImage.length; a++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = hotelImage[a];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+  for(var b = 0; b <  seaworldImage.length; b++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = seaworldImage[b];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+  for(var c = 0; c < discoveryImage.length; c++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = discoveryImage[c];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+  for(var d = 0; d < sixImage.length; d++) {
+    var viewImages = document.createElement("img");
+    viewImages.classList.add('view-images');
+    viewImages.src = sixImage[d];
+    imagediv.appendChild(viewImages);
+    viewImages.onclick = images; 
+}
+for(var e = 0; e < sanAntonioImage.length; e++) {
+  var viewImages = document.createElement("img");
+  viewImages.classList.add('view-images');
+  viewImages.src = sanAntonioImage[d];
+  imagediv.appendChild(viewImages);
+  viewImages.onclick = images; 
+}
 function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0;
 

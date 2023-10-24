@@ -96,42 +96,42 @@ function hide() {
   sections("Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
   sections("Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
  
-function cardView() {
-      document.getElementById("image-view-demo").style.display = "none";
-      document.getElementById("demo").style.display = "block";
- } 
-function imageView() {
-  document.getElementById("demo").style.display = "none";
-  document.getElementById("image-view-demo").style.display = "block";
-}
-
   var imagediv = document.createElement("div"); 
   imagediv.classList.add('view-div');
-  document.getElementById("image-view-demo").appendChild(imagediv);        
-  
-    for(var i = 0; i < vandervoortImages.length; i++) {
+  document.getElementById("image-view-demo").appendChild(imagediv);    
+
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    for(var a = 0; a < vandervoortImages.length; a++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
-        viewImages.src = vandervoortImages[i];
+        viewImages.src = vandervoortImages[a];
         imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
     }
     for(var b = 0; b <  ozarkImages.length; b++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
         viewImages.src = ozarkImages[b];
         imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
     }
     for(var c = 0; c < hendersonImages.length; c++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
         viewImages.src = hendersonImages[c];
         imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
     }
     for(var d = 0; d < arkansasImages.length; d++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
         viewImages.src = arkansasImages[d];
         imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
     }
 
   function sectionSelected() {
@@ -656,7 +656,7 @@ function imageView() {
   }
   for(var i = 0; i < img.length; i++)
   {
-      img[i].onclick = images;
+      img[i].onclick = images; 
   }
   for(var j = 0; j < img.length; j++)
   {

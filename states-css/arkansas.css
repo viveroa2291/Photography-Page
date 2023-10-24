@@ -4,15 +4,6 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-.section-view {
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.image-view {
-  margin-left: 1rem;
-}
 .arkansas-date {
   bottom: 0;
 }
@@ -139,6 +130,12 @@
   margin-left: 1rem;
   margin-top: 1rem;
   border: solid black .5px;
+}
+.view-images:hover
+{
+    opacity: .7;
+    border: white solid 1px;
+    cursor: zoom-in;
 }
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 

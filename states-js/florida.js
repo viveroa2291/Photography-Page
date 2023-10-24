@@ -126,6 +126,43 @@ var modal = document.getElementById("myModal");
       sections("Other Parts of Florida", floridaImages, floridaImagesAlt, floridaDates, floridaDescription, floridaTitle, floridaImageWidth);
     }
   }
+  var imagediv = document.createElement("div"); 
+  imagediv.classList.add('view-div');
+  document.getElementById("image-view-demo").appendChild(imagediv);    
+
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    for(var a = 0; a < disneyworldImages.length; a++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = disneyworldImages[a];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var b = 0; b <  universalImages.length; b++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = universalImages[b];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var c = 0; c < seaworldImages.length; c++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = seaworldImages[c];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var d = 0; d < floridaImages.length; d++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = floridaImages[d];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
   function sections(section, image, imagesAlt, dates, description, title, imageWidth) {
   let count = 0.0;
   

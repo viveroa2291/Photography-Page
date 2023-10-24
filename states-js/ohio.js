@@ -458,6 +458,43 @@ function yearCollections(year, ySection, yImage, yImageAlt, yDates, yDescription
   }
     return[sect, yearImage, yearImageAlt, yearDates, yearDescription, yearTitle, yearImageWidth];
   }
+  var imagediv = document.createElement("div"); 
+  imagediv.classList.add('view-div');
+  document.getElementById("image-view-demo").appendChild(imagediv);    
+
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    for(var a = 0; a < cedarImages.length; a++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = cedarImages[a];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var b = 0; b <  akronImage.length; b++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = akronImage[b];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var c = 0; c < clevelandImage.length; c++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = clevelandImage[c];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var d = 0; d < cincinnatiImage.length; d++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = cincinnatiImage[d];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
 function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0;
   

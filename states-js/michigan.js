@@ -123,6 +123,43 @@ var captionText = document.getElementById("caption");
       sections("Detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
     }
   }
+  var imagediv = document.createElement("div"); 
+  imagediv.classList.add('view-div');
+  document.getElementById("image-view-demo").appendChild(imagediv);    
+
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    for(var a = 0; a < sawyerImages.length; a++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = sawyerImages[a];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var b = 0; b <  lakehouseImages.length; b++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = lakehouseImages[b];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var c = 0; c < wakefieldImages.length; c++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = wakefieldImages[c];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var d = 0; d < detroitImages.length; d++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = detroitImages[d];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
   function yearSelected() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2013") 

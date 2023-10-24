@@ -104,6 +104,43 @@ var captionText = document.getElementById("caption");
       sections("Other Georgia Pictures", georgiaImages, georgiaImagesAlt, georgiaDates, georgiaDescription, georgiaTitle, georgiaImageWidth);
     }
   }
+  var imagediv = document.createElement("div"); 
+  imagediv.classList.add('view-div');
+  document.getElementById("image-view-demo").appendChild(imagediv);    
+
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    for(var a = 0; a < atlantaImages.length; a++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = atlantaImages[a];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var b = 0; b <  cnnImages.length; b++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = cnnImages[b];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var c = 0; c < cocaImages.length; c++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = cocaImages[c];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var d = 0; d < georgiaImages.length; d++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = georgiaImages[d];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0;
     
