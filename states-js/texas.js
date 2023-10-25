@@ -209,7 +209,7 @@ document.getElementById("image-view-demo").appendChild(imagediv);
 for(var e = 0; e < sanAntonioImage.length; e++) {
   var viewImages = document.createElement("img");
   viewImages.classList.add('view-images');
-  viewImages.src = sanAntonioImage[d];
+  viewImages.src = sanAntonioImage[e];
   imagediv.appendChild(viewImages);
   viewImages.onclick = images; 
 }

@@ -141,24 +141,46 @@ span>.close {
 .image-view-demo {
     display: none;
   }
-  .view-div {
+.view-div {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
-  }
-  .view-images {
+    width: 95%;
+}
+.view-images {
     height: 200px;
     margin-left: 1rem;
     margin-top: 1rem;
     border: solid black .5px;
-  }
-  .view-images:hover
-  {
-      opacity: .7;
-      border: white solid 1px;
-      cursor: zoom-in;
-  }
+}
+.view-images:hover
+{
+    opacity: .7;
+    border: white solid 1px;
+    cursor: zoom-in;
+}
+.button-view {
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0077cc;
+    border: none;
+    cursor: pointer;
+}
+.button-view:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #005599;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+.button-view:hover:before {
+    transform: translateY(0);
+}
 @media (max-width: 890px) {
     .united-states-map {
         height: 350px;

@@ -132,17 +132,17 @@ document.getElementById("image-view-demo").appendChild(imagediv);
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
   }
-  for(var a = 0; a < hotelImage.length; a++) {
+  for(var a = 0; a < saltImages.length; a++) {
       var viewImages = document.createElement("img");
       viewImages.classList.add('view-images');
-      viewImages.src = hotelImage[a];
+      viewImages.src = saltImages[a];
       imagediv.appendChild(viewImages);
       viewImages.onclick = images; 
   }
-  for(var b = 0; b <  saltImages.length; b++) {
+  for(var b = 0; b <  archesImages.length; b++) {
       var viewImages = document.createElement("img");
       viewImages.classList.add('view-images');
-      viewImages.src = saltImages[b];
+      viewImages.src = archesImages[b];
       imagediv.appendChild(viewImages);
       viewImages.onclick = images; 
   }
