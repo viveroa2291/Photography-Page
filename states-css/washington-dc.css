@@ -1,3 +1,16 @@
+.washington-dc-top-section {
+    background-image: url('../states-images/washington-dc-images/cover.jpeg');
+    height: 750px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.washington-dc-header {
+    line-height: 750px;
+    text-align: center;
+    color: white;
+    font-size: 75px;
+    animation: color-change 30s infinite;
+}
 .section-selection {
     display: flex;
     justify-content: center;
@@ -7,4 +20,18 @@
     text-align: center;
     display: flex;
     justify-content: center;
+}
+.body-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.washington-dc-images {
+    height: 350px;
+    margin: .5rem 3rem;
+    cursor: zoom-in;
+    transition: .3s;
+}
+.washington-dc-images:hover {
+    opacity: .7;
 }
