@@ -24,15 +24,84 @@ var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
-const whitehouseImages = [".../states-images/washington-dc-images/white-house.jpeg"];
-const whitehouseImagesAlt = ["This is a picture of the white house."];
-const whitehouseDates = ["July 4, 2019"];
-const whitehouseDescription = ["This is a picture of the white house."];
-const whitehouseTitle = ["White House"];
-const whitehouseImageWidth = ["wide"];
+const whitehouseImages = ["../states-images/washington-dc-images/white-house.jpeg", "../states-images/washington-dc-images/white-house-alex-sean.jpeg"];
+const whitehouseImagesAlt = ["This is a picture of the white house.", "This is a picture of my friends and I at the White House."];
+const whitehouseDates = ["July 4, 2019", "July 4, 2019"];
+const whitehouseDescription = ["This is a picture of the white house.", "This is a picture of my friends and I at the White House."];
+const whitehouseTitle = ["White House", "White House"];
+const whitehouseImageWidth = ["wide", "wide"];
 
-sections("White House", whitehouseImages, whitehouseImagesAlt, whitehouseDates, whitehouseDescription, whitehouseTitle, whitehouseImageWidth);
+const presidentImages = ["../states-images/washington-dc-images/washington.jpeg"];
+const presidentImagesAlt = [""];
+const presidentDates = ["July 5, 2019"];
+const presidentDescription = [""];
+const presidentTitle = [""];
+const presidentImageWidth = [""];
 
+const capitolImages = [""];
+const capitolImagesAlt = [""];
+const capitolDates = [""];
+const capitolDescription = [""];
+const capitolTitle = [""];
+const capitolImageWidth = [""];
+
+const lincolnImages = [""];
+const lincolnImagesAlt = [""];
+const lincolnDates = [""];
+const lincolnDescription = [""];
+const lincolnTitle = [""];
+const lincolnImageWidth = [""];
+
+const washingtonImages = [""];
+const washingtonImagesAlt = [""];
+const washingtonDates = [""];
+const washingtonDescription = [""];
+const washingtonTitle = [""];
+const washingtonImageWidth = [""];
+
+sections("White House", whitehouseImages, whitehouseImagesAlt, whitehouseDates, whitehouseDescription, whitehouseTitle, whitehouseImageWidth); 
+sections("Presidential Artwork", presidentImages, presidentImagesAlt, presidentDates, presidentDescription, presidentTitle, presidentImageWidth);
+sections("United States Capitol", capitolImages, capitolImagesAlt, capitolDates, capitolDescription, capitolTitle, capitolImageWidth);
+sections("Lincoln Memorial", lincolnImages, lincolnImagesAlt, lincolnDates, lincolnDescription, lincolnTitle, lincolnImageWidth); 
+sections("Washington DC", washingtonImages, washingtonImagesAlt, washingtonDates, washingtonDescription, washingtonTitle, washingtonImageWidth);
+
+var imagediv = document.createElement("div"); 
+  imagediv.classList.add('view-div');
+  document.getElementById("image-view-demo").appendChild(imagediv);    
+
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    for(var a = 0; a < whitehouseImages.length; a++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = whitehouseImages[a];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var b = 0; b <  presidentImages.length; b++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = presidentImages[b];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var c = 0; c < hendersonImages.length; c++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = hendersonImages[c];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
+    for(var d = 0; d < arkansasImages.length; d++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = arkansasImages[d];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images; 
+    }
 function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
     
