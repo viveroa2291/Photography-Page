@@ -133,7 +133,7 @@ function hide() {
         imagediv.appendChild(viewImages);
         viewImages.onclick = images; 
     }
-
+  
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x =="Vandervoort") 
@@ -175,7 +175,7 @@ function hide() {
       sections("Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
     }
   }
-  
+
   function yearSelected() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2012") 
@@ -419,6 +419,7 @@ function hide() {
   }
     return[sect, yearImage, yearImageAlt, yearDates, yearDescription, yearTitle, yearImageWidth];
   }
+  
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0;
   
@@ -547,6 +548,7 @@ function hide() {
       modal.style.display = "none";
     }
   }
+  
   function yearSections(image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
    
@@ -648,6 +650,7 @@ function hide() {
           count = count + 2.0; 
       }   
       }
+      
   // This block of code is when an image is clicked, it expands the image. 
   function images() {
     modal.style.display = "block";

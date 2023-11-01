@@ -21,6 +21,11 @@
     display: flex;
     justify-content: center;
 }
+.body-headers {
+    text-align: center;
+    margin-top: 1rem;
+    animation: body-color-change 30s infinite;
+}
 .body-images {
     display: flex;
     flex-direction: row;
@@ -35,3 +40,95 @@
 .washington-dc-images:hover {
     opacity: .7;
 }
+.header-hr {
+    width: 25%;
+}   
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+.box-image{
+    height: 100px;
+    cursor: pointer;
+    transition: .3s;
+    margin-left: 2px;
+}
+.box-image:hover
+{
+    opacity: .7;
+    border: white solid 1px;
+}
+.not-wide {
+    margin: auto;
+    margin-bottom: 3px;
+    display: block;
+    width: 80%;
+    max-width: 450px;  
+}
+.image-view-demo {
+    display: none;
+  }
+  .view-div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .view-images {
+    height: 200px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border: solid black .5px;
+  }
+  .view-images:hover
+  {
+      opacity: .7;
+      border: white solid 1px;
+      cursor: zoom-in;
+  }
+@media (max-width: 890px) {
+    .washington-dc-header {
+        font-size: 50px;
+        color: white;
+        font-weight: 200;
+    }
+    .body-images {
+        flex-direction: column;
+    }
+    .not-wide {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 350px;
+      width: 85%;
+    }
+    .wide {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 225px;  
+    }
+    .not-wide-card {
+        width: 300px;
+    }
+    .wide-card {
+      width: 375px;
+    }
+    .section-selection {
+      flex-direction: column;
+    }
+    .year {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .body-images {
+      margin-left: 4rem;
+    }
+    p {
+        font-size: 13px;
+    }
+  }
