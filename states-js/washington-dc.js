@@ -227,10 +227,12 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
         { 
             img[i].onclick = images;
         }
+        /*
       for(var j = 0; j < img.length; j++)
         {
           boxImage[j].onclick = images;
         }
+        */
       var span = document.getElementsByClassName("close")[0];
       
       span.onclick = function() { 

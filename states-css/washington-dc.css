@@ -70,25 +70,24 @@
 }
 .image-view-demo {
     display: none;
-  }
-  .view-div {
+}
+.view-div {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
   }
-  .view-images {
+.view-images {
     height: 200px;
     margin-left: 1rem;
     margin-top: 1rem;
     border: solid black .5px;
-  }
-  .view-images:hover
-  {
-      opacity: .7;
-      border: white solid 1px;
-      cursor: zoom-in;
-  }
+}
+.view-images:hover {
+    opacity: .7;
+    border: white solid 1px;
+    cursor: zoom-in;
+}
 @media (max-width: 890px) {
     .washington-dc-header {
         font-size: 50px;

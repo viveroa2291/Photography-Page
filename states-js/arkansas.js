@@ -49,7 +49,6 @@ function hide() {
   const vandervoortTitle = ["Cousin's Bathroom", "Cousin's Land", "Cousin's Farm", "Cousin's Farm", "Lake", "Cousin's Farm", "Cousin's Farm", "Cousin's Farm"];
   const vandervoortImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "wide", "not-wide"];
   
-  
   /**
    * Ozark Lists
    */
