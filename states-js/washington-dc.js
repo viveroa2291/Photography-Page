@@ -31,33 +31,33 @@ const whitehouseDescription = ["This is a picture of the white house.", "This is
 const whitehouseTitle = ["White House", "White House"];
 const whitehouseImageWidth = ["wide", "wide"];
 
-const presidentImages = ["../states-images/washington-dc-images/washington.jpeg"];
-const presidentImagesAlt = ["This is a picture of the white house."];
-const presidentDates = ["July 5, 2019"];
-const presidentDescription = ["This is a picture of the white house."];
-const presidentTitle = ["George Washington"];
-const presidentImageWidth = ["not-wide"];
+const presidentImages = ["../states-images/washington-dc-images/washington.jpeg", "../states-images/washington-dc-images/lincoln.jpeg", "../states-images/washington-dc-images/jfk.jpeg",  "../states-images/washington-dc-images/reagan.jpeg", "../states-images/washington-dc-images/obama.jpeg"];
+const presidentImagesAlt = ["This is a picture of me in front of a George Washington painting.", "This is a picture of me in front of a Lincoln painting.", "This is a picture of me in front of a John F Kennedy painting.", "This is a picture of me in front of a Ronald Reagan painting", "This is a picture of me in front of a Barrack Obama painting."];
+const presidentDates = ["July 5, 2019", "July 5, 2019", "July 5, 2019", "July 5, 2019", "July 5, 2019"];
+const presidentDescription = ["This is a picture of me in front of a George Washington painting.", "This is a picture of me in front of a Lincoln painting.", "This is a picture of me in front of a John F Kennedy painting.", "This is a picture of me in front of a Ronald Reagan painting", "This is a picture of me in front of a Barrack Obama painting."];
+const presidentTitle = ["George Washington", "Abraham Lincoln", "John F Kennedy", "Ronald Reagan", "Barrack Obama"];
+const presidentImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
 
-const capitolImages = ["../states-images/washington-dc-images/washington.jpeg"];
-const capitolImagesAlt = ["This is a picture of the white house."];
-const capitolDates = ["July 5, 2019"];
-const capitolDescription = ["This is a picture of the white house."];
-const capitolTitle = ["George Washington"];
-const capitolImageWidth = ["not-wide"];
+const capitolImages = ["../states-images/washington-dc-images/capitol-me.jpeg", "../states-images/washington-dc-images/capitol.jpeg", "../states-images/washington-dc-images/cover.jpeg"];
+const capitolImagesAlt = ["This is a picture of me in front of the United States capitol.", "This is a picture of the United States Capitol building.", "This is a picture of the United States Capitol building."];
+const capitolDates = ["July 6, 2019", "July 6, 2019", "July 6, 2019"];
+const capitolDescription = ["This is a picture of me in front of the United States capitol.", "This is a picture of the United States Capitol building.", "This is a picture of the United States Capitol building."];
+const capitolTitle = ["United States Captiol", "United States Capitol"];
+const capitolImageWidth = ["not-wide", "wide", "wide"];
 
-const lincolnImages = ["../states-images/washington-dc-images/washington.jpeg"];
-const lincolnImagesAlt = ["This is a picture of the white house."];
-const lincolnDates = ["July 5, 2019"];
-const lincolnDescription = ["This is a picture of the white house."];
-const lincolnTitle = ["George Washington"];
-const lincolnImageWidth = ["not-wide"];
+const lincolnImages = ["../states-images/washington-dc-images/lincoln-alex-sean.jpeg", "../states-images/washington-dc-images/lincoln-me.jpeg"];
+const lincolnImagesAlt = ["This is a picture of my friend Alex, Sean, and I in front of the lincoln memorial.", "This is a picture of me in front of the Lincoln Memorial."];
+const lincolnDates = ["July 6, 2019", "July 6, 2019"];
+const lincolnDescription = ["This is a picture of my friend Alex, Sean, and I in front of the lincoln memorial.", "This is a picture of me in front of the Lincoln Memorial."];
+const lincolnTitle = ["Lincoln Memorial", "Lincoln Memorial"];
+const lincolnImageWidth = ["wide", "not-wide"];
 
-const washingtonImages = ["../states-images/washington-dc-images/washington.jpeg"];
-const washingtonImagesAlt = ["This is a picture of the white house."];
-const washingtonDates = ["July 5, 2019"];
-const washingtonDescription = ["This is a picture of the white house."];
-const washingtonTitle = ["George Washington"];
-const washingtonImageWidth = ["not-wide"];
+const washingtonImages = ["../states-images/washington-dc-images/fed.jpeg", "../states-images/washington-dc-images/fed-me.jpeg", "../states-images/washington-dc-images/america.jpeg", "../states-images/washington-dc-images/hat.jpeg", "../states-images/washington-dc-images/dc-me.jpeg", "../states-images/washington-dc-images/dc-alex-sean.jpeg", "../states-images/washington-dc-images/kaitlin-interview.png", "../states-images/washington-dc-images/kaitlin-me.jpeg", "../states-images/washington-dc-images/kaitlin-sean.jpeg", "../states-images/washington-dc-images/rally-alex.jpeg", "../states-images/washington-dc-images/art.jpeg", "../states-images/washington-dc-images/panda.jpeg", "../states-images/washington-dc-images/zoo-alex-sean.jpeg", "../states-images/washington-dc-images/mlk.jpeg"];
+const washingtonImagesAlt = ["This is a picture of the Federal Reserve Building.", "This is a picture of me in front of the federal reserve building.", "This is a picture of me in front of a building in Washington DC.", "This is a picture of my hat with the Washington Monument in the background.", "This is a picture of me in front of the Washington Monument.", "This is a picture of my friends and I in front of the Washington Monument.", "This is a picture of me and my friend Sean being interviewed by Kaitlin Bennet.", "This is a picture of Kaitlin Bennet and I.", "This is a picture of my friend Sean and I taking a picture with Kaitlin Bennet.", "This is a picture of my friend Alex and I at a Trump rally.", "This is a picture of me in front of a painting.", "This is a picture of a Panda at the Smithsonian National Zoo.", "This is a picture of my friend Alex, Sean, and I at the Smithsonian National Zoo", "This is a picture of me in front of the Martin Luther King monument."];
+const washingtonDates = ["July 3, 2019", "July 3, 2019", "July 3, 2019", "July 3, 2019", "July 3, 2019", "July 3, 2019", "July 4, 2019", "July 4, 2019", "July 4, 2019", "July 4, 2019", "July 5, 2019", "July 5, 2019", "July 5, 2019", "July 6, 2019"];
+const washingtonDescription = ["This is a picture of the Federal Reserve Building.", "This is a picture of me in front of the federal reserve building.", "This is a picture of me in front of a building in Washington DC.", "This is a picture of my hat with the Washington Monument in the background.", "This is a picture of me in front of the Washington Monument.", "This is a picture of my friends and I in front of the Washington Monument.", "This is a picture of me and my friend Sean being interviewed by Kaitlin Bennet.", "This is a picture of Kaitlin Bennet and I.", "This is a picture of my friend Sean and I taking a picture with Kaitlin Bennet", "This is a picture of my friend Alex and I at a Trump rally.", "This is a picture of me in front of a painting.", "This is a picture of a Panda at the Smithsonian National Zoo.", "This is a picture of my friend Alex, Sean, and I at the Smithsonian National Zoo", "This is a picture of me in front of the Martin Luther King monument."];
+const washingtonTitle = ["Federal Reserve Building", "Federal Reserve Building", "Washington DC building", "Washington Monument", "Washington Monument", "Washington Monument", "Kaitlin Bennet", "Kaitlin Bennet", "Kaitlin Bennet", "Trump Rally", "Artwork", "Smithsonian Zoo", "Smithsonian Zoo", "Martin Luther King Monument"];
+const washingtonImageWidth = ["wide", "wide", "wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "wide", "wide", "wide", "not-wide", "not-wide"];
 
 sections("White House", whitehouseImages, whitehouseImagesAlt, whitehouseDates, whitehouseDescription, whitehouseTitle, whitehouseImageWidth); 
 sections("Presidential Artwork", presidentImages, presidentImagesAlt, presidentDates, presidentDescription, presidentTitle, presidentImageWidth);
