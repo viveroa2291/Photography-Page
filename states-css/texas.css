@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 .texas-images {
     height: 350px;
@@ -60,6 +61,10 @@
     text-align: center;
     display: flex;
     justify-content: center;
+}
+.not-wide-card {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 

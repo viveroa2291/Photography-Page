@@ -52,6 +52,10 @@
     opacity: .7;
     border: white solid 1px;
 }
+.not-wide-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
     to {-webkit-transform:scale(1)}

@@ -73,6 +73,10 @@
     margin-left: auto;
     margin-top: 1rem;
 }
+.not-wide-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
     to {-webkit-transform:scale(1)}
