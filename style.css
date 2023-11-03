@@ -121,13 +121,21 @@ span>.close {
     position: absolute;
     right: 5rem;
     top: 2.25rem;
+    z-index: 2;
 }
 /* Div Tag */
 .state-list {
-    border: 3px black solid;
+    border: 2px black solid;
     text-align: center;
-    padding: .5rem 2.15rem;
-    background-color: gainsboro;
+    padding: 1rem 2.15rem;
+}
+.state {
+    color: white;
+    font-weight: 500;
+}
+.state:hover {
+    color: black;
+    font-weight: 900;
 }
 .section-view {
     margin: 1rem 0;
@@ -180,7 +188,7 @@ span>.close {
 }
 .button-view:hover:before {
     transform: translateY(0);
-}
+} 
 @media (max-width: 890px) {
     .united-states-map {
         height: 350px;
