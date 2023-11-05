@@ -29,12 +29,12 @@ const whitehouseImagesAlt = ["This is a picture of the white house.", "This is a
 const whitehouseDates = ["July 4, 2019", "July 4, 2019"];
 const whitehouseDescription = ["This is a picture of the white house.", "This is a picture of my friends and I at the White House."];
 const whitehouseTitle = ["White House", "White House"];
-const whitehouseImageWidth = ["wide", "wide"];
+const whitehouseImageWidth = ["mid-wide", "mid-wide"];
 
 const presidentImages = ["../states-images/washington-dc-images/washington.jpeg", "../states-images/washington-dc-images/lincoln.jpeg", "../states-images/washington-dc-images/jfk.jpeg",  "../states-images/washington-dc-images/reagan.jpeg", "../states-images/washington-dc-images/obama.jpeg"];
-const presidentImagesAlt = ["This is a picture of me in front of a George Washington painting.", "This is a picture of me in front of a Lincoln painting.", "This is a picture of me in front of a John F Kennedy painting.", "This is a picture of me in front of a Ronald Reagan painting", "This is a picture of me in front of a Barrack Obama painting."];
+const presidentImagesAlt = ["This is a picture of me in front of a George Washington painting.", "This is a picture of me in front of a Lincoln painting.", "This is a picture of me in front of a John F Kennedy painting.", "This is a picture of me in front of a Ronald Reagan painting.", "This is a picture of me in front of a Barrack Obama painting."];
 const presidentDates = ["July 5, 2019", "July 5, 2019", "July 5, 2019", "July 5, 2019", "July 5, 2019"];
-const presidentDescription = ["This is a picture of me in front of a George Washington painting.", "This is a picture of me in front of a Lincoln painting.", "This is a picture of me in front of a John F Kennedy painting.", "This is a picture of me in front of a Ronald Reagan painting", "This is a picture of me in front of a Barrack Obama painting."];
+const presidentDescription = ["This is a picture of me in front of a George Washington painting.", "This is a picture of me in front of a Lincoln painting.", "This is a picture of me in front of a John F Kennedy painting.", "This is a picture of me in front of a Ronald Reagan painting.", "This is a picture of me in front of a Barrack Obama painting."];
 const presidentTitle = ["George Washington", "Abraham Lincoln", "John F Kennedy", "Ronald Reagan", "Barrack Obama"];
 const presidentImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
 
@@ -42,8 +42,8 @@ const capitolImages = ["../states-images/washington-dc-images/capitol-me.jpeg", 
 const capitolImagesAlt = ["This is a picture of me in front of the United States capitol.", "This is a picture of the United States Capitol building.", "This is a picture of the United States Capitol building."];
 const capitolDates = ["July 6, 2019", "July 6, 2019", "July 6, 2019"];
 const capitolDescription = ["This is a picture of me in front of the United States capitol.", "This is a picture of the United States Capitol building.", "This is a picture of the United States Capitol building."];
-const capitolTitle = ["United States Captiol", "United States Capitol"];
-const capitolImageWidth = ["not-wide", "wide", "wide"];
+const capitolTitle = ["United States Captiol", "United States Capitol", "United States Capitol"];
+const capitolImageWidth = ["not-wide", "mid-wide", "wide"];
 
 const lincolnImages = ["../states-images/washington-dc-images/lincoln-alex-sean.jpeg", "../states-images/washington-dc-images/lincoln-me.jpeg"];
 const lincolnImagesAlt = ["This is a picture of my friend Alex, Sean, and I in front of the lincoln memorial.", "This is a picture of me in front of the Lincoln Memorial."];
@@ -139,7 +139,7 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
         document.getElementById("demo").appendChild(element_div_element);
         count = 0.0;
       }
-        if(imageWidth[b] != "wide") {
+        if(imageWidth[b] === "not-wide") {
           var element_content_element = document.createElement("div");
           element_content_element.classList.add('card', 'm-5', 'mx-sm-auto', 'not-wide-card');
           element_div_element.appendChild(element_content_element);
@@ -171,7 +171,7 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
           element_card_date_small.classList.add('text-muted');
           element_card_date_small.innerHTML = dates[b];
           element_card_date.appendChild(element_card_date_small);
-    
+          
           element_card_body_element.appendChild(element_card_date);
           if((imageWidth[b+1] === "wide" || imageWidth[b+1] === "ultra-wide") && count >= 1.5) 
           {
@@ -181,6 +181,49 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
              count = count + 1.5;
           }
         }
+        if(imageWidth[b] === "mid-wide") {
+          var element_content_element = document.createElement("div");
+          element_content_element.classList.add('card', 'm-2', 'mx-sm-auto', 'mid-wide-card');  // original is m-5
+          element_div_element.appendChild(element_content_element);
+          
+    
+          element_card_element = document.createElement("div");
+          element_card_element.classList.add('card-header', 'text-center');
+          element_card_element.innerHTML = title[b];
+          element_content_element.appendChild(element_card_element);
+    
+          element_image_element = document.createElement("img");
+          element_image_element.classList.add('washington-dc-images', 'mid-wide');
+          element_image_element.src = image[b];
+          element_image_element.alt = imageAlt[b];
+          element_content_element.appendChild(element_image_element);
+    
+          element_card_body_element = document.createElement("div");
+          element_card_body_element.classList.add('card-body', 'm-1');
+          element_content_element.append(element_card_body_element);
+    
+          element_card_text = document.createElement("p");
+          element_card_text.classList.add('card-text');
+          element_card_text.innerHTML = description[b];
+          element_card_body_element.appendChild(element_card_text);
+    
+          element_card_date = document.createElement("p");
+          element_card_date.classList.add('card-text');
+          element_card_date_small = document.createElement("small");
+          element_card_date_small.classList.add('text-muted');
+          element_card_date_small.innerHTML = dates[b];
+          element_card_date.appendChild(element_card_date_small);
+    
+          element_card_body_element.appendChild(element_card_date);
+          
+          if((imageWidth[b+1] === "mid-wide" || imageWidth[b+1] === "wide") && count > 1.0) 
+          {
+            count = count + 4.0;
+          }
+          else {
+            count = count + 2.0;
+          }
+        }   
         if(imageWidth[b] === "wide") {
           var element_content_element = document.createElement("div");
           element_content_element.classList.add('card', 'm-2', 'mx-sm-auto', 'wide-card');  // original is m-5
@@ -215,8 +258,14 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
           element_card_date.appendChild(element_card_date_small);
     
           element_card_body_element.appendChild(element_card_date);
-          count = count + 2.0; 
-      }   
+          if((imageWidth[b+1] === "mid-wide" || imageWidth[b+1] === "wide") && count >= 4.5) 
+          {
+            count = count + 4.0;
+          }
+          else {
+            count = count + 2.0;
+          }
+        }   
       }
       function images() {
         modal.style.display = "block";
