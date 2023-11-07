@@ -47,13 +47,31 @@
         </span>
     </header>
     <main>
-        <h1>Illinois coming soon</h1>
+        <section class="illinois-top-section" id="top">
+            <h2 class="illinois-header">Illinois</h2>
+        </section>
+        <section class="section-view">
+            <button class="button-view card-view" onclick="cardView()">Card View</button>
+            <button class="button-view image-view" onclick="imageView()">Image View</button>
+        </section>
+        <section id="demo"></section>
+        <section id="image-view-demo" class="image-view-demo"></section>
         <section class="bottom-section">
             <span><a class="previous-state" href="georgia.html">&#60;</a></span>
                 <p class="other-states"><b>Check out the other states</b></p>
             <span><a class="next-state" href="indiana.html">&#62;</a></span>
         </section>
+        <section class="top">
+            <a href="#top"><b>TOP</b></a>
+        </section>
+        <div id="myModal" class="modal">
+            <span><p class="close">X</p></span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
     </main>
 </body>
 </html>
+<script src="../script.js"></script>
+<script src="../states-js/illinois.js"></script>
 <script src="../search.js"></script>
