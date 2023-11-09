@@ -64,21 +64,24 @@
     margin: auto; 
     margin-bottom: 3px;
     display: block;
-    width: 80%;
+    width: 75%;
     max-width: 450px;  
 }
 .not-wide-card {
     width: 25%;
     height: 550px;
-  }
-  .wide-card {
+}
+.mid-wide {
+    width: 85%;
+}
+.wide-card {
     height: 550px;
-  }
-  .card-text {
+}
+.card-text {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+}
   .image-view-demo {
       display: none;
   }
