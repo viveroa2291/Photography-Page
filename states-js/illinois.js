@@ -142,10 +142,17 @@ document.getElementById("image-view-demo").appendChild(imagediv);
         imagediv.appendChild(viewImages);
         viewImages.onclick = images; 
     }
-    for(var f = 0; f < sixflagsImages.length; f++) {
+    for(var f = 0; f < starveImages.length; f++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
-        viewImages.src = sixflagsImages[f];
+        viewImages.src = starveImages[f];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images;  
+    }
+    for(var h = 0; h < sixflagsImages.length; h++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = sixflagsImages[h];
         imagediv.appendChild(viewImages);
         viewImages.onclick = images; 
     }
