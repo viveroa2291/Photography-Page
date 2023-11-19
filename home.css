@@ -4,7 +4,7 @@
     white-space: nowrap;
     margin: 0;
     letter-spacing: .15em;
-    animation: typing 4s steps(100) infinite, blink-caret 4s step-end infinite;
+    animation: typing 4s steps(100), blink-caret 4s step-end infinite;
 }
 @keyframes typing {
     from { width: 0; }
@@ -38,12 +38,12 @@
 .list-view {
     display: none;
 }
-.arizona-card, .arkansas-card, .california-card, .florida-card, .georgia-card, .illinois-card, .indiana-card, .michigan-card, .minnesota-card, .missouri-card, .ohio-card, .south-dakota-card, .tennessee-card, .texas-card, .utah-card, .washington-dc-card, .west-virginia-card, .wisconsin-card {
+.arizona-card, .arkansas-card, .california-card, .florida-card, .georgia-card, .illinois-card, .indiana-card, .michigan-card, .minnesota-card, .missouri-card, .newyork-card, .ohio-card, .south-dakota-card, .tennessee-card, .texas-card, .utah-card, .washington-dc-card, .west-virginia-card, .wisconsin-card {
     border: 1px solid lightgray;
     border-radius: 5px;
     margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 .card-images {
     height: 250px;
@@ -59,27 +59,33 @@
     z-index: 2;
     margin-top: 1rem;
 }
-.first-row, .second-row, .third-row, .fourth-row, .fifth-row {
+.first-row, .second-row, .third-row, .fourth-row, .fifth-row, .sixth-row {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     margin-top: 1px;
 }
-.AR, .AZ, .CA, .DC, .FL, .GA, .IL, .IN, .MI, .MN, .MO, .OH, .SD, .TN, .TX, .UT, .WV, .WI {
+.AR, .AZ, .CA, .DC, .FL, .GA, .IL, .IN, .MI, .MN, .MO, .NY, .OH, .SD, .TN, .TX, .UT, .WV, .WI {
     fill: red;
 }
-.AR:hover, .AZ:hover, .CA:hover, .DC:hover, .FL:hover, .GA:hover, .IL:hover, .IN:hover, .MI:hover, .MN:hover, .MO:hover, .OH:hover, .SD:hover, .TN:hover, .TX:hover, .UT:hover, .WV:hover, .WI:hover {
+.AR:hover, .AZ:hover, .CA:hover, .DC:hover, .FL:hover, .GA:hover, .IL:hover, .IN:hover, .MI:hover, .MN:hover, .MO:hover, .NY:hover, .OH:hover, .SD:hover, .TN:hover, .TX:hover, .UT:hover, .WV:hover, .WI:hover {
     z-index: -100;
     fill: green;
     cursor: pointer;
 }
-.arkansas:hover, .california:hover, .florida:hover, .georgia:hover, .illinois:hover, .indiana:hover, .michigan:hover, .minnesota:hover, .missouri:hover, .ohio:hover, .south-dakota:hover, .tennesseee:hover, .texas:hover, .utah:hover, .washington-dc:hover, .west-virginia:hover, .wisconsin:hover {
+.arkansas:hover, .california:hover, .florida:hover, .georgia:hover, .illinois:hover, .indiana:hover, .michigan:hover, .minnesota:hover, .missouri:hover, .newyork:hover, .ohio:hover, .south-dakota:hover, .tennesseee:hover, .texas:hover, .utah:hover, .washington-dc:hover, .west-virginia:hover, .wisconsin:hover {
     background-color: green;
     cursor: pointer;
 }
 @media (max-width: 890px) { 
-    .first-row, .second-row, .third-row, .fourth-row, .fifth-row {
+    .header-main {
+        font-size: 5vw;
+    }
+    .first-row, .second-row, .third-row, .fourth-row, .fifth-row, .sixth-row {
         display: flex;
         flex-direction: column;
         justify-content: center
@@ -93,16 +99,19 @@
         height: 350px;
     }
     .mid {
-        height: 350px;
+        height: 300px;
     } 
     .wide {
         height: 300px;
     }
     .minnesota-image-card {
-        height: 275px;
+        height: 250px;
+    }
+    .newyork-image-card {
+        height: 260px;
     }
     .tennessee-image-card {
-        height: 260px;
+        height: 250px;
     }
     .washington-dc-image-card {
         height: 239px;

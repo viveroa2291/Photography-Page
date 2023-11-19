@@ -30,6 +30,138 @@ const chicagoDates = ["September 8, 2013", "December 15, 2013", "August 16, 2014
 const chicagoDescription = ["This is a picture of me, Sean, and Karina at Germanfest in Chicago.", "This is a picture of Sean and I next to a Spongebob mailbox", "This is a picture of Sean and I at the Chicago water show.", "This is a picture of me in Chicago after my UIC visit.", "This is a group picture of my friends and I ice skating at Maggie Daley.", "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.", "This is a picture of my friends at the German market in Chicago.", "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.", "This is a picture of my friend Alex and I in front of the Trump hotel.", "This is a picture of my friends and I outside of a club in Chicago.", "This is a picture of Chloe and I at Lollapalooza.", "This is a picture of my friends at Lollapalooza.", "This is a picture of Chloe and I in the Christmas lights at Lincoln Park Zoo.", "This is a picture of my friends Sami and Chloe in a web at the WNDR Musuem.", "This is a picture of my friends and I in an optical illusion at the WNDR musuem.", "This is a picture of my friends and I at the WNDR musuem under a rock.", "This is a selfie of my friends Nikki and Chloe on Chloe's balcony.", "This is a picture of Sami and I by the Chicago River.", "This is a picture of my friend Jon and I at a Chicago Bears preseason game.", "This is a picture of the Donda Listening Party in Chicago.", "This is a picture of the beautiful Chicago River.", "This is a group picture of my friends and I ice skating at Maggie Daley in Chicago.", "This is a picture of me at the Chicago Contemmporary Art Musuem", "This is a picture of Kenzie and I as tourists in Chicago.", "This is a picture of me in the balcony.", "This is a picture of Chloe and I having fun at Rocbar in Chicago.", "This is a picture of Nikki and I at a ice skating rink in Chicago.", "This is a picture of Chicago from the lake", "This is a selfie of me on my friend Chloe's balcony.", "This is a halloween picture of my friends and I at a club in Chicago."];
 const chicagoTitle = ["GermanFest", "Chicago", "Chicago Lake", "Chicago", "Maggie Daley", "Maggie Daley", "German Kindlemarket", "St. Patricks Day Parade", "Trump Building", "Chicago", "Lollapalooza", "Lollapalooza", "Lincoln Park Zoo", "WNDR Musuem", "WNDR Musuem", "WNDR Musuem", "Chloe's Balcony", "Chicago River", "Bears Game", "Soldier Field", "Chicago River", "Maggie Daley", "Chicago Contemporary Art Institute Musuem", "Chicago", "Chloe's Balcony", "Rocbar", "Chicago", "Chicago", "Chloe's Balcony", "Chicago"];
 const chicagoImageWidth = ["not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"];
+ 
+/*
+const chicagoData = [
+  {
+      section: "Chicago",
+      image: "../states-images/illinois-images/germanfest.jpeg",
+      imageAlt: "This is a picture of me, Sean, and Karina at Germanfest in Chicago.",
+      dates: "September 8, 2013",
+      description: "This is a picture of me, Sean, and Karina at Germanfest in Chicago.",
+      title: "GermanFest",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "Chicago",
+      image: "../states-images/illinois-images/spongebob.jpeg",
+      imageAlt: "This is a picture of Sean and I next to a Spongebob mailbox",
+      dates: "December 15, 2013",
+      description: "This is a picture of Sean and I next to a Spongebob mailbox",
+      title: "Chicago",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "Chicago",
+      image: "../states-images/illinois-images/chicago-sean.jpeg",
+      imageAlt: "This is a picture of Sean and I at the Chicago water show.",
+      dates: "August 16, 2014",
+      description: "This is a picture of Sean and I at the Chicago water show.",
+      title: "Chicago Lake",
+      imageWidth: "mid-wide"
+  },
+    {
+      section: "Chicago",
+      image: "../states-images/illinois-images/chicago-uic.jpeg",
+      imageAlt: "This is a picture of me in Chicago after my UIC visit.",
+      dates: "September 22, 2017",
+      description: "This is a picture of me in Chicago after my UIC visit.",
+      title: "Chicago",
+      imageWidth: "mid-wide"
+  },
+  {
+      section: "Maggie Daley",
+      image: "../states-images/illinois-images/maggie-daley-group.jpeg",
+      imageAlt: "This is a group picture of my friends and I ice skating at Maggie Daley.",
+      dates: "December 21, 2017",
+      description: "This is a group picture of my friends and I ice skating at Maggie Daley.",
+      title: "Maggie Daley",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "Maggie Daley",
+      image: "../states-images/illinois-images/maggie-daley-nikki.jpeg",
+      imageAlt: "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.",
+      dates: "December 21, 2017",
+      description: "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.",
+      title: "Maggie Daley",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "German Kindlemarket",
+      image: "../states-images/illinois-images/german-kristlemarket.jpeg",
+      imageAlt: "This is a picture of my friends at the German market in Chicago.",
+      dates: "December 21, 2017",
+      description: "This is a picture of my friends at the German market in Chicago.",
+      title: "German Kindlemarket",
+      imageWidth: "mid-wide"
+  },
+  {
+      section: "St. Patricks Day Parade",
+      image: "../states-images/illinois-images/stpatty.jpeg",
+      imageAlt: "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.",
+      dates: "March 17, 2018",
+      description: "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.",
+      title: "St. Patricks Day Parade",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "Trump Building",
+      image: "../states-images/illinois-images/trump-alex.jpeg",
+      imageAlt: "This is a picture of my friend Alex and I in front of the Trump hotel.",
+      dates: "March 18, 2018",
+      description: "This is a picture of my friend Alex and I in front of the Trump hotel.",
+      title: "Trump Building",
+      imageWidth: "mid-wide"
+  },
+  {
+      section: "Chicago Club",
+      image: "../states-images/illinois-images/club-alex-sean.jpeg",
+      imageAlt: "This is a picture of my friends and I outside of a club in Chicago.",
+      dates: "July 1, 2018",
+      description: "This is a picture of my friends and I outside of a club in Chicago.",
+      title: "Chicago Club",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "Lollapalooza",
+      image: "../states-images/illinois-images/lolla-chloe.jpeg",
+      imageAlt: "This is a picture of Chloe and I at Lollapalooza.",
+      dates: "August 3, 2018",
+      description: "This is a picture of Chloe and I at Lollapalooza.",
+      title: "Lollapalooza",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "Lollapalooza Group",
+      image: "../states-images/illinois-images/lolla-jon-dmac.jpeg",
+      imageAlt: "This is a picture of my friends at Lollapalooza.",
+      dates: "August 5, 2018",
+      description: "This is a picture of my friends at Lollapalooza.",
+      title: "Lollapalooza Group",
+      imageWidth: "not-wide"
+  },
+  {
+      section: "Zoo Lights",
+      image: "path_to_image.jpg",
+      imageAlt: "Description of the image",
+      dates: "Event date",
+      description: "Description of the event",
+      title: "Title of the entry",
+      imageWidth: "image-width-type"
+  },
+  {
+      section: "Art Institute Visit",
+      image: "path_to_image.jpg",
+      imageAlt: "Description of the image",
+      dates: "Event date",
+      description: "Description of the event",
+      title: "Title of the entry",
+      imageWidth: "image-width-type"
+  }
+
+]
+*/
 
 const navyImages = ["../states-images/illinois-images/chicago-2014.jpeg", "../states-images/illinois-images/navy-pier-chloe-sami.jpeg", "../states-images/illinois-images/navy-pier-me.jpeg", "../states-images/illinois-images/navy-pier-me2.jpeg"];
 const navyImagesAlt = ["This is a picture of my friend Nikki from the state of Ohio and I at Navy Pier in Chicago.", "This is a picture of my friend Chloe and Sami at Navy Pier with me.", "This is a picture of me at the Navy Pier dock in Chicago.", "This is a picture of me at the Navy Pier Dock in Chicago."];

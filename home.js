@@ -39,6 +39,9 @@ function minnesota() {
 function missouri() {
     document.location.href="states-html/missouri.html";
 }
+function newyork() {
+    document.location.href="states-html/newyork.html";
+}
 function ohio() {
     document.location.href="states-html/ohio.html";    
 }

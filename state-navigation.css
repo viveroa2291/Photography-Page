@@ -46,6 +46,10 @@
     background-image: url('../states-images/missouri-images/cave2.jpeg');
     background-size: cover;
 }
+.search-newyork-div {
+    background-image: url('../states-images/newyork-images/city.jpeg');
+    background-size: cover;
+}
 .search-ohio-div {
     background-image: url('../states-images/ohio-images/beach-view.jpeg');
     background-size: cover;
