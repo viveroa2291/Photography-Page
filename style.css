@@ -40,6 +40,30 @@ div.modal {
     animation-duration: 0.6s;
     overflow: auto;
 }
+.modal-items {
+    display: flex;
+    flex-direction: row;
+}
+.previous-button {
+    margin-left: 20rem;
+}
+.next-button {
+    margin-right: 20rem;
+}
+.previous-button, .next-button {
+    background-color: white;
+    padding: 1px 25px 8px 25px;
+    border-radius: 50%; 
+    font-size: 35px;
+    align-self: center;
+    scale: .75;
+}
+.previous-button:hover, .next-button:hover {
+    border: solid white 2px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
 .bottom-section {
     display: flex;
     flex-direction: row;
