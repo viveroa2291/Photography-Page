@@ -452,15 +452,13 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
         captionText.innerHTML = this.alt;
       }
       for(var i = 0; i < img.length; i++)
-        { 
-            img[i].onclick = images;
-        }
-        /*
+      { 
+          img[i].onclick = images;
+      }
       for(var j = 0; j < img.length; j++)
       {
           boxImage[j].onclick = images;
       }
-      */
       var span = document.getElementsByClassName("close")[0];
       
       span.onclick = function() { 
