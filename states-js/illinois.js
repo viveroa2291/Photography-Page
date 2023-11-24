@@ -223,6 +223,8 @@ sections("Wrigleyfield", wrigleyImages, wrigleyImagesAlt, wrigleyDates, wrigleyD
 sections("Starved Rock", starveImages, starveImagesAlt, starveDates, starveDescription, starveTitle, starveImageWidth);
 sections("Six Flags Great America", sixflagsImages, sixflagsImagesAlt, sixflagsDates, sixflagsDescription, sixflagsTitle, sixflagsImageWidth);
 
+var imageLegnth = chicagoImages.length + navyImages.length + cubsImages.length + suburbsImages.length + boatsImages.length + wrigleyImages.length + starveImages.length + sixflagsImages.length;
+console.log(imageLegnth);
 var imagediv = document.createElement("div"); 
 imagediv.classList.add('view-div');
 document.getElementById("image-view-demo").appendChild(imagediv);    
