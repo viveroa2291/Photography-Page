@@ -123,33 +123,40 @@ imagesView(wrigley.image, imagediv);
 imagesView(starveRock.image, imagediv);
 imagesView(sixFlags.image, imagediv);
 
-var imageLength = chicago.image.length + navyPier.image.length + cubs.image.length + suburbs.image.length + boats.image.length + wrigley.image.length + starveRock.image.length + sixFlags.image.length;
-
 var imageList = [];
+var descriptionList = [];
 
 for(var a = 0; a < chicago.image.length; a++) {
   imageList.push(chicago.image[a]);
+  descriptionList.push(chicago.description[a]);
 }
 for(var b = 0; b < navyPier.image.length; b++) {
   imageList.push(navyPier.image[b]);
+  descriptionList.push(navyPier.description[b]);
 }
 for(var c = 0; c < cubs.image.length; c++) {
   imageList.push(cubs.image[c]);
+  descriptionList.push(cubs.description[c]);
 }
 for(var d = 0; d < suburbs.image.length; d++) {
   imageList.push(suburbs.image[d]);
+  descriptionList.push(suburbs.description[d]);
 }
 for(var e = 0; e < boats.image.length; e++) {
   imageList.push(boats.image[e]);
+  descriptionList.push(boats.description[e]);
 }
 for(var f = 0; f < wrigley.image.length; f++) {
   imageList.push(wrigley.image[f]);
+  descriptionList.push(wrigley.description[f]);
 }
 for(var g = 0; g < starveRock.image.length; g++) {
   imageList.push(starveRock.image[g]);
+  descriptionList.push(starveRock.description[g]);
 }
 for(var h = 0; h < sixFlags.image.length; h++) {
   imageList.push(sixFlags.image[h]);
+  descriptionList.push(sixFlags.description[h]);
 }
 
 function images() {
@@ -167,6 +174,7 @@ function imagesView(image, imagediv) {
     viewImages.onclick = images;
   }
 }
+  
 function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
     
@@ -325,11 +333,41 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
           }
         }   
       }
-
+      var currentIndex = 0; 
+      function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+      }      
+      prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+      });
+      nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+      });
       function images() {
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
+          
+          var substringIndex = this.src.indexOf("states");
+
+          if(substringIndex !== -1) {
+            var newUrl = "../" + this.src.substring(substringIndex);
+          }
+
+          for(var i = 0; i < imageList.length; i++) {
+            if(newUrl === imageList[i]) {
+              currentIndex = i;
+              imageIndex(i);
+            }
+          }
       }
       for(var i = 0; i < img.length; i++)
       { 
@@ -344,12 +382,3 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
         modal.style.display = "none";
       }
     }
-
-function image(delta) {
-        modal.style.display = "block";
-        modalImg.src = imageList[delta];
-        console.log(imageList[delta].src);
-        // captionText.innerHTML = imageList[delta].alt;
- }      
- prevButton.addEventListener('click', () => image(-1))
- nextButton.addEventListener('click', () => image(1));
