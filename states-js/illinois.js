@@ -26,272 +26,147 @@ var captionText = document.getElementById("caption");
 var prevButton = document.getElementById("previous-button");
 var nextButton = document.getElementById("next-button");
 
-const chicagoImages = ["../states-images/illinois-images/germanfest.jpeg", "../states-images/illinois-images/spongebob.jpeg", "../states-images/illinois-images/chicago-sean.jpeg", "../states-images/illinois-images/chicago-uic.jpeg", "../states-images/illinois-images/maggie-daley-group.jpeg", "../states-images/illinois-images/maggie-daley-nikki.jpeg", "../states-images/illinois-images/german-kristlemarket.jpeg", "../states-images/illinois-images/stpatty.jpeg", "../states-images/illinois-images/trump-alex.jpeg", "../states-images/illinois-images/club-alex-sean.jpeg", "../states-images/illinois-images/lolla-chloe.jpeg", "../states-images/illinois-images/lolla-jon-dmac.jpeg", "../states-images/illinois-images/zoo-chloe.jpeg", "../states-images/illinois-images/wndr-web.jpeg", "../states-images/illinois-images/wndr-illusion.jpeg",  "../states-images/illinois-images/wndr-group.jpeg", "../states-images/illinois-images/chicago-nikki-chloe.jpeg", "../states-images/illinois-images/trump-sami.jpeg", "../states-images/illinois-images/soldier-jon.jpeg", "../states-images/illinois-images/soldier-donda.jpeg",  "../states-images/illinois-images/chicago-river.jpeg", "../states-images/illinois-images/maggie-group.jpeg", "../states-images/illinois-images/contemporary-musuem.jpeg", "../states-images/illinois-images/chicago-kenzie.jpeg", "../states-images/illinois-images/balcony-me.jpeg", "../states-images/illinois-images/rocbar-chloe.jpeg", "../states-images/illinois-images/chicago-nikki.jpeg", "../states-images/illinois-images/cover.jpeg", "../states-images/illinois-images/chicago-me.jpeg", "../states-images/illinois-images/halloween.jpeg"];
-const chicagoImagesAlt = ["This is a picture of me, Sean, and Karina at Germanfest in Chicago.", "This is a picture of Sean and I next to a Spongebob mailbox", "This is a picture of Sean and I at the Chicago water show.", "This is a picture of me in Chicago after my UIC visit.", "This is a group picture of my friends and I ice skating at Maggie Daley.", "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.", "This is a picture of my friends at the German market in Chicago.", "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.", "This is a picture of my friend Alex and I in front of the Trump hotel.", "This is a picture of my friends and I outside of a club in Chicago.", "This is a picture of Chloe and I at Lollapalooza.", "This is a picture of my friends at Lollapalooza.",  "This is a picture of Chloe and I in the Christmas lights at Lincoln Park Zoo.", "This is a picture of my friends Sami and Chloe in a web at the WNDR Musuem.", "This is a picture of my friends and I in an optical illusion at the WNDR musuem.", "This is a picture of my friends and I at the WNDR musuem under a rock.", "This is a selfie of my friends Nikki and Chloe on Chloe's balcony.", "This is a picture of Sami and I by the Chicago River.", "This is a picture of my friend Jon and I at a Chicago Bears preseason game.", "This is a picture of the Donda Listening Party in Chicago.", "This is a picture of the beautiful Chicago River.", "This is a group picture of my friends and I ice skating at Maggie Daley in Chicago.", "This is a picture of me at the Chicago Contemmporary Art Musuem", "This is a picture of Kenzie and I as tourists in Chicago.", "This is a picture of me in the balcony.", "This is a picture of Chloe and I having fun at Rocbar in Chicago.", "This is a picture of Nikki and I at a ice skating rink in Chicago.", "This is a picture of Chicago from the lake", "This is a selfie of me on my friend Chloe's balcony.", "This is a halloween picture of my friends and I at a club in Chicago."];
-const chicagoDates = ["September 8, 2013", "December 15, 2013", "August 16, 2014", "September 22, 2017", "December 21, 2017", "December 21, 2017", "December 21, 2017", "March 17, 2018", "March 18, 2018", "July 1, 2018", "August 3, 2018", "August 5, 2018", "January 2, 2019", "February 1, 2019", "February 1, 2019", "February 1, 2019", "July 30, 2021", "July 30, 2021", "August 21, 2021", "August 26, 2021", "August 27, 2021", "December 30, 2021", "March 20, 2022", "March 20, 2022", "July 29, 2022", "July 31, 2022", "December 28, 2022", "September 4, 2023", "September 10, 2023", "October 28, 2023"];
-const chicagoDescription = ["This is a picture of me, Sean, and Karina at Germanfest in Chicago.", "This is a picture of Sean and I next to a Spongebob mailbox", "This is a picture of Sean and I at the Chicago water show.", "This is a picture of me in Chicago after my UIC visit.", "This is a group picture of my friends and I ice skating at Maggie Daley.", "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.", "This is a picture of my friends at the German market in Chicago.", "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.", "This is a picture of my friend Alex and I in front of the Trump hotel.", "This is a picture of my friends and I outside of a club in Chicago.", "This is a picture of Chloe and I at Lollapalooza.", "This is a picture of my friends at Lollapalooza.", "This is a picture of Chloe and I in the Christmas lights at Lincoln Park Zoo.", "This is a picture of my friends Sami and Chloe in a web at the WNDR Musuem.", "This is a picture of my friends and I in an optical illusion at the WNDR musuem.", "This is a picture of my friends and I at the WNDR musuem under a rock.", "This is a selfie of my friends Nikki and Chloe on Chloe's balcony.", "This is a picture of Sami and I by the Chicago River.", "This is a picture of my friend Jon and I at a Chicago Bears preseason game.", "This is a picture of the Donda Listening Party in Chicago.", "This is a picture of the beautiful Chicago River.", "This is a group picture of my friends and I ice skating at Maggie Daley in Chicago.", "This is a picture of me at the Chicago Contemmporary Art Musuem", "This is a picture of Kenzie and I as tourists in Chicago.", "This is a picture of me in the balcony.", "This is a picture of Chloe and I having fun at Rocbar in Chicago.", "This is a picture of Nikki and I at a ice skating rink in Chicago.", "This is a picture of Chicago from the lake", "This is a selfie of me on my friend Chloe's balcony.", "This is a halloween picture of my friends and I at a club in Chicago."];
-const chicagoTitle = ["GermanFest", "Chicago", "Chicago Lake", "Chicago", "Maggie Daley", "Maggie Daley", "German Kindlemarket", "St. Patricks Day Parade", "Trump Building", "Chicago", "Lollapalooza", "Lollapalooza", "Lincoln Park Zoo", "WNDR Musuem", "WNDR Musuem", "WNDR Musuem", "Chloe's Balcony", "Chicago River", "Bears Game", "Soldier Field", "Chicago River", "Maggie Daley", "Chicago Contemporary Art Institute Musuem", "Chicago", "Chloe's Balcony", "Rocbar", "Chicago", "Chicago", "Chloe's Balcony", "Chicago"];
-const chicagoImageWidth = ["not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"];
- 
-/*
-const chicagoData = [
-  {
-      section: "Chicago",
-      image: "../states-images/illinois-images/germanfest.jpeg",
-      imageAlt: "This is a picture of me, Sean, and Karina at Germanfest in Chicago.",
-      dates: "September 8, 2013",
-      description: "This is a picture of me, Sean, and Karina at Germanfest in Chicago.",
-      title: "GermanFest",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "Chicago",
-      image: "../states-images/illinois-images/spongebob.jpeg",
-      imageAlt: "This is a picture of Sean and I next to a Spongebob mailbox",
-      dates: "December 15, 2013",
-      description: "This is a picture of Sean and I next to a Spongebob mailbox",
-      title: "Chicago",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "Chicago",
-      image: "../states-images/illinois-images/chicago-sean.jpeg",
-      imageAlt: "This is a picture of Sean and I at the Chicago water show.",
-      dates: "August 16, 2014",
-      description: "This is a picture of Sean and I at the Chicago water show.",
-      title: "Chicago Lake",
-      imageWidth: "mid-wide"
-  },
-    {
-      section: "Chicago",
-      image: "../states-images/illinois-images/chicago-uic.jpeg",
-      imageAlt: "This is a picture of me in Chicago after my UIC visit.",
-      dates: "September 22, 2017",
-      description: "This is a picture of me in Chicago after my UIC visit.",
-      title: "Chicago",
-      imageWidth: "mid-wide"
-  },
-  {
-      section: "Maggie Daley",
-      image: "../states-images/illinois-images/maggie-daley-group.jpeg",
-      imageAlt: "This is a group picture of my friends and I ice skating at Maggie Daley.",
-      dates: "December 21, 2017",
-      description: "This is a group picture of my friends and I ice skating at Maggie Daley.",
-      title: "Maggie Daley",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "Maggie Daley",
-      image: "../states-images/illinois-images/maggie-daley-nikki.jpeg",
-      imageAlt: "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.",
-      dates: "December 21, 2017",
-      description: "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.",
-      title: "Maggie Daley",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "German Kindlemarket",
-      image: "../states-images/illinois-images/german-kristlemarket.jpeg",
-      imageAlt: "This is a picture of my friends at the German market in Chicago.",
-      dates: "December 21, 2017",
-      description: "This is a picture of my friends at the German market in Chicago.",
-      title: "German Kindlemarket",
-      imageWidth: "mid-wide"
-  },
-  {
-      section: "St. Patricks Day Parade",
-      image: "../states-images/illinois-images/stpatty.jpeg",
-      imageAlt: "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.",
-      dates: "March 17, 2018",
-      description: "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.",
-      title: "St. Patricks Day Parade",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "Trump Building",
-      image: "../states-images/illinois-images/trump-alex.jpeg",
-      imageAlt: "This is a picture of my friend Alex and I in front of the Trump hotel.",
-      dates: "March 18, 2018",
-      description: "This is a picture of my friend Alex and I in front of the Trump hotel.",
-      title: "Trump Building",
-      imageWidth: "mid-wide"
-  },
-  {
-      section: "Chicago Club",
-      image: "../states-images/illinois-images/club-alex-sean.jpeg",
-      imageAlt: "This is a picture of my friends and I outside of a club in Chicago.",
-      dates: "July 1, 2018",
-      description: "This is a picture of my friends and I outside of a club in Chicago.",
-      title: "Chicago Club",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "Lollapalooza",
-      image: "../states-images/illinois-images/lolla-chloe.jpeg",
-      imageAlt: "This is a picture of Chloe and I at Lollapalooza.",
-      dates: "August 3, 2018",
-      description: "This is a picture of Chloe and I at Lollapalooza.",
-      title: "Lollapalooza",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "Lollapalooza Group",
-      image: "../states-images/illinois-images/lolla-jon-dmac.jpeg",
-      imageAlt: "This is a picture of my friends at Lollapalooza.",
-      dates: "August 5, 2018",
-      description: "This is a picture of my friends at Lollapalooza.",
-      title: "Lollapalooza Group",
-      imageWidth: "not-wide"
-  },
-  {
-      section: "Zoo Lights",
-      image: "path_to_image.jpg",
-      imageAlt: "Description of the image",
-      dates: "Event date",
-      description: "Description of the event",
-      title: "Title of the entry",
-      imageWidth: "image-width-type"
-  },
-  {
-      section: "Art Institute Visit",
-      image: "path_to_image.jpg",
-      imageAlt: "Description of the image",
-      dates: "Event date",
-      description: "Description of the event",
-      title: "Title of the entry",
-      imageWidth: "image-width-type"
-  }
-
-]
-*/
-
-const navyImages = ["../states-images/illinois-images/chicago-2014.jpeg", "../states-images/illinois-images/navy-pier-chloe-sami.jpeg", "../states-images/illinois-images/navy-pier-me.jpeg", "../states-images/illinois-images/navy-pier-me2.jpeg"];
-const navyImagesAlt = ["This is a picture of my friend Nikki from the state of Ohio and I at Navy Pier in Chicago.", "This is a picture of my friend Chloe and Sami at Navy Pier with me.", "This is a picture of me at the Navy Pier dock in Chicago.", "This is a picture of me at the Navy Pier Dock in Chicago."];
-const navyDates = ["June 20, 2014", "December 20, 2019", "March 20, 2022", "March 20, 2022"];
-const navyDescription = ["This is a picture of my friend Nikki from the state of Ohio and I at Navy Pier in Chicago.", "This is a picture of my friend Chloe and Sami at Navy Pier with me.", "This is a picture of me at the Navy Pier dock in Chicago.", "This is a picture of me at the Navy Pier Dock in Chicago."];
-const navyTitle = ["Navy Pier", "Navy Pier", "Navy Pier Dock", "Navy Pier Dock"];
-const navyImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide"];
-
-const cubsImages = ["../states-images/illinois-images/wrigley-chloe-me.jpeg", "../states-images/illinois-images/wrigley-group.jpeg"];
-const cubsImagesAlt = ["This is a picture of Chloe and I at the cubs game.", "This is a picture of my friends and I at the Cubs baseball game."];
-const cubsDates = ["August 8, 2021", "July 2, 2023"];
-const cubsDescription = ["This is a picture of Chloe and I at the cubs game.", "This is a picture of my friends and I at the Cubs baseball game."];
-const cubsTitle = ["Wrigley Field Stadium", "Wrigley Field Stadium"];
-const cubsImageWidth = ["not-wide", "mid-wide"];
-
-const suburbsImages = ["../states-images/illinois-images/barrington-d-j.jpeg", "../states-images/illinois-images/barrington-group.jpeg", "../states-images/illinois-images/barrington.jpeg", "../states-images/illinois-images/escaperoom-group.jpeg", "../states-images/illinois-images/escaperoom-chloe.jpeg", "../states-images/illinois-images/nicole.jpeg", "../states-images/illinois-images/mp-sean.jpeg", "../states-images/illinois-images/northwestern-sami.jpeg", "../states-images/illinois-images/fox-lake.jpeg", "../states-images/illinois-images/professional.jpeg",  "../states-images/illinois-images/bowling.jpeg"];
-const suburbsImagesAlt = ["This is a picture of my friend Jon's backyard during his graduation party.", "This is a picture of my friend Jon's graduation party.", "This is a group picture of my friends at my friend Jon's graduation party", "This is a group picture of my friends Nikki, Chloe, Sami, and I at an escape room.", "This is a picture of Chloe and I at an escape room.", "This is a picture of Nicole and I at a beach playing catch with a football.", "This is a picture of my friend Sean and I.", "This is a picture of me and Sami roller blading at Northwestern.", "This is a picture of Nikki and Sami at Fox Lake.", "This is a picture of me taking professional pictures for my linkedin.", "This is a picture of my friend Nikki, Mikayla, and I bowling at Kings in Rosemont."];
-const suburbsDates = ["June 27, 2015", "June 27, 2015", "June 27, 2015", "March 9, 2018", "March 9, 2018", "June 14, 2018", "August 9, 2018", "March 6, 2021", "May 29, 2023", "September 15, 2023", "October 7, 2023"];
-const suburbsDescription = ["This is a picture of my friend Jon's backyard during his graduation party.", "This is a picture of my friend Jon's graduation party.", "This is a group picture of my friends at my friend Jon's graduation party", "This is a group picture of my friends Nikki, Chloe, Sami, and I at an escape room.", "This is a picture of Chloe and I at an escape room.", "This is a picture of Nicole and I at a beach playing catch with a football.", "This is a picture of my friend Sean and I.", "This is a picture of me and Sami roller blading at Northwestern.", "This is a picture of Nikki and Sami at Fox Lake.", "This is a picture of me taking professional pictures for my linkedin.", "This is a picture of my friend Nikki, Mikayla, and I bowling at Kings in Rosemont."];
-const suburbsTitle = ["Barrington, Illinois", "Barrington, Illinois", "Barrington, Illinois", "Schaumburg, Illinois", "Schaumburg, Illinois", "Wilmette Beach, Illinois", "Mount Prospect, Illinois", "Evanston, Illinois", "Fox Lake, Illinois", "Mount Prospect, Illinois", "Rosemont, Illinois"];
-const suburbsImageWidth = ["mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "mid-wide"]; 
-
-const boatsImages = ["../states-images/illinois-images/boat-group.jpeg", "../states-images/illinois-images/boat-sami-chloe-nikki.jpeg", "../states-images/illinois-images/boat-me2.jpeg", "../states-images/illinois-images/boat-me1.jpeg", "../states-images/illinois-images/boat-me3.jpeg", "../states-images/illinois-images/boat-group1.jpeg", "../states-images/illinois-images/boat-me.jpeg"];
-const boatsImagesAlt = ["This is a picture of my friends and I on a Chicago boat.", "This is a group picture of my best friends on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me as a captain on a boat in the Chicago River.", "This is a group picture of my friends and I on a boat.", "This is a picture of me on a boat in Chicago."];
-const boatsDates = ["July 3, 2023", "September 4, 2023", "September 4, 2023", "September 4, 2023", "September 10, 2023", "September 30, 2023", "September 30, 2023"];
-const boatsDescription = ["This is a picture of my friends and I on a Chicago boat.", "This is a group picture of my best friends on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me as a captain on a boat in the Chicago River.", "This is a group picture of my friends and I on a boat.", "This is a picture of me on a boat in Chicago."];
-const boatsTitle = ["Chicago, Illinois", "Chicago, Illinois", "Chicago, Illinois", "Chicago, Illinois", "Chicago River", "Chicago, Illinois", "Chicago, Illinois"];
-const boatsImageWidth = ["mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide"];
-
-const wrigleyImages = ["../states-images/illinois-images/wrigley-chloe.jpeg", "../states-images/illinois-images/wrigley-chloe2.jpeg"];
-const wrigleyImagesAlt = ["This is a picture of Chloe and I outside of Wrigley Field stadium.", "This is a picture of Chloe and I outside of Wrigley Field stadium."];
-const wrigleyDates = ["August 8, 2021", "August 6, 2022"];
-const wrigleyDescription = ["This is a picture of Chloe and I outside of Wrigley Field stadium.", "This is a picture of Chloe and I outside of Wrigley Field stadium."];
-const wrigleyTitle = ["Wrigley Field Stadium", "Wrigley Field Stadium"];
-const wrigleyImageWidth = ["mid-wide", "not-wide"];
-
-const starveImages = ["../states-images/illinois-images/starve-rock-nikki.jpeg", "../states-images/illinois-images/starve-rock-nnv.jpeg", "../states-images/illinois-images/starve-rock-nkg.jpeg"];
-const starveImagesAlt = ["This is a picture of Nikki and I at Starve Rock.", "This is a picture of my friends at I at Starve Rock", "This is a group picture of my friends at Starve Rock."];
-const starveDates = ["March 31, 2018", "July 29, 2018", "July 28, 2019"];
-const starveDescription = ["This is a picture of Nikki and I at Starve Rock.", "This is a picture of my friends at I at Starve Rock", "This is a group picture of my friends at Starve Rock."];
-const starveTitle = ["Starve Rock", "Starve Rock", "Starve Rock"];
-const starveImageWidth = ["not-wide", "not-wide", "mid-wide"];
-
-const sixflagsImages = ["../states-images/illinois-images/six-flags-sean-alex.jpeg", "../states-images/illinois-images/six-flags-sean.jpeg", "../states-images/illinois-images/six-flags-group.jpeg"];
-const sixflagsImagesAlt = ["This is a picture of my friends at Hurricane Harbor, Six Flags water park.", "This is a picture of my friend Sean and I at Six Flags Great America's entrance.", "This is a picture of my friends from Eau Claire at Six Flags."];
-const sixflagsDates = ["June 5, 2015", "August 7, 2016", "June 24, 2018"];
-const sixflagsDescription = ["This is a picture of my friends at Hurricane Harbor, Six Flags water park.", "This is a picture of my friend Sean and I at Six Flags Great America's entrance.", "This is a picture of my friends from Eau Claire at Six Flags."];
-const sixflagsTitle = ["Hurricane, Harbor", "Six Flags Great America"];
-const sixflagsImageWidth = ["not-wide", "mid-wide", "not-wide"];
-
-sections("Chicago", chicagoImages, chicagoImagesAlt, chicagoDates, chicagoDescription, chicagoTitle, chicagoImageWidth); 
-sections("Navy Pier", navyImages, navyImagesAlt, navyDates, navyDescription, navyTitle, navyImageWidth);
-sections("Chicago Cubs", cubsImages, cubsImagesAlt, cubsDates, cubsDescription, cubsTitle, cubsImageWidth);
-sections("Suburbs", suburbsImages, suburbsImagesAlt, suburbsDates, suburbsDescription, suburbsTitle, suburbsImageWidth);
-sections("Chicago Boats", boatsImages, boatsImagesAlt, boatsDates, boatsDescription, boatsTitle, boatsImageWidth); 
-sections("Wrigleyfield", wrigleyImages, wrigleyImagesAlt, wrigleyDates, wrigleyDescription, wrigleyTitle, wrigleyImageWidth);
-sections("Starved Rock", starveImages, starveImagesAlt, starveDates, starveDescription, starveTitle, starveImageWidth);
-sections("Six Flags Great America", sixflagsImages, sixflagsImagesAlt, sixflagsDates, sixflagsDescription, sixflagsTitle, sixflagsImageWidth);
-
-var imageLegnth = chicagoImages.length + navyImages.length + cubsImages.length + suburbsImages.length + boatsImages.length + wrigleyImages.length + starveImages.length + sixflagsImages.length;
-console.log(imageLegnth);
 var imagediv = document.createElement("div"); 
 imagediv.classList.add('view-div');
 document.getElementById("image-view-demo").appendChild(imagediv);    
 
-    function images() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    for(var a = 0; a < chicagoImages.length; a++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = chicagoImages[a];
-        console.log(chicagoImages[a]);
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var i = 0; i < navyImages.length; i++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = navyImages[i];
-        console.log(navyImages[i]);
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var b = 0; b <  cubsImages.length; b++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = cubsImages[b];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var c = 0; c < suburbsImages.length; c++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = suburbsImages[c];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var d = 0; d < boatsImages.length; d++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = boatsImages[d];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var e = 0; e < wrigleyImages.length; e++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = wrigleyImages[e];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var f = 0; f < starveImages.length; f++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = starveImages[f];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images;  
-    }
-    for(var h = 0; h < sixflagsImages.length; h++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = sixflagsImages[h];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
+class ImageSet {
+  constructor(image, imageAlt, date, description, title, imageWidth) {
+    this.image = image;
+    this.imageAlt = imageAlt; 
+    this.date = date;
+    this.description = description;
+    this.title = title;
+    this.imageWidth = imageWidth;
+  }
+}
+const chicago = new ImageSet(
+  ["../states-images/illinois-images/germanfest.jpeg", "../states-images/illinois-images/spongebob.jpeg", "../states-images/illinois-images/chicago-sean.jpeg", "../states-images/illinois-images/chicago-uic.jpeg", "../states-images/illinois-images/maggie-daley-group.jpeg", "../states-images/illinois-images/maggie-daley-nikki.jpeg", "../states-images/illinois-images/german-kristlemarket.jpeg", "../states-images/illinois-images/stpatty.jpeg", "../states-images/illinois-images/trump-alex.jpeg", "../states-images/illinois-images/club-alex-sean.jpeg", "../states-images/illinois-images/lolla-chloe.jpeg", "../states-images/illinois-images/lolla-jon-dmac.jpeg", "../states-images/illinois-images/zoo-chloe.jpeg", "../states-images/illinois-images/wndr-web.jpeg", "../states-images/illinois-images/wndr-illusion.jpeg",  "../states-images/illinois-images/wndr-group.jpeg", "../states-images/illinois-images/chicago-nikki-chloe.jpeg", "../states-images/illinois-images/trump-sami.jpeg", "../states-images/illinois-images/soldier-jon.jpeg", "../states-images/illinois-images/soldier-donda.jpeg",  "../states-images/illinois-images/chicago-river.jpeg", "../states-images/illinois-images/maggie-group.jpeg", "../states-images/illinois-images/contemporary-musuem.jpeg", "../states-images/illinois-images/chicago-kenzie.jpeg", "../states-images/illinois-images/balcony-me.jpeg", "../states-images/illinois-images/rocbar-chloe.jpeg", "../states-images/illinois-images/chicago-nikki.jpeg", "../states-images/illinois-images/cover.jpeg", "../states-images/illinois-images/chicago-me.jpeg", "../states-images/illinois-images/halloween.jpeg"],
+  ["This is a picture of me, Sean, and Karina at Germanfest in Chicago.", "This is a picture of Sean and I next to a Spongebob mailbox", "This is a picture of Sean and I at the Chicago water show.", "This is a picture of me in Chicago after my UIC visit.", "This is a group picture of my friends and I ice skating at Maggie Daley.", "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.", "This is a picture of my friends at the German market in Chicago.", "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.", "This is a picture of my friend Alex and I in front of the Trump hotel.", "This is a picture of my friends and I outside of a club in Chicago.", "This is a picture of Chloe and I at Lollapalooza.", "This is a picture of my friends at Lollapalooza.",  "This is a picture of Chloe and I in the Christmas lights at Lincoln Park Zoo.", "This is a picture of my friends Sami and Chloe in a web at the WNDR Musuem.", "This is a picture of my friends and I in an optical illusion at the WNDR musuem.", "This is a picture of my friends and I at the WNDR musuem under a rock.", "This is a selfie of my friends Nikki and Chloe on Chloe's balcony.", "This is a picture of Sami and I by the Chicago River.", "This is a picture of my friend Jon and I at a Chicago Bears preseason game.", "This is a picture of the Donda Listening Party in Chicago.", "This is a picture of the beautiful Chicago River.", "This is a group picture of my friends and I ice skating at Maggie Daley in Chicago.", "This is a picture of me at the Chicago Contemmporary Art Musuem", "This is a picture of Kenzie and I as tourists in Chicago.", "This is a picture of me in the balcony.", "This is a picture of Chloe and I having fun at Rocbar in Chicago.", "This is a picture of Nikki and I at a ice skating rink in Chicago.", "This is a picture of Chicago from the lake", "This is a selfie of me on my friend Chloe's balcony.", "This is a halloween picture of my friends and I at a club in Chicago."],
+  ["September 8, 2013", "December 15, 2013", "August 16, 2014", "September 22, 2017", "December 21, 2017", "December 21, 2017", "December 21, 2017", "March 17, 2018", "March 18, 2018", "July 1, 2018", "August 3, 2018", "August 5, 2018", "January 2, 2019", "February 1, 2019", "February 1, 2019", "February 1, 2019", "July 30, 2021", "July 30, 2021", "August 21, 2021", "August 26, 2021", "August 27, 2021", "December 30, 2021", "March 20, 2022", "March 20, 2022", "July 29, 2022", "July 31, 2022", "December 28, 2022", "September 4, 2023", "September 10, 2023", "October 28, 2023"],
+  ["This is a picture of me, Sean, and Karina at Germanfest in Chicago.", "This is a picture of Sean and I next to a Spongebob mailbox", "This is a picture of Sean and I at the Chicago water show.", "This is a picture of me in Chicago after my UIC visit.", "This is a group picture of my friends and I ice skating at Maggie Daley.", "This is a picture of Nikki and I ice skating at Maggie Daley in Chicago.", "This is a picture of my friends at the German market in Chicago.", "This is a picture of my friends and I at the St. Patricks Day parade in Chicago.", "This is a picture of my friend Alex and I in front of the Trump hotel.", "This is a picture of my friends and I outside of a club in Chicago.", "This is a picture of Chloe and I at Lollapalooza.", "This is a picture of my friends at Lollapalooza.", "This is a picture of Chloe and I in the Christmas lights at Lincoln Park Zoo.", "This is a picture of my friends Sami and Chloe in a web at the WNDR Musuem.", "This is a picture of my friends and I in an optical illusion at the WNDR musuem.", "This is a picture of my friends and I at the WNDR musuem under a rock.", "This is a selfie of my friends Nikki and Chloe on Chloe's balcony.", "This is a picture of Sami and I by the Chicago River.", "This is a picture of my friend Jon and I at a Chicago Bears preseason game.", "This is a picture of the Donda Listening Party in Chicago.", "This is a picture of the beautiful Chicago River.", "This is a group picture of my friends and I ice skating at Maggie Daley in Chicago.", "This is a picture of me at the Chicago Contemmporary Art Musuem", "This is a picture of Kenzie and I as tourists in Chicago.", "This is a picture of me in the balcony.", "This is a picture of Chloe and I having fun at Rocbar in Chicago.", "This is a picture of Nikki and I at a ice skating rink in Chicago.", "This is a picture of Chicago from the lake", "This is a selfie of me on my friend Chloe's balcony.", "This is a halloween picture of my friends and I at a club in Chicago."],
+  ["GermanFest", "Chicago", "Chicago Lake", "Chicago", "Maggie Daley", "Maggie Daley", "German Kindlemarket", "St. Patricks Day Parade", "Trump Building", "Chicago", "Lollapalooza", "Lollapalooza", "Lincoln Park Zoo", "WNDR Musuem", "WNDR Musuem", "WNDR Musuem", "Chloe's Balcony", "Chicago River", "Bears Game", "Soldier Field", "Chicago River", "Maggie Daley", "Chicago Contemporary Art Institute Musuem", "Chicago", "Chloe's Balcony", "Rocbar", "Chicago", "Chicago", "Chloe's Balcony", "Chicago"],
+  ["not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"] 
+);
+const navyPier = new ImageSet(
+  ["../states-images/illinois-images/chicago-2014.jpeg", "../states-images/illinois-images/navy-pier-chloe-sami.jpeg", "../states-images/illinois-images/navy-pier-me.jpeg", "../states-images/illinois-images/navy-pier-me2.jpeg"],
+  ["This is a picture of my friend Nikki from the state of Ohio and I at Navy Pier in Chicago.", "This is a picture of my friend Chloe and Sami at Navy Pier with me.", "This is a picture of me at the Navy Pier dock in Chicago.", "This is a picture of me at the Navy Pier Dock in Chicago."],
+  ["June 20, 2014", "December 20, 2019", "March 20, 2022", "March 20, 2022"],
+  ["This is a picture of my friend Nikki from the state of Ohio and I at Navy Pier in Chicago.", "This is a picture of my friend Chloe and Sami at Navy Pier with me.", "This is a picture of me at the Navy Pier dock in Chicago.", "This is a picture of me at the Navy Pier Dock in Chicago."],
+  ["Navy Pier", "Navy Pier", "Navy Pier Dock", "Navy Pier Dock"],
+  ["not-wide", "not-wide", "not-wide", "not-wide"]
+);
+const cubs = new ImageSet(
+  ["../states-images/illinois-images/wrigley-chloe-me.jpeg", "../states-images/illinois-images/wrigley-group.jpeg"],
+  ["This is a picture of Chloe and I at the cubs game.", "This is a picture of my friends and I at the Cubs baseball game."],
+  ["August 8, 2021", "July 2, 2023"],
+  ["This is a picture of Chloe and I at the cubs game.", "This is a picture of my friends and I at the Cubs baseball game."],
+  ["Wrigley Field Stadium", "Wrigley Field Stadium"],
+  ["not-wide", "mid-wide"]
+);
+const suburbs = new ImageSet(
+  ["../states-images/illinois-images/barrington-d-j.jpeg", "../states-images/illinois-images/barrington-group.jpeg", "../states-images/illinois-images/barrington.jpeg", "../states-images/illinois-images/escaperoom-group.jpeg", "../states-images/illinois-images/escaperoom-chloe.jpeg", "../states-images/illinois-images/nicole.jpeg", "../states-images/illinois-images/mp-sean.jpeg", "../states-images/illinois-images/northwestern-sami.jpeg", "../states-images/illinois-images/fox-lake.jpeg", "../states-images/illinois-images/professional.jpeg",  "../states-images/illinois-images/bowling.jpeg"],
+  ["This is a picture of my friend Jon's backyard during his graduation party.", "This is a picture of my friend Jon's graduation party.", "This is a group picture of my friends at my friend Jon's graduation party", "This is a group picture of my friends Nikki, Chloe, Sami, and I at an escape room.", "This is a picture of Chloe and I at an escape room.", "This is a picture of Nicole and I at a beach playing catch with a football.", "This is a picture of my friend Sean and I.", "This is a picture of me and Sami roller blading at Northwestern.", "This is a picture of Nikki and Sami at Fox Lake.", "This is a picture of me taking professional pictures for my linkedin.", "This is a picture of my friend Nikki, Mikayla, and I bowling at Kings in Rosemont."],
+  ["June 27, 2015", "June 27, 2015", "June 27, 2015", "March 9, 2018", "March 9, 2018", "June 14, 2018", "August 9, 2018", "March 6, 2021", "May 29, 2023", "September 15, 2023", "October 7, 2023"],
+  ["This is a picture of my friend Jon's backyard during his graduation party.", "This is a picture of my friend Jon's graduation party.", "This is a group picture of my friends at my friend Jon's graduation party", "This is a group picture of my friends Nikki, Chloe, Sami, and I at an escape room.", "This is a picture of Chloe and I at an escape room.", "This is a picture of Nicole and I at a beach playing catch with a football.", "This is a picture of my friend Sean and I.", "This is a picture of me and Sami roller blading at Northwestern.", "This is a picture of Nikki and Sami at Fox Lake.", "This is a picture of me taking professional pictures for my linkedin.", "This is a picture of my friend Nikki, Mikayla, and I bowling at Kings in Rosemont."],
+  ["Barrington, Illinois", "Barrington, Illinois", "Barrington, Illinois", "Schaumburg, Illinois", "Schaumburg, Illinois", "Wilmette Beach, Illinois", "Mount Prospect, Illinois", "Evanston, Illinois", "Fox Lake, Illinois", "Mount Prospect, Illinois", "Rosemont, Illinois"],
+  ["mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide", "mid-wide", "not-wide", "not-wide", "mid-wide", "mid-wide"] 
+);
+const boats = new ImageSet(
+  ["../states-images/illinois-images/boat-group.jpeg", "../states-images/illinois-images/boat-sami-chloe-nikki.jpeg", "../states-images/illinois-images/boat-me2.jpeg", "../states-images/illinois-images/boat-me1.jpeg", "../states-images/illinois-images/boat-me3.jpeg", "../states-images/illinois-images/boat-group1.jpeg", "../states-images/illinois-images/boat-me.jpeg"],
+  ["This is a picture of my friends and I on a Chicago boat.", "This is a group picture of my best friends on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me as a captain on a boat in the Chicago River.", "This is a group picture of my friends and I on a boat.", "This is a picture of me on a boat in Chicago."],
+  ["July 3, 2023", "September 4, 2023", "September 4, 2023", "September 4, 2023", "September 10, 2023", "September 30, 2023", "September 30, 2023"],
+  ["This is a picture of my friends and I on a Chicago boat.", "This is a group picture of my best friends on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me on a boat in Chicago.", "This is a picture of me as a captain on a boat in the Chicago River.", "This is a group picture of my friends and I on a boat.", "This is a picture of me on a boat in Chicago."],
+  ["Chicago, Illinois", "Chicago, Illinois", "Chicago, Illinois", "Chicago, Illinois", "Chicago River", "Chicago, Illinois", "Chicago, Illinois"],
+  ["mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide"]
+);
+const wrigley = new ImageSet(
+  ["../states-images/illinois-images/wrigley-chloe.jpeg", "../states-images/illinois-images/wrigley-chloe2.jpeg"],
+  ["This is a picture of Chloe and I outside of Wrigley Field stadium.", "This is a picture of Chloe and I outside of Wrigley Field stadium."],
+  ["August 8, 2021", "August 6, 2022"],
+  ["This is a picture of Chloe and I outside of Wrigley Field stadium.", "This is a picture of Chloe and I outside of Wrigley Field stadium."],
+  ["Wrigley Field Stadium", "Wrigley Field Stadium"],
+  ["mid-wide", "not-wide"]
+);
+const starveRock = new ImageSet(
+  ["../states-images/illinois-images/starve-rock-nikki.jpeg", "../states-images/illinois-images/starve-rock-nnv.jpeg", "../states-images/illinois-images/starve-rock-nkg.jpeg"],
+  ["This is a picture of Nikki and I at Starve Rock.", "This is a picture of my friends at I at Starve Rock", "This is a group picture of my friends at Starve Rock."],
+  ["March 31, 2018", "July 29, 2018", "July 28, 2019"],
+  ["This is a picture of Nikki and I at Starve Rock.", "This is a picture of my friends at I at Starve Rock", "This is a group picture of my friends at Starve Rock."],
+  ["Starve Rock", "Starve Rock", "Starve Rock"],
+  ["not-wide", "not-wide", "mid-wide"]
+);
+const sixFlags = new ImageSet(
+  ["../states-images/illinois-images/six-flags-sean-alex.jpeg", "../states-images/illinois-images/six-flags-sean.jpeg", "../states-images/illinois-images/six-flags-group.jpeg"],
+  ["This is a picture of my friends at Hurricane Harbor, Six Flags water park.", "This is a picture of my friend Sean and I at Six Flags Great America's entrance.", "This is a picture of my friends from Eau Claire at Six Flags."],
+  ["June 5, 2015", "August 7, 2016", "June 24, 2018"],
+  ["This is a picture of my friends at Hurricane Harbor, Six Flags water park.", "This is a picture of my friend Sean and I at Six Flags Great America's entrance.", "This is a picture of my friends from Eau Claire at Six Flags."],
+  ["Hurricane, Harbor", "Six Flags Great America"],
+  ["not-wide", "mid-wide", "not-wide"]
+);
+
+sections("Chicago", chicago.image, chicago.imageAlt, chicago.date, chicago.description, chicago.title, chicago.imageWidth);
+sections("Navy Pier", navyPier.image, navyPier.imageAlt, navyPier.date, navyPier.description, navyPier.title, navyPier.imageWidth);
+sections("Chicago Cubs", cubs.image, cubs.imageAlt, cubs.date, cubs.description, cubs.title, cubs.imageWidth);
+sections("Suburbs", suburbs.image, suburbs.imageAlt, suburbs.date, suburbs.description, suburbs.title, suburbs.imageWidth);
+sections("Chicago Boats", boats.image, boats.imageAlt, boats.date, boats.description, boats.title, boats.imageWidth); 
+sections("Wrigleyfield", wrigley.image, wrigley.imageAlt, wrigley.date, wrigley.description, wrigley.title, wrigley.imageWidth);
+sections("Starved Rock", starveRock.image, starveRock.imageAlt, starveRock.date, starveRock.description, starveRock.title, starveRock.imageWidth);
+sections("Six Flags Great America", sixFlags.image, sixFlags.imageAlt, sixFlags.date, sixFlags.description, sixFlags.title, sixFlags.imageWidth);
+
+imagesView(chicago.image, imagediv);
+imagesView(navyPier.image, imagediv);
+imagesView(cubs.image, imagediv);
+imagesView(suburbs.image, imagediv);
+imagesView(boats.image, imagediv);
+imagesView(wrigley.image, imagediv);
+imagesView(starveRock.image, imagediv);
+imagesView(sixFlags.image, imagediv);
+
+var imageLength = chicago.image.length + navyPier.image.length + cubs.image.length + suburbs.image.length + boats.image.length + wrigley.image.length + starveRock.image.length + sixFlags.image.length;
+
+var imageList = [];
+
+for(var a = 0; a < chicago.image.length; a++) {
+  imageList.push(chicago.image[a]);
+}
+for(var b = 0; b < navyPier.image.length; b++) {
+  imageList.push(navyPier.image[b]);
+}
+for(var c = 0; c < cubs.image.length; c++) {
+  imageList.push(cubs.image[c]);
+}
+for(var d = 0; d < suburbs.image.length; d++) {
+  imageList.push(suburbs.image[d]);
+}
+for(var e = 0; e < boats.image.length; e++) {
+  imageList.push(boats.image[e]);
+}
+for(var f = 0; f < wrigley.image.length; f++) {
+  imageList.push(wrigley.image[f]);
+}
+for(var g = 0; g < starveRock.image.length; g++) {
+  imageList.push(starveRock.image[g]);
+}
+for(var h = 0; h < sixFlags.image.length; h++) {
+  imageList.push(sixFlags.image[h]);
+}
+
+function images() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+function imagesView(image, imagediv) {
+  for(var i = 0; i < image.length; i++) {
+    var viewImages = document.createElement("img");
+    viewImages.classList.add('view-images');
+    viewImages.src = image[i];
+    imagediv.appendChild(viewImages);
+    viewImages.onclick = images;
+  }
+}
 function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
     
@@ -450,52 +325,7 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
           }
         }   
       }
-      /*
-      var currentCategory = 0;
-      var currentIndex = 0;
 
-      function showImage(categoryIndex, imageIndex) {
-        modal.style.display = "block";
-
-      }
-      function showNextImage() {
-        if (currentIndex < imageArrays[currentCategory].length - 1) {
-            currentIndex++;
-        } else if (currentCategory < imageArrays.length - 1) {
-            currentCategory++;
-            currentIndex = 0;
-        } else {
-            currentCategory = 0;
-            currentIndex = 0;
-        }
-        showImage(currentCategory, currentIndex);
-    }
-    
-    function showPreviousImage() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else if (currentCategory > 0) {
-            currentCategory--;
-            currentIndex = imageArrays[currentCategory].length - 1;
-        } else {
-            currentCategory = imageArrays.length - 1;
-            currentIndex = imageArrays[currentCategory].length - 1;
-        }
-        showImage(currentCategory, currentIndex);
-    }
-    function images() {
-      var index = Array.from(this.parentNode.children).indexOf(this);
-      var categoryIndex = Array.from(document.querySelectorAll(".box-image")).indexOf(this);
-      showImage(categoryIndex, index);
-  }
-  
-  Array.from(document.querySelectorAll(".box-image")).forEach(function (el) {
-      el.onclick = images;
-  });
-  
-  prevButton.onclick = showPreviousImage;
-  nextButton.onclick = showNextImage;
-  */
       function images() {
         modal.style.display = "block";
         modalImg.src = this.src;
@@ -510,8 +340,16 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
           boxImage[j].onclick = images;
       }
       var span = document.getElementsByClassName("close")[0];
-      
       span.onclick = function() { 
         modal.style.display = "none";
       }
     }
+
+function image(delta) {
+        modal.style.display = "block";
+        modalImg.src = imageList[delta];
+        console.log(imageList[delta].src);
+        // captionText.innerHTML = imageList[delta].alt;
+ }      
+ prevButton.addEventListener('click', () => image(-1))
+ nextButton.addEventListener('click', () => image(1));
