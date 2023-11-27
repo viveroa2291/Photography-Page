@@ -69,8 +69,21 @@
   margin: auto;
   margin-bottom: 3px;
   display: block;
-  width: 80%;
+  width: auto;
   max-width: 450px;  
+}
+.not-wide-card {
+  width: 300px;
+}
+.wide {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 600px;
+}
+.wide-card {
+  max-width: 600px;
 }
 .section-selection {
   display: flex;

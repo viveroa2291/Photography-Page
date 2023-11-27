@@ -1,116 +1,109 @@
 var modal = document.getElementById("myModal");
-  var img = document.getElementsByClassName("california-images");
-  var boxImage = document.getElementsByClassName("box-image");
-  var modalImg = document.getElementById("img01");
-  var captionText = document.getElementById("caption");
-  
-  /**
-   * Los Angeles Lists
-   */
-  const losAngelesImages = ["../states-images/california-images/downtown.jpeg", "../states-images/california-images/pbars.jpeg"];
-  const losAngelesImagesAlt = ["This is a picture of my friends and I in downtown Los Angeles. I was on their shoulders preparing to do an 'L', which is a skill that is performed in mens gymnastics on the parallel bars.",
-  "This is the picture of me doing the 'L' on top of my friends shoulders in downtown Los Angeles."];
-  const losAngelesDates = ["August 6, 2015", "August 6, 2015"];
-  const losAngelesDescription = ["This is a picture of my friends and I in downtown <br> Los Angeles. I was on their shoulders preparing <br> to do an 'L', which is a skill that is performed in <br> mens gymnastics on the parallel bars.",
-  "This is the picture of me doing the 'L' on top of my <br> friends shoulders in downtown Los Angeles."];
-  const losAngelesTitle = ["Downtown Los Angeles", "Downtown Los Angeles"];
-  const losAngelesImageWidth = ["mid-wide", "mid-wide"];
-  sections("Los Angeles", losAngelesImages, losAngelesImagesAlt, losAngelesDates, losAngelesDescription, losAngelesTitle, losAngelesImageWidth);
-  /**
-   * DisneyLand Lists
-   */
-  const disneylandImages = ["../states-images/california-images/disneyland-jon.jpeg", "../states-images/california-images/disneyland-jon2.jpeg", "../states-images/california-images/disneyland-kristin.jpeg"];
-  const disneylandImagesAlt = ["This is a picture of my friend Jon and I at Disneyland.",
-  "This is an image of my friend Jon and I at Disneyland in front of the infamous Mickey Mouse roller coaster.",
-  "This is an image of my friend Jon and Kristin and I at Disneyland. <br><br><b> Fun fact, they are twins.</b>"];
-  const disneylandDates = ["August 7, 2015", "August 7, 2015", "August 7, 2015"];
-  const disneylandDescription = ["This is a picture of my friend Jon and I <br> at Disneyland.", 
-  "This is an image of my friend Jon and I <br> at Disneyland in front of the infamous <br> Mickey Mouse roller coaster.",
-  "This is an image of my friend Jon and Kristin and I at Disneyland. <br> Fun fact, they are twins."];
-  const disneylandTitle = ["Disneyland", "Disneyland", "Disneyland"];
-  const disneylandImageWidth = ["not-wide", "not-wide", "wide"];
-  sections("Disneyland", disneylandImages, disneylandImagesAlt, disneylandDates, disneylandDescription, disneylandTitle, disneylandImageWidth);
-  /**
-   * Huntington Beach Lists
-   */
-  const huntingtonImages = ["../states-images/california-images/huntington-jon.jpeg", "../states-images/california-images/huntington-jon2.jpeg", "../states-images/california-images/huntington-karina.jpeg", "../states-images/california-images/pyramid.jpeg", "../states-images/california-images/huntington-holly.jpeg"];
-  const huntingtonImagesAlt = ["This is an image of my friend Jon and I at Huntington Beach.",
-  "This is an image of my friend Jon and I at Huntington Beach.",
-  "This is an image of my friend Karina and I at Huntington Beach.",
-  "This is an image of my friends and I attempting to do a pyramid.",
-  "This is an image of my friend Holly and I at Huntington Beach."];
-  const huntingtonDates = ["August 10, 2015", "August 10, 2015", "August 10, 2015", "August 10, 2015", "August 10, 2015"];
-  const huntingtonDescription = ["This is an image of my friend Jon and I <br> at Huntington Beach.",
-  "This is an image of my friend Jon and I <br> at Huntington Beach.", 
-  "This is an image of my friend Karina and I <br> at Huntington Beach.", 
-  "This is an image of my friends and I <br> attempting to do a pyramid.",
-  "This is an image of my friend Holly and I <br> at Huntington Beach."];
-  const huntingtonTitle = ["Huntington Beach", "Huntington Beach", "Huntington Beach", "Huntington Beach", "Huntington Beach"];
-  const huntingtonImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
-  sections("Huntington Beach", huntingtonImages, huntingtonImagesAlt, huntingtonDates, huntingtonDescription, huntingtonTitle, huntingtonImageWidth);
-  function sectionSelected() {
+var img = document.getElementsByClassName("california-images");
+var boxImage = document.getElementsByClassName("box-image");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
+
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);
+
+const losAngeles = new ImageSet(
+  ["../states-images/california-images/downtown.jpeg", "../states-images/california-images/pbars.jpeg"],
+  ["This is a picture of my friends and I in downtown Los Angeles. I was on their shoulders preparing to do an 'L', which is a skill that is performed in mens gymnastics on the parallel bars.", "This is the picture of me doing the 'L' on top of my friends shoulders in downtown Los Angeles."],
+  ["August 6, 2015", "August 6, 2015"],
+  ["This is a picture of my friends and I in downtown Los Angeles. I was on their shoulders preparing to do an 'L', which is a skill that is performed in mens gymnastics on the parallel bars.", "This is the picture of me doing the 'L' on top of my friends shoulders in downtown Los Angeles."],
+  ["Downtown Los Angeles", "Downtown Los Angeles"],
+  ["mid-wide", "mid-wide"]
+);
+sections("Los Angeles", losAngeles.image, losAngeles.imageAlt, losAngeles.date, losAngeles.description, losAngeles.title, losAngeles.imageWidth);
+imagesView(losAngeles.image, imagediv);
+const disneyland = new ImageSet(
+  ["../states-images/california-images/disneyland-jon.jpeg", "../states-images/california-images/disneyland-jon2.jpeg", "../states-images/california-images/disneyland-kristin.jpeg"],
+  ["This is a picture of my friend Jon and I at Disneyland.", "This is an image of my friend Jon and I at Disneyland in front of the infamous Mickey Mouse roller coaster.", "This is an image of my friend Jon and Kristin and I at Disneyland. <br><br><b> Fun fact, they are twins.</b>"],
+  ["August 7, 2015", "August 7, 2015", "August 7, 2015"],
+  ["This is a picture of my friend Jon and I at Disneyland.", "This is an image of my friend Jon and I at Disneyland in front of the infamous Mickey Mouse roller coaster.", "This is an image of my friend Jon and Kristin and I at Disneyland. <br><br><b> Fun fact, they are twins.</b>"],
+  ["Disneyland", "Disneyland", "Disneyland"],
+  ["not-wide", "not-wide", "wide"]
+);
+sections("Disneyland", disneyland.image, disneyland.imageAlt, disneyland.date, disneyland.description, disneyland.title, disneyland.imageWidth);
+imagesView(disneyland.image, imagediv);
+const huntington = new ImageSet(
+  ["../states-images/california-images/huntington-jon.jpeg", "../states-images/california-images/huntington-jon2.jpeg", "../states-images/california-images/huntington-karina.jpeg", "../states-images/california-images/pyramid.jpeg", "../states-images/california-images/huntington-holly.jpeg"],
+  ["This is an image of my friend Jon and I at Huntington Beach.", "This is an image of my friend Jon and I at Huntington Beach.", "This is an image of my friend Karina and I at Huntington Beach.", "This is an image of my friends and I attempting to do a pyramid.", "This is an image of my friend Holly and I at Huntington Beach."],
+  ["August 10, 2015", "August 10, 2015", "August 10, 2015", "August 10, 2015", "August 10, 2015"],
+  ["This is an image of my friend Jon and I at Huntington Beach.", "This is an image of my friend Jon and I at Huntington Beach.", "This is an image of my friend Karina and I at Huntington Beach.", "This is an image of my friends and I attempting to do a pyramid.", "This is an image of my friend Holly and I at Huntington Beach."],
+  ["Huntington Beach", "Huntington Beach", "Huntington Beach", "Huntington Beach", "Huntington Beach"],
+  ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide"]
+);
+sections("Huntington Beach", huntington.image, huntington.imageAlt, huntington.date, huntington.description, huntington.title, huntington.imageWidth);
+imagesView(huntington.image, imagediv);
+function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x == "Los Angeles") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       } 
-      document.getElementById("demo").appendChild(sections("Los Angeles", losAngelesImages, losAngelesImagesAlt, losAngelesDates, losAngelesDescription, losAngelesTitle, losAngelesImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Los Angeles", losAngeles.image, losAngeles.imageAlt, losAngeles.date, losAngeles.description, losAngeles.title, losAngeles.imageWidth)); 
     }
     else if(x == "Disneyland") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Disneyland", disneylandImages, disneylandImagesAlt, disneylandDates, disneylandDescription, disneylandTitle, disneylandImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Disneyland", disneyland.image, disneyland.imageAlt, disneyland.date, disneyland.description, disneyland.title, disneyland.imageWidth)); 
     }
     else if(x == "Huntington") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Huntington Beach", huntingtonImages, huntingtonImagesAlt, huntingtonDates, huntingtonDescription, huntingtonTitle, huntingtonImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Huntington Beach", huntington.image, huntington.imageAlt, huntington.date, huntington.description, huntington.title, huntington.imageWidth)); 
     }
     else if(x == "all") {
   
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Los Angeles", losAngelesImages, losAngelesImagesAlt, losAngelesDates, losAngelesDescription, losAngelesTitle, losAngelesImageWidth);
-      sections("Disneyland", disneylandImages, disneylandImagesAlt, disneylandDates, disneylandDescription, disneylandTitle, disneylandImageWidth);
-      sections("Huntington Beach", huntingtonImages, huntingtonImagesAlt, huntingtonDates, huntingtonDescription, huntingtonTitle, huntingtonImageWidth);
+      sections("Los Angeles", losAngeles.image, losAngeles.imageAlt, losAngeles.date, losAngeles.description, losAngeles.title, losAngeles.imageWidth);
+      sections("Disneyland", disneyland.image, disneyland.imageAlt, disneyland.date, disneyland.description, disneyland.title, disneyland.imageWidth);
+      sections("Huntington Beach", huntington.image, huntington.imageAlt, huntington.date, huntington.description, huntington.title, huntington.imageWidth);
     }
   }
-  var imagediv = document.createElement("div"); 
-  imagediv.classList.add('view-div');
-  document.getElementById("image-view-demo").appendChild(imagediv);    
 
-    function images() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    for(var a = 0; a < losAngelesImages.length; a++) {
+  var imageList = [];
+  var descriptionList = [];
+
+for(var a = 0; a < losAngeles.image.length; a++) {
+  imageList.push(losAngeles.image[a]);
+  descriptionList.push(losAngeles.description[a]);
+}
+for(var b = 0; b < disneyland.image.length; b++) {
+  imageList.push(disneyland.image[b]);
+  descriptionList.push(disneyland.description[b]);
+}
+for(var c = 0; c < huntington.image.length; c++) {
+  imageList.push(huntington.image[c]);
+  descriptionList.push(huntington.description[c]);
+}
+
+function images() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+function imagesView(image, imagediv) {
+    for(var i = 0; i < image.length; i++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
-        viewImages.src = losAngelesImages[a];
+        viewImages.src = image[i];
         imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
+        viewImages.onclick = images;
     }
-    for(var b = 0; b <  disneylandImages.length; b++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = disneylandImages[b];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var c = 0; c < huntingtonImages.length; c++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = huntingtonImages[c];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
+}
   // ------------------------------------------------------------------------------
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0;
@@ -261,10 +254,41 @@ var modal = document.getElementById("myModal");
       count = count + 2.0;
     }
   }
+  var currentIndex = 0; 
+  function imageIndex(delta) {
+      modal.style.display = "block";
+      modalImg.src = imageList[delta];
+      captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+      if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+  });
+  nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+  });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+    if(substringIndex !== -1) {
+      var newUrl = "../" + this.src.substring(substringIndex);
+    }
+
+    for(var i = 0; i < imageList.length; i++) {
+      if(newUrl === imageList[i]) {
+        currentIndex = i;
+        imageIndex(i);
+      }
+    }    
   }
   for(var i = 0; i < img.length; i++)
   {

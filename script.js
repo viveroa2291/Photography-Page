@@ -23,3 +23,13 @@ function imageView() {
     document.getElementById("demo").style.display = "none";
     document.getElementById("image-view-demo").style.display = "block";
 }
+class ImageSet {
+    constructor(image, imageAlt, date, description, title, imageWidth) {
+      this.image = image;
+      this.imageAlt = imageAlt; 
+      this.date = date;
+      this.description = description;
+      this.title = title;
+      this.imageWidth = imageWidth;
+    }
+  }

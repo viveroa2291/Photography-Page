@@ -23,116 +23,96 @@ function hide() {
   var boxImage = document.getElementsByClassName("box-image");
   var modalImg = document.getElementById("img01");
   var captionText = document.getElementById("caption");
-
-  var sectionSelection = document.getElementById("section-selection");
-  /**
-   * Vandervoort Lists
-   */
-  const vandervoortImages = ["../states-images/arkansas-images/me.jpeg", "../states-images/arkansas-images/hunting.jpeg", "../states-images/arkansas-images/goats.jpeg", "../states-images/arkansas-images/cows.jpeg", "../states-images/arkansas-images/lake-me.jpeg", "../states-images/arkansas-images/goat-me2.jpeg", "../states-images/arkansas-images/goat-me.jpeg", "../states-images/arkansas-images/cow-me.jpeg"];
-  const vandervoortImagesAlt = ["This is a mirror picture that I took in my cousins newly remodeled bathroom and was a time when taking mirror pictures was popular on the iphone.", 
-  "This is an image of me holding a hunting rifle at my cousins house where we went target shooting on their land <b>safely</b>. It was a fun experience and learned information on gun safety.",
-  "This is an image of goats eating their food in my cousins farm.",
-  "This is an image of the cows on my cousin's farm.",
-  "This is an image of me at the lake that my cousins took me to.",
-  "This is an image of me holding a baby goat on my cousin's farm.",
-  "This is an image of me and one of my cousin's goat on his farm.",
-  "This is an image of me taking a picture with one of my cousin's cow."];
-  const vandervoortDates = ["December 29, 2012", "December 28, 2015", "December 31, 2015", "December 31, 2015", "June 15, 2016", "August 19, 2017", "January 1, 2016", "December 28, 2020"];
-  const vandervoortDescription = ["This is a mirror picture that I took in my <br> cousins newly remodeled bathroom and <br> was a time when taking mirror pictures <br> was popular on the iphone.",
-  "This is an image of me holding a hunting <br> rifle at my cousins house where we <br> went target shooting on their land <br> <b>safely</b>. It was a fun experience and <br> learned information on gun safety.",
-  "This is an image of goats eating their <br> food in my cousins farm.",
-  "This is an image of the cows on my <br> cousin's farm.",
-  "This is an image of me at the lake that <br> my cousins took me to.",
-  "This is an image of me holding a baby <br> goat on my cousin's farm.",
-  "This is an image of me and one of my cousin's goat on his farm.",
-  "This is an image of me taking a <br> picture with one of my cousin's cow."];
-  const vandervoortTitle = ["Cousin's Bathroom", "Cousin's Land", "Cousin's Farm", "Cousin's Farm", "Lake", "Cousin's Farm", "Cousin's Farm", "Cousin's Farm"];
-  const vandervoortImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "wide", "not-wide"];
+  var prevButton = document.getElementById("previous-button");
+  var nextButton = document.getElementById("next-button");
   
-  /**
-   * Ozark Lists
-   */
-  const ozarkImages = ["../states-images/arkansas-images/view.jpeg", "../states-images/arkansas-images/restaurant.jpeg"];
-  const ozarkImagesAlt = ["This is a picture of me on the side of the road. We were driving and decided to take a picture of the view which is difficult to see with the barricade in the way.", 
-  "This is a picture of me outside of one of my favorite Mexican restaurant when visiting my cousins. They provide very delicious food and give you large portions."];
-  const ozarkDates = ["August 16, 2017", "August 16, 2017"];
-  const ozarkDescription = ["This is a picture of me on the side of <br> the road. We were driving and decided <br> to take a picture of the view which is <br> difficult to see with the barricade in <br> the way.",
-  "This is a picture of me outside of one of my favorite Mexican <br> restaurant when visiting my cousins. They provide very delicious <br> food and give you large portions."];
-  const ozarkTitle = ["On The Road", "Mexican Restaurant"];
-  const ozarkImageWidth = ["not-wide", "wide"];
-  
-  /**
-   * Henderson Lists
-   */
-  const hendersonImages = ["../states-images/arkansas-images/university.jpeg", "../states-images/arkansas-images/university2.jpeg"];
-  const hendersonImagesAlt = ["This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school.", 
-  "This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school."];
-  const hendersonDates = ["December 31, 2020", "December 31, 2020"];
-  const hendersonDescription = ["This is a picture of me at my cousin's <br> undergrad and graduate school. He <br> took me in for a tour of where he works <br> and where he went to school.",
-  "This is a picture of me at my cousin's <br> undergrad and graduate school. He <br> took me in for a tour of where he works <br> and where he went to school."];
-  const hendersonTitle = ["Henderson State University", "Henderson State University"];
-  const hendersonImageWidth = ["not-wide", "not-wide"];
-  
-  /**
-   * Other Parts of Arkansas Lists
-   */
-  const arkansasImages = ["../states-images/arkansas-images/cousins.jpeg", "../states-images/arkansas-images/lake-me2.jpeg", "../states-images/arkansas-images/cousins2.jpeg"];
-  const arkansasImageAlt = ["This is a picture of my cousins and I at their house.", 
-  "This is an image of me at a Lake Horsehead in Clarksville Arkansas.",
-  "This is an image of my cousins and I a year and a half later from the image on the left."];
-  const arkansasDates = ["January 1, 2016", "June 20, 2016", "August 17, 2017"];
-  const arkansasDescription = ["This is a picture of my cousins and I <br> at their house.", 
-  "This is an image of me at a Lake <br> Horsehead in Clarksville Arkansas.", 
-  "This is an image of my cousins and I a year and a half later <br> from the image on the left."];
-  const arkansasTitle = ["Altus (Cousin's House)", "Clarksville Lake", "Waldron"];
-  const arkansasImageWidth = ["not-wide", "not-wide", "wide"];
-  
-  /**
-   * Area Selected 
-   */
-  sections("Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-  sections("Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-  sections("Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-  sections("Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
- 
   var imagediv = document.createElement("div"); 
   imagediv.classList.add('view-div');
   document.getElementById("image-view-demo").appendChild(imagediv);    
 
-    function images() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    for(var a = 0; a < vandervoortImages.length; a++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = vandervoortImages[a];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var b = 0; b <  ozarkImages.length; b++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = ozarkImages[b];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var c = 0; c < hendersonImages.length; c++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = hendersonImages[c];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var d = 0; d < arkansasImages.length; d++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = arkansasImages[d];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-  
+  var sectionSelection = document.getElementById("section-selection");
+
+  const vandervoort = new ImageSet(
+    ["../states-images/arkansas-images/me.jpeg", "../states-images/arkansas-images/hunting.jpeg", "../states-images/arkansas-images/goats.jpeg", "../states-images/arkansas-images/cows.jpeg", "../states-images/arkansas-images/lake-me.jpeg", "../states-images/arkansas-images/goat-me2.jpeg", "../states-images/arkansas-images/goat-me.jpeg", "../states-images/arkansas-images/cow-me.jpeg"],
+    ["This is an image of me holding a hunting rifle at my cousins house where we went target shooting on their land <b>safely</b>. It was a fun experience and learned information on gun safety.",  "This is an image of me holding a hunting rifle at my cousins house where we went target shooting on their land <b>safely</b>. It was a fun experience and learned information on gun safety.", "This is an image of goats eating their food in my cousins farm.", "This is an image of the cows on my cousin's farm.", "This is an image of me at the lake that my cousins took me to.", "This is an image of me holding a baby goat on my cousin's farm.", "This is an image of me and one of my cousin's goat on his farm.", "This is an image of me taking a picture with one of my cousin's cow."],
+    ["December 29, 2012", "December 28, 2015", "December 31, 2015", "December 31, 2015", "June 15, 2016", "August 19, 2017", "January 1, 2016", "December 28, 2020"],
+    ["This is an image of me holding a hunting rifle at my cousins house where we went target shooting on their land <b>safely</b>. It was a fun experience and learned information on gun safety.",  "This is an image of me holding a hunting rifle at my cousins house where we went target shooting on their land <b>safely</b>. It was a fun experience and learned information on gun safety.", "This is an image of goats eating their food in my cousins farm.", "This is an image of the cows on my cousin's farm.", "This is an image of me at the lake that my cousins took me to.", "This is an image of me holding a baby goat on my cousin's farm.", "This is an image of me and one of my cousin's goat on his farm.", "This is an image of me taking a picture with one of my cousin's cow."],
+    ["Cousin's Bathroom", "Cousin's Land", "Cousin's Farm", "Cousin's Farm", "Lake", "Cousin's Farm", "Cousin's Farm", "Cousin's Farm"],
+    ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "wide", "not-wide"]
+  );
+  const ozark = new ImageSet(
+    ["../states-images/arkansas-images/view.jpeg", "../states-images/arkansas-images/restaurant.jpeg"],
+    ["This is a picture of me on the side of the road. We were driving and decided to take a picture of the view which is difficult to see with the barricade in the way.", "This is a picture of me outside of one of my favorite Mexican restaurant when visiting my cousins. They provide very delicious food and give you large portions."],
+    ["August 16, 2017", "August 16, 2017"],
+    ["This is a picture of me on the side of the road. We were driving and decided to take a picture of the view which is difficult to see with the barricade in the way.", "This is a picture of me outside of one of my favorite Mexican restaurant when visiting my cousins. They provide very delicious food and give you large portions."],
+    ["On The Road", "Mexican Restaurant"],
+    ["not-wide", "wide"]
+  );
+
+  const henderson = new ImageSet(
+    ["../states-images/arkansas-images/university.jpeg", "../states-images/arkansas-images/university2.jpeg"],
+    ["This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school.", "This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school."],
+    ["December 31, 2020", "December 31, 2020"],
+    ["This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school.", "This is a picture of me at my cousin's undergrad and graduate school. He took me in for a tour of where he works and where he went to school."],
+    ["Henderson State University", "Henderson State University"],
+    ["not-wide", "not-wide"]
+  );
+
+  const arkansas = new ImageSet(
+    ["../states-images/arkansas-images/cousins.jpeg", "../states-images/arkansas-images/lake-me2.jpeg", "../states-images/arkansas-images/cousins2.jpeg"],
+    ["This is a picture of my cousins and I at their house.", "This is an image of me at a Lake Horsehead in Clarksville Arkansas.", "This is an image of my cousins and I a year and a half later from the image on the left."],
+    ["January 1, 2016", "June 20, 2016", "August 17, 2017"],
+    ["This is a picture of my cousins and I at their house.", "This is an image of me at a Lake Horsehead in Clarksville Arkansas.", "This is an image of my cousins and I a year and a half later from the image on the left."],
+    ["Altus (Cousin's House)", "Clarksville Lake", "Waldron"],
+    ["not-wide", "not-wide", "wide"]
+  );
+  /**
+   * Area Selected 
+   */
+sections("Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+sections("Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+sections("Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+sections("Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
+ 
+imagesView(vandervoort.image, imagediv);
+imagesView(ozark.image, imagediv);
+imagesView(henderson.image, imagediv);
+imagesView(arkansas.image, imagediv);
+
+var imageList = [];
+var descriptionList = [];
+
+for(var a = 0; a < vandervoort.image.length; a++) {
+  imageList.push(vandervoort.image[a]);
+  descriptionList.push(vandervoort.description[a]);
+}
+for(var b = 0; b < ozark.image.length; b++) {
+  imageList.push(ozark.image[b]);
+  descriptionList.push(ozark.description[b]);
+}
+for(var c = 0; c < henderson.image.length; c++) {
+  imageList.push(henderson.image[c]);
+  descriptionList.push(henderson.description[c]);
+}
+for(var d = 0; d < arkansas.image.length; d++) {
+  imageList.push(arkansas.image[d]);
+  descriptionList.push(arkansas.description[d]);
+}
+function images() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+}
+function imagesView(image, imagediv) {
+  console.log("Entered")
+  for(var i = 0; i < image.length; i++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = image[i];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images; 
+  }
+}
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x =="Vandervoort") 
@@ -140,21 +120,21 @@ function hide() {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       } 
-      document.getElementById("demo").appendChild(sections("Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth)); 
     }
     else if(x == "Ozark") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth)); 
     }
     else if(x == "Henderson") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth)); 
   
     }
     else if(x == "Other") 
@@ -162,16 +142,16 @@ function hide() {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth));
+      document.getElementById("demo").appendChild(sections("Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth));
     }
     else if(x == "all") {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-      sections("Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-      sections("Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-      sections("Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+      sections("Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+      sections("Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+      sections("Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+      sections("Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
     }
   }
 
@@ -179,10 +159,10 @@ function hide() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2012") 
     {
-      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-      var ozarkYear =  yearCollections(y, "Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-      var hendersonYear = yearCollections(y, "Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+      var ozarkYear =  yearCollections(y, "Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+      var hendersonYear = yearCollections(y, "Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
   
       const yearVImages = vandervoortYear[1];
       const yearVImageAlt = vandervoortYear[2];
@@ -219,10 +199,10 @@ function hide() {
     }
     else if(y == "2015") 
     {
-      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-      var ozarkYear =  yearCollections(y, "Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-      var hendersonYear = yearCollections(y, "Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+      var ozarkYear =  yearCollections(y, "Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+      var hendersonYear = yearCollections(y, "Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
   
       const yearVImages = vandervoortYear[1];
       const yearVImageAlt = vandervoortYear[2];
@@ -259,10 +239,10 @@ function hide() {
     }
     else if(y == "2016") 
     {
-      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-      var ozarkYear =  yearCollections(y, "Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-      var hendersonYear = yearCollections(y, "Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+      var ozarkYear =  yearCollections(y, "Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+      var hendersonYear = yearCollections(y, "Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
   
       const yearVImages = vandervoortYear[1];
       const yearVImageAlt = vandervoortYear[2];
@@ -299,10 +279,10 @@ function hide() {
     }
     else if(y == "2017") 
     {
-      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-      var ozarkYear =  yearCollections(y, "Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-      var hendersonYear = yearCollections(y, "Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+      var ozarkYear =  yearCollections(y, "Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+      var hendersonYear = yearCollections(y, "Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
   
       const yearVImages = vandervoortYear[1];
       const yearVImageAlt = vandervoortYear[2];
@@ -339,10 +319,10 @@ function hide() {
       yearSections(yearVImages, yearVImageAlt, yearVDates, yearVDescription, yearVTitle, yearVImageWidth); 
     }
     else if(y == "2020") {
-      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-      var ozarkYear =  yearCollections(y, "Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-      var hendersonYear = yearCollections(y, "Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+      var vandervoortYear =  yearCollections(y, "Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+      var ozarkYear =  yearCollections(y, "Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+      var hendersonYear = yearCollections(y, "Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+      var arkansasYear = yearCollections(y, "Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
   
       const yearVImages = vandervoortYear[1];
       const yearVImageAlt = vandervoortYear[2];
@@ -382,10 +362,10 @@ function hide() {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Vandervoort", vandervoortImages, vandervoortImagesAlt, vandervoortDates, vandervoortDescription, vandervoortTitle, vandervoortImageWidth);
-      sections("Ozark", ozarkImages, ozarkImagesAlt, ozarkDates, ozarkDescription, ozarkTitle, ozarkImageWidth);
-      sections("Henderson State University", hendersonImages, hendersonImagesAlt, hendersonDates, hendersonDescription, hendersonTitle, hendersonImageWidth);
-      sections("Other Parts of Arkansas", arkansasImages, arkansasImageAlt, arkansasDates, arkansasDescription, arkansasTitle, arkansasImageWidth);
+      sections("Vandervoort", vandervoort.image, vandervoort.imageAlt, vandervoort.date, vandervoort.description, vandervoort.title, vandervoort.imageWidth);
+      sections("Ozark", ozark.image, ozark.imageAlt, ozark.date, ozark.description, ozark.title, ozark.imageWidth);
+      sections("Henderson State University", henderson.image, henderson.imageAlt, henderson.date, henderson.description, henderson.title, henderson.imageWidth);
+      sections("Other Parts of Arkansas", arkansas.image, arkansas.imageAlt, arkansas.date, arkansas.description, arkansas.title, arkansas.imageWidth);
     }
   }
   var area = document.getElementById("about");
@@ -528,10 +508,43 @@ function hide() {
         count = count + 2.0; 
     }   
     }
+    var currentIndex = 0; 
+  
+    function imageIndex(delta) {
+        modal.style.display = "block";
+        modalImg.src = imageList[delta];
+        captionText.innerHTML = descriptionList[delta];
+        console.log(descriptionList[delta]);
+    }      
+    prevButton.addEventListener('click', function() {
+      if(currentIndex > 0) {
+        currentIndex--;
+      }
+      imageIndex(currentIndex);
+    });
+    nextButton.addEventListener('click', function() {
+      if (currentIndex < imageList.length - 1) {
+        currentIndex++;
+      }
+      imageIndex(currentIndex);
+    });
+
     function images() {
       modal.style.display = "block";
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
+
+      var substringIndex = this.src.indexOf("states");
+
+      if(substringIndex !== -1) {
+        var newUrl = "../" + this.src.substring(substringIndex);
+      }
+      for(var i = 0; i < imageList.length; i++) {
+        if(newUrl === imageList[i]) {
+            currentIndex = i;
+            imageIndex(i);
+        }
+      }
     }
     for(var i = 0; i < img.length; i++)
       { 
@@ -649,7 +662,6 @@ function hide() {
           count = count + 2.0; 
       }   
       }
-      
   // This block of code is when an image is clicked, it expands the image. 
   function images() {
     modal.style.display = "block";
