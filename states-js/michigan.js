@@ -19,7 +19,7 @@ const sawyer = new ImageSet(
   ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide"]
 );
   sections("Sawyer (The Dunes)", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
-
+  imagesView(sawyer.image, imagediv);
 const lakehouse = new ImageSet(
   ["../states-images/michigan-images/nikki.jpeg", "../states-images/michigan-images/nikki-chloe.jpeg", "../states-images/michigan-images/nikki2.jpeg", "../states-images/michigan-images/fireworks.jpeg"],
   ["This is a picture of my friend Nikki and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki, Chloe, and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki, Chloe, and I blowing up fireworks outside on the Fourth of July."],
@@ -29,7 +29,7 @@ const lakehouse = new ImageSet(
   ["not-wide", "not-wide", "not-wide", "not-wide"]
 );
   sections("Friend's Lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
-
+  imagesView(lakehouse.image, imagediv);
   const wakefield = new ImageSet(
     ["../states-images/michigan-images/cabin.jpeg", "../states-images/michigan-images/wakefield3.jpeg", "../states-images/michigan-images/ski.jpeg", "../states-images/michigan-images/wakefield4.jpeg", "../states-images/michigan-images/wakefield.jpeg", "../states-images/michigan-images/wakefield2.jpeg"],
     ["This is an image of me sitting inside my cabin before skiing.", "This is an image of me skiing in Wakefield Michigan.", "This is an image of where I was skiing in Wakefield Michigan.", "This is a selfie of me skiing in Wakefield Michigan after I fell and had snow all over my face.", "This is a selfie of me skiing in Wakefield Michigan.", "This is a selfie of me skiing in Wakefield Michigan."],
@@ -39,7 +39,7 @@ const lakehouse = new ImageSet(
     ["not-wide", "not-wide", "wide", "mid-wide", "mid-wide", "mid-wide"]
   );
   sections("Wakefield", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
-
+  imagesView(wakefield.image, imagediv);
   const detroit = new ImageSet(
     ["../states-images/michigan-images/me.jpeg"],
     ["This is an image of me sitting inside a bus on a way to a German event."],
@@ -49,6 +49,41 @@ const lakehouse = new ImageSet(
     ["not-wide"]
   );
   sections("Detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
+  imagesView(detroit.image, imagediv); 
+  
+  var imageList = [];
+  var descriptionList = [];
+
+  for(var a = 0; a < sawyer.image.length; a++) {
+      imageList.push(sawyer.image[a]);
+      descriptionList.push(sawyer.description[a]);
+  }
+  for(var b = 0; b < lakehouse.image.length; b++) {
+    imageList.push(lakehouse.image[b]);
+    descriptionList.push(lakehouse.description[b]);
+  }
+  for(var c = 0; c < wakefield.image.length; c++) {
+    imageList.push(wakefield.image[c]);
+    descriptionList.push(wakefield.description[c]);
+  }
+  for(var d = 0; d < detroit.image.length; d++) {
+    imageList.push(detroit.image[d]);
+    descriptionList.push(detroit.description[d]);
+  }
+    function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    function imagesView(image, imagediv) {
+      for(var i = 0; i < image.length; i++) {
+        var viewImages = document.createElement("img");
+        viewImages.classList.add('view-images');
+        viewImages.src = image[i];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images;
+      }
+    }
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x == "Sawyer") 
@@ -91,41 +126,6 @@ const lakehouse = new ImageSet(
       sections("Detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
     }
   }
-
-  var imageList = [];
-  var descriptionList = [];
-
-  for(var a = 0; a < sawyer.image.length; a++) {
-      imageList.push(sawyer.image[a]);
-      descriptionList.push(sawyer.description[a]);
-  }
-  for(var b = 0; b < lakehouse.image.length; b++) {
-    imageList.push(lakehouse.image[b]);
-    descriptionList.push(lakehouse.description[b]);
-  }
-  for(var c = 0; c < wakefield.image.length; c++) {
-    imageList.push(wakefield.image[c]);
-    descriptionList.push(wakefield.description[c]);
-  }
-  for(var d = 0; d < detroit.image.length; d++) {
-    imageList.push(detroit.image[d]);
-    descriptionList.push(detroit.description[d]);
-  }
-    function images() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    function imagesView(image, imagediv) {
-      for(var i = 0; i < image.length; i++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = image[i];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images;
-      }
-    }
-
   function yearSelected() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2013") 
@@ -472,30 +472,28 @@ const lakehouse = new ImageSet(
     }
   }
   var currentIndex = 0; 
-      function imageIndex(delta) {
-            modal.style.display = "block";
-            modalImg.src = imageList[delta];
-            captionText.innerHTML = descriptionList[delta];
-      }      
-      prevButton.addEventListener('click', function() {
-        if(currentIndex > 0) {
+  function imageIndex(delta) {
+        modal.style.display = "block";
+        modalImg.src = imageList[delta];
+        captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+      if(currentIndex > 0) {
           currentIndex--;
-        }
+      }
         imageIndex(currentIndex);
-      });
-      nextButton.addEventListener('click', function() {
-        if (currentIndex < imageList.length - 1) {
+  });
+  nextButton.addEventListener('click', function() {
+      if (currentIndex < imageList.length - 1) {
           currentIndex++;
-        }
+      }
         imageIndex(currentIndex);
-      });
+  });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
-
     var substringIndex = this.src.indexOf("states");
-
     if(substringIndex !== -1) {
       var newUrl = "../" + this.src.substring(substringIndex);
     }
@@ -673,10 +671,42 @@ const lakehouse = new ImageSet(
         modal.style.display = "none";
       }
     }  
+    var currentIndex = 0; 
+    function imageIndex(delta) {
+          modal.style.display = "block";
+          modalImg.src = imageList[delta];
+          captionText.innerHTML = descriptionList[delta];
+    }      
+    prevButton.addEventListener('click', function() {
+      if(currentIndex > 0) {
+        currentIndex--;
+      }
+      imageIndex(currentIndex);
+    });
+    nextButton.addEventListener('click', function() {
+      if (currentIndex < imageList.length - 1) {
+        currentIndex++;
+      }
+      imageIndex(currentIndex);
+    });
+
   function images(){
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+    
+    var substringIndex = this.src.indexOf("states");
+
+    if(substringIndex !== -1) {
+      var newUrl = "../" + this.src.substring(substringIndex);
+    }
+
+    for(var i = 0; i < imageList.length; i++) {
+      if(newUrl === imageList[i]) {
+        currentIndex = i;
+        imageIndex(i);
+      }
+    }
   }
   for(var i = 0; i < img.length; i++)
   {
