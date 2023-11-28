@@ -2,85 +2,53 @@ var modal = document.getElementById("myModal");
 var img = document.getElementsByClassName("michigan-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-  /**
-   * Sawyer Lists
-   */
-  const sawyerImages = ["../states-images/michigan-images/sami.jpeg", "../states-images/michigan-images/nicole.jpeg", "../states-images/michigan-images/sami2.jpeg", "../states-images/michigan-images/nicole-sami.jpeg", "../states-images/michigan-images/gabi-nora.jpeg", "../states-images/michigan-images/sawyer2.jpeg", "../states-images/michigan-images/alex.jpeg", "../states-images/michigan-images/kaitlin-alex.jpeg", "../states-images/michigan-images/sawyer.jpeg", "../states-images/michigan-images/alex2.jpeg"];
-  const sawyerImagesAlt = ["This is the picture of my friend Sami and I sitting on a tree at The Dunes in Sawyer Michigan.",
-  "This is the picture of my friend Nicole and I sitting on a tree at The Dunes in Sawyer Michigan.",
-  "This is the picture of my friend Sami and I in the clean mud of The Dunes in Sawyer Michigan.",
-  "This is the picture of my friends Nicole and Sami in the clean mud of The Dunes in Sawyer Michigan.",
-  "This is the picture of my friends Gabi and Nora at the beach in Sawyer Michigan.",
-  "This is the picture of my friends Alex, Kaitlin, Gabi, and Nora at the beach in Sawyer Michigan.",
-  "This is the picture of my friend Alex and I sitting on a tree at the Dunes.",
-  "This is the picture of my friends Alex, Kaitlin, and I sitting on a tree at the Dunes covered in clean mud.",
-  "This is a group picture of my friends and I sitting on a tree at The Dunes.",
-  "This is a selfie taken by me of my friend Alex and I covered in clean mud at The Dunes."];
-  const sawyerDates = ["July 14, 2019", "July 14, 2019", "July 14, 2019", "July 14, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019"];
-  const sawyerDescription = ["This is the picture of my friend Sami and I <br> sitting on a tree at The Dunes in Sawyer <br> Michigan.",
-  "This is the picture of my friend Nicole and I <br> sitting on a tree at The Dunes in Sawyer <br> Michigan.",
-  "This is the picture of my friend Sami and I <br> in the clean mud of The Dunes in Sawyer <br> Michigan.",
-  "This is the picture of my friends Nicole and Sami in the clean mud of <br> The Dunes in Sawyer Michigan.",
-  "This is the picture of my friends Gabi and Nora at the beach in <br> Sawyer Michigan.",
-  "This is the picture of my friends Alex, Kaitlin, Gabi, and Nora <br> at the beach in Sawyer Michigan.",
-  "This is the picture of my friend Alex and I sitting on a tree at the Dunes.",
-  "This is the picture of my friends Alex, Kaitlin, and I sitting on a <br> tree at the Dunes covered in clean mud.",
-  "This is a group picture of my friends and I sitting on a tree at <br> The Dunes.",
-  "This is a selfie taken by me of my friend <br> Alex and I covered in clean mud at <br> The Dunes."];
-  const sawyerTitle = ["The Dunes", "The Dunes", "The Dunes", "Clean mud of The Dunes", "Beach of the Dunes", "Beach of the Dunes", "The Dunes", "The Dunes", "The Dunes", "Clean Mud"];
-  const sawyerImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide"];
-  
-  sections("Sawyer (The Dunes)", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth);
-  /**
-   * Chloe's Lakehouse Lists
-   */
-  const lakehouseImages = ["../states-images/michigan-images/nikki.jpeg", "../states-images/michigan-images/nikki-chloe.jpeg", "../states-images/michigan-images/nikki2.jpeg", "../states-images/michigan-images/fireworks.jpeg"];
-  const lakehouseImagesAlt = ["This is a picture of my friend Nikki and I at Lake Michigan Beach on the Fourth of July.",
-  "This is an image of my friends Nikki, Chloe, and I at Lake Michigan Beach on the Fourth of July.",
-  "This is an image of my friends Nikki and I at Lake Michigan Beach on the Fourth of July.",
-  "This is an image of my friends Nikki, Chloe, and I blowing up fireworks outside on the Fourth of July."];
-  const lakehouseDates = ["July 4, 2020", "July 4, 2020", "July 4, 2020", "July 4, 2020"];
-  const lakehouseDescription = ["This is a picture of my friend Nikki and I <br> at Lake Michigan Beach on the Fourth <br> of July.",
-  "This is an image of my friends Nikki, Chloe, <br> and I at Lake Michigan Beach on the <br> Fourth of July.",
-  "This is an image of my friends Nikki and I <br> at Lake Michigan Beach on the Fourth <br> of July.",
-  "This is an image of my friends Nikki, Chloe, <br> and I blowing up fireworks outside on the <br> Fourth of July."];
-  const lakehouseTitle = ["Lake Michigan Beach", "Lake Michigan Beach", "Lake Michigan Beach", "Fireworks"];
-  const lakehouseImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide"];
-  
-  sections("Friend's Lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth);
-  /**
-   * Wakefield Lists
-   */
-  const wakefieldImages = ["../states-images/michigan-images/cabin.jpeg", "../states-images/michigan-images/wakefield3.jpeg", "../states-images/michigan-images/ski.jpeg", "../states-images/michigan-images/wakefield4.jpeg", "../states-images/michigan-images/wakefield.jpeg", "../states-images/michigan-images/wakefield2.jpeg"];
-  const wakefieldImagesAlt = ["This is an image of me sitting inside my cabin before skiing.", 
-  "This is an image of me skiing in Wakefield Michigan.", 
-  "This is an image of where I was skiing in Wakefield Michigan.",
-  "This is a selfie of me skiing in Wakefield Michigan after I fell and had snow all over my face.",
-  "This is a selfie of me skiing in Wakefield Michigan.",
-  "This is a selfie of me skiing in Wakefield Michigan."];
-  const wakefieldDates = ["January 22, 2022", "January 22, 2022", "January 22, 2022", "January 22, 2022", "January 23, 2022", "January 23, 2022"];
-  const wakefieldDescription = ["This is an image of me sitting inside my <br> cabin before skiing.", 
-  "This is an image of me skiing in Wakefield <br> Michigan.",
-  "This is an image of where I was skiing in Wakefield Michigan.",
-  "This is a selfie of me skiing in Wakefield Michigan after I fell <br> and had snow all over my face.",
-  "This is a selfie of me skiing in Wakefield Michigan.",
-  "This is a selfie of me skiing in Wakefield Michigan."];
-  const wakefieldTitle = ["Cabin", "Wakefield", "Wakefield", "Wakefield", "Wakefield", "Wakefield"];
-  const wakefieldImageWidth = ["not-wide", "not-wide", "wide", "mid-wide", "mid-wide", "mid-wide"];
-  
-  sections("Wakefield", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth);
-  /**
-   * Detroit List
-   */
-  const detroitImages = ["../states-images/michigan-images/me.jpeg"];
-  const detroitImagesAlt = ["This is an image of me sitting inside a bus on a way to a German event."];
-  const detroitDates = ["August 31, 2013"];
-  const detroitDescription = ["This is an image of me sitting inside <br> a bus on a way to a German event."];
-  const detroitTitle = ["German Event"];
-  const detroitImageWidth = ["not-wide"];
-  
-  sections("Detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
+var captionText = document.getElementById("caption");  
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
+
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);    
+
+const sawyer = new ImageSet(
+  ["../states-images/michigan-images/sami.jpeg", "../states-images/michigan-images/nicole.jpeg", "../states-images/michigan-images/sami2.jpeg", "../states-images/michigan-images/nicole-sami.jpeg", "../states-images/michigan-images/gabi-nora.jpeg", "../states-images/michigan-images/sawyer2.jpeg", "../states-images/michigan-images/alex.jpeg", "../states-images/michigan-images/kaitlin-alex.jpeg", "../states-images/michigan-images/sawyer.jpeg", "../states-images/michigan-images/alex2.jpeg"],
+  ["This is the picture of my friend Sami and I sitting on a tree at The Dunes in Sawyer Michigan.", "This is the picture of my friend Nicole and I sitting on a tree at The Dunes in Sawyer Michigan.", "This is the picture of my friend Sami and I in the clean mud of The Dunes in Sawyer Michigan.", "This is the picture of my friends Nicole and Sami in the clean mud of The Dunes in Sawyer Michigan.", "This is the picture of my friends Gabi and Nora at the beach in Sawyer Michigan.", "This is the picture of my friends Alex, Kaitlin, Gabi, and Nora at the beach in Sawyer Michigan.", "This is the picture of my friend Alex and I sitting on a tree at the Dunes.", "This is the picture of my friends Alex, Kaitlin, and I sitting on a tree at the Dunes covered in clean mud.", "This is a group picture of my friends and I sitting on a tree at The Dunes.", "This is a selfie taken by me of my friend Alex and I covered in clean mud at The Dunes."],
+  ["July 14, 2019", "July 14, 2019", "July 14, 2019", "July 14, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019", "August 10, 2019"],
+  ["This is the picture of my friend Sami and I sitting on a tree at The Dunes in Sawyer Michigan.", "This is the picture of my friend Nicole and I sitting on a tree at The Dunes in Sawyer Michigan.", "This is the picture of my friend Sami and I in the clean mud of The Dunes in Sawyer Michigan.", "This is the picture of my friends Nicole and Sami in the clean mud of The Dunes in Sawyer Michigan.", "This is the picture of my friends Gabi and Nora at the beach in Sawyer Michigan.", "This is the picture of my friends Alex, Kaitlin, Gabi, and Nora at the beach in Sawyer Michigan.", "This is the picture of my friend Alex and I sitting on a tree at the Dunes.", "This is the picture of my friends Alex, Kaitlin, and I sitting on a tree at the Dunes covered in clean mud.", "This is a group picture of my friends and I sitting on a tree at The Dunes.", "This is a selfie taken by me of my friend Alex and I covered in clean mud at The Dunes."],
+  ["The Dunes", "The Dunes", "The Dunes", "Clean mud of The Dunes", "Beach of the Dunes", "Beach of the Dunes", "The Dunes", "The Dunes", "The Dunes", "Clean Mud"],
+  ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "mid-wide", "not-wide"]
+);
+  sections("Sawyer (The Dunes)", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
+
+const lakehouse = new ImageSet(
+  ["../states-images/michigan-images/nikki.jpeg", "../states-images/michigan-images/nikki-chloe.jpeg", "../states-images/michigan-images/nikki2.jpeg", "../states-images/michigan-images/fireworks.jpeg"],
+  ["This is a picture of my friend Nikki and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki, Chloe, and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki, Chloe, and I blowing up fireworks outside on the Fourth of July."],
+  ["July 4, 2020", "July 4, 2020", "July 4, 2020", "July 4, 2020"],
+  ["This is a picture of my friend Nikki and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki, Chloe, and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki and I at Lake Michigan Beach on the Fourth of July.", "This is an image of my friends Nikki, Chloe, and I blowing up fireworks outside on the Fourth of July."],
+  ["Lake Michigan Beach", "Lake Michigan Beach", "Lake Michigan Beach", "Fireworks"],
+  ["not-wide", "not-wide", "not-wide", "not-wide"]
+);
+  sections("Friend's Lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
+
+  const wakefield = new ImageSet(
+    ["../states-images/michigan-images/cabin.jpeg", "../states-images/michigan-images/wakefield3.jpeg", "../states-images/michigan-images/ski.jpeg", "../states-images/michigan-images/wakefield4.jpeg", "../states-images/michigan-images/wakefield.jpeg", "../states-images/michigan-images/wakefield2.jpeg"],
+    ["This is an image of me sitting inside my cabin before skiing.", "This is an image of me skiing in Wakefield Michigan.", "This is an image of where I was skiing in Wakefield Michigan.", "This is a selfie of me skiing in Wakefield Michigan after I fell and had snow all over my face.", "This is a selfie of me skiing in Wakefield Michigan.", "This is a selfie of me skiing in Wakefield Michigan."],
+    ["January 22, 2022", "January 22, 2022", "January 22, 2022", "January 22, 2022", "January 23, 2022", "January 23, 2022"],
+    ["This is an image of me sitting inside my cabin before skiing.", "This is an image of me skiing in Wakefield Michigan.", "This is an image of where I was skiing in Wakefield Michigan.", "This is a selfie of me skiing in Wakefield Michigan after I fell and had snow all over my face.", "This is a selfie of me skiing in Wakefield Michigan.", "This is a selfie of me skiing in Wakefield Michigan."],
+    ["Cabin", "Wakefield", "Wakefield", "Wakefield", "Wakefield", "Wakefield"],
+    ["not-wide", "not-wide", "wide", "mid-wide", "mid-wide", "mid-wide"]
+  );
+  sections("Wakefield", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
+
+  const detroit = new ImageSet(
+    ["../states-images/michigan-images/me.jpeg"],
+    ["This is an image of me sitting inside a bus on a way to a German event."],
+    ["August 31, 2013"],
+    ["This is an image of me sitting inside a bus on a way to a German event."],
+    ["German Event"],
+    ["not-wide"]
+  );
+  sections("Detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x == "Sawyer") 
@@ -88,28 +56,28 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       } 
-      document.getElementById("demo").appendChild(sections("Sawyer (The Dunes)", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Sawyer (The Dunes)", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth)); 
     }
     else if(x == "Lakehouse") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Friend's Lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Friend's Lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth)); 
     }
     else if(x == "Wakefield") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Wakefield", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Wakefield", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth)); 
     }
     else if(x == "Detroit") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth)); 
   
     }
     else if(x == "all") {
@@ -117,57 +85,55 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Sawyer (The Dunes)", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth);
-      sections("Friend's Lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth);
-      sections("Wakefield", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth);
-      sections("Detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
+      sections("Sawyer (The Dunes)", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
+      sections("Friend's Lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
+      sections("Wakefield", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
+      sections("Detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
     }
   }
-  var imagediv = document.createElement("div"); 
-  imagediv.classList.add('view-div');
-  document.getElementById("image-view-demo").appendChild(imagediv);    
 
+  var imageList = [];
+  var descriptionList = [];
+
+  for(var a = 0; a < sawyer.image.length; a++) {
+      imageList.push(sawyer.image[a]);
+      descriptionList.push(sawyer.description[a]);
+  }
+  for(var b = 0; b < lakehouse.image.length; b++) {
+    imageList.push(lakehouse.image[b]);
+    descriptionList.push(lakehouse.description[b]);
+  }
+  for(var c = 0; c < wakefield.image.length; c++) {
+    imageList.push(wakefield.image[c]);
+    descriptionList.push(wakefield.description[c]);
+  }
+  for(var d = 0; d < detroit.image.length; d++) {
+    imageList.push(detroit.image[d]);
+    descriptionList.push(detroit.description[d]);
+  }
     function images() {
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
     }
-    for(var a = 0; a < sawyerImages.length; a++) {
+    function imagesView(image, imagediv) {
+      for(var i = 0; i < image.length; i++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
-        viewImages.src = sawyerImages[a];
+        viewImages.src = image[i];
         imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
+        viewImages.onclick = images;
+      }
     }
-    for(var b = 0; b <  lakehouseImages.length; b++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = lakehouseImages[b];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var c = 0; c < wakefieldImages.length; c++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = wakefieldImages[c];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var d = 0; d < detroitImages.length; d++) {
-      var viewImages = document.createElement("img");
-      viewImages.classList.add('view-images');
-      viewImages.src = detroitImages[d];
-      imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
-  }
+
   function yearSelected() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2013") 
     {
-      var sawyerYear =  yearCollections(y, "sawyer", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth);
-      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth);
-      var wakefieldYear = yearCollections(y, "wakefield State University", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth);
-      var detroitYear = yearCollections(y, "Other Parts of detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
+      var sawyerYear =  yearCollections(y, "sawyer", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
+      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
+      var wakefieldYear = yearCollections(y, "wakefield State University", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
+      var detroitYear = yearCollections(y, "Other Parts of detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
   
       const yearImages = sawyerYear[1];
       const yearImageAlt = sawyerYear[2];
@@ -204,10 +170,10 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2019") 
     {
-      var sawyerYear =  yearCollections(y, "sawyer", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth);
-      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth);
-      var wakefieldYear = yearCollections(y, "wakefield State University", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth);
-      var detroitYear = yearCollections(y, "Other Parts of detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
+      var sawyerYear =  yearCollections(y, "sawyer", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
+      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
+      var wakefieldYear = yearCollections(y, "wakefield State University", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
+      var detroitYear = yearCollections(y, "Other Parts of detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
   
       const yearImages = sawyerYear[1];
       const yearImageAlt = sawyerYear[2];
@@ -244,10 +210,10 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2020") 
     {
-      var sawyerYear =  yearCollections(y, "sawyer", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth);
-      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth);
-      var wakefieldYear = yearCollections(y, "wakefield State University", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth);
-      var detroitYear = yearCollections(y, "Other Parts of detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
+      var sawyerYear =  yearCollections(y, "sawyer", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
+      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
+      var wakefieldYear = yearCollections(y, "wakefield State University", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
+      var detroitYear = yearCollections(y, "Other Parts of detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
   
       const yearImages = sawyerYear[1];
       const yearImageAlt = sawyerYear[2];
@@ -284,10 +250,10 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2022") 
     {
-      var sawyerYear =  yearCollections(y, "sawyer", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth);
-      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth);
-      var wakefieldYear = yearCollections(y, "wakefield State University", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth);
-      var detroitYear = yearCollections(y, "Other Parts of detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
+      var sawyerYear =  yearCollections(y, "sawyer", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
+      var lakehouseYear =  yearCollections(y, "lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
+      var wakefieldYear = yearCollections(y, "wakefield State University", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
+      var detroitYear = yearCollections(y, "Other Parts of detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
   
       const yearVImages = sawyerYear[1];
       const yearVImageAlt = sawyerYear[2];
@@ -327,10 +293,10 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("sawyer", sawyerImages, sawyerImagesAlt, sawyerDates, sawyerDescription, sawyerTitle, sawyerImageWidth);
-      sections("lakehouse", lakehouseImages, lakehouseImagesAlt, lakehouseDates, lakehouseDescription, lakehouseTitle, lakehouseImageWidth);
-      sections("wakefield State University", wakefieldImages, wakefieldImagesAlt, wakefieldDates, wakefieldDescription, wakefieldTitle, wakefieldImageWidth);
-      sections("Other Parts of detroit", detroitImages, detroitImagesAlt, detroitDates, detroitDescription, detroitTitle, detroitImageWidth);
+      sections("Sawyer (The Dunes)", sawyer.image, sawyer.imageAlt, sawyer.date, sawyer.description, sawyer.title, sawyer.imageWidth);
+      sections("Friend's Lakehouse", lakehouse.image, lakehouse.imageAlt, lakehouse.date, lakehouse.description, lakehouse.title, lakehouse.imageWidth);
+      sections("Wakefield", wakefield.image, wakefield.imageAlt, wakefield.date, wakefield.description, wakefield.title, wakefield.imageWidth);
+      sections("Detroit", detroit.image, detroit.imageAlt, detroit.date, detroit.description, detroit.title, detroit.imageWidth);
     }
   } 
   function yearCollections(year, ySection, yImage, yImageAlt, yDates, yDescription, yTitle, yImageWidth) {
@@ -505,10 +471,41 @@ var captionText = document.getElementById("caption");
       count = count + 2.0;
     }
   }
+  var currentIndex = 0; 
+      function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+      }      
+      prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+      });
+      nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+      });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+    if(substringIndex !== -1) {
+      var newUrl = "../" + this.src.substring(substringIndex);
+    }
+
+    for(var i = 0; i < imageList.length; i++) {
+      if(newUrl === imageList[i]) {
+        currentIndex = i;
+        imageIndex(i);
+      }
+    }
   }
   for(var i = 0; i < img.length; i++)
   {
