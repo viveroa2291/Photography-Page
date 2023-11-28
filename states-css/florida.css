@@ -75,13 +75,21 @@
     margin: auto;
     margin-bottom: 1px;
     display: block;
-    width: 80%;
+    width: auto;
     max-width: 450px;  
 }
 .not-wide-card {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    height: 550px;
+    height: 575px;
+    max-width: 350px;
+}
+.mid-wide {
+    width: auto;
+    max-width: 500px;
+}
+.mid-wide-card {
+    max-width: 500px;
 }
 @media (max-width: 1000px){
     br {
