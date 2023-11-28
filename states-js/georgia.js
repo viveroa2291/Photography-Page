@@ -3,66 +3,54 @@ var img = document.getElementsByClassName("georgia-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-  
-  /**
-   * Atlanta's Lists
-   */
-  const atlantaImages = ["../states-images/georgia-images/atlanta.jpeg", "../states-images/georgia-images/atlanta2.jpeg"];
-  const atlantaImagesAlt = ["This is a picture of me in downtown Atlanta. I really liked the city and what it had to offer.",
-  "This is the picture of me in downtown Atlanta."];
-  const atlantaDates = ["May 06, 2018", "May 06, 2018"];
-  const atlantaDescription = ["This is a picture of me in downtown Atlanta. I really liked the city <br> and what it had to offer.",
-  "This is the picture of me in downtown Atlanta."];
-  const atlantaTitle = ["Downtown Atlanta", "Downtown Atlanta"];
-  const atlantaImageWidth = ["mid-wide", "mid-wide"];
-  
-  sections("Atlanta", atlantaImages, atlantaImagesAlt, atlantaDates, atlantaDescription, atlantaTitle, atlantaImageWidth);
-  /**
-   * CNN Lists
-   */
-  const cnnImages = ["../states-images/georgia-images/cnn.jpeg", "../states-images/georgia-images/cnn2.jpeg"];
-  const cnnImagesAlt = ["This is a picture of me standing outside of the CNN building next to the sign.",
-  "This is a selfie of me inside of the CNN building next to an anchor's chair and table where the news is reported."];
-  const cnnDates = ["May 06, 2018", "May 06, 2018"];
-  const cnnDescription = ["This is a picture of me standing outside of the CNN building next <br> to the sign.",
-  "This is a selfie of me inside of the CNN building next to an <br> anchor's chair and table where the news is reported."];
-  const cnnTitle = ["CNN Building", "Inside CNN"];
-  const cnnImageWidth = ["mid-wide", "mid-wide"];
-  
-  sections("CNN", cnnImages, cnnImagesAlt, cnnDates, cnnDescription, cnnTitle, cnnImageWidth);
-  /**
-   * Coca-Cola Lists
-   */
-  const cocaImages = ["../states-images/georgia-images/coca-cola.jpeg", "../states-images/georgia-images/coca-cola3.jpeg", "../states-images/georgia-images/coca-cola2.jpeg"];
-  const cocaImagesAlt = ["This is a picture of me sitting on a couch enjoying a coke drink inside the World of Coca-Cola located in Atlanta.",
-  "This is a picture of me inside of the World of Coca-Cola. I thought this looked cool.",
-  "This is an image of me jumping outside of the World of Coca Cola sign."];
-  const cocaDates = ["May 06, 2018", "May 06, 2018", "May 06, 2018"];
-  const cocaDescription = ["This is a picture of me sitting on a couch enjoying a coke drink inside <br> the World of Coca-Cola located in Atlanta.",
-  "This is a picture of me inside of the World of Coca-Cola. I thought <br> this looked cool.",
-  "This is an image of me jumping outside <br> of the World of Coca Cola sign."];
-  const cocaTitle = ["Inside the World of Coca-Cola", "Inside the World of Coca-Cola", "Outside of the World of Coca-Cola"];
-  const cocaImageWidth = ["mid-wide", "mid-wide", "not-wide"];
-  
-  sections("World of Coca-Cola", cocaImages, cocaImagesAlt, cocaDates, cocaDescription, cocaTitle, cocaImageWidth);
-  /**
-   * Other Georgia Lists
-   */
-  const georgiaImages = ["../states-images/georgia-images/airport.jpeg", "../states-images/georgia-images/dinner.jpeg", "../states-images/georgia-images/pool.jpeg", "../states-images/georgia-images/hotel.jpeg"];
-  const georgiaImagesAlt = ["This is a picture of my sister's national team for gymnastics. She is part of the special olympics and I was there to help coach the boys. We took a group picture in the airport and I believe this airport ranks in the United States for being one of the biggest airports in the United States.",
-  "This is a picture of me standing outside of the Marietta Diner which was where we ate for dinner.",
-  "This is a picture of me sitting pool side by my hotel",
-  "This is a mirror picture of me in the hotel."];
-  const georgiaDates = ["May 04, 2018", "May 04, 2018", "May 04, 2018", "May 06, 2018"];
-  const georgiaDescription = ["This is a picture of my sister's national team for gymnastics. She is <br> part of the special olympics and I was there to help coach the boys. <br> We took a group picture in the airport and I believe this airport ranks <br> in the United States for being one of the biggest airports in the <br> United States.",
-  "This is a picture of me standing outside of the Marietta Diner <br> which was where we ate for dinner.",
-  "This is a picture of me sitting pool side <br> by my hotel.",
-  "This is a mirror picture of me in the hotel."];
-  const georgiaTitle = ["Airport", "Marietta Diner", "Pool", "Mirror Picture"];
-  const georgiaImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide"];
-  
-  sections("Other Georgia Pictures", georgiaImages, georgiaImagesAlt, georgiaDates, georgiaDescription, georgiaTitle, georgiaImageWidth);
-  
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
+
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);    
+
+const atlanta = new ImageSet(
+  ["../states-images/georgia-images/atlanta.jpeg", "../states-images/georgia-images/atlanta2.jpeg"],
+  ["This is a picture of me in downtown Atlanta. I really liked the city and what it had to offer.", "This is the picture of me in downtown Atlanta."],
+  ["May 06, 2018", "May 06, 2018"],
+  ["This is a picture of me in downtown Atlanta. I really liked the city and what it had to offer.", "This is the picture of me in downtown Atlanta."],
+  ["Downtown Atlanta", "Downtown Atlanta"],
+  ["mid-wide", "mid-wide"]
+);
+  sections("Atlanta", atlanta.image, atlanta.imageAlt, atlanta.date, atlanta.description, atlanta.title, atlanta.imageWidth);
+  imagesView(atlanta.image, imagediv);
+  const cnn = new ImageSet(
+    ["../states-images/georgia-images/cnn.jpeg", "../states-images/georgia-images/cnn2.jpeg"],
+    ["This is a picture of me standing outside of the CNN building next to the sign.", "This is a selfie of me inside of the CNN building next to an anchor's chair and table where the news is reported."],
+    ["May 06, 2018", "May 06, 2018"],
+    ["This is a picture of me standing outside of the CNN building next to the sign.", "This is a selfie of me inside of the CNN building next to an anchor's chair and table where the news is reported."],
+    ["CNN Building", "Inside CNN"],
+    ["mid-wide", "mid-wide"]
+  );
+  sections("CNN", cnn.image, cnn.imageAlt, cnn.date, cnn.description, cnn.title, cnn.imageWidth);
+  imagesView(cnn.image, imagediv);
+  const coca = new ImageSet(
+    ["../states-images/georgia-images/coca-cola.jpeg", "../states-images/georgia-images/coca-cola3.jpeg", "../states-images/georgia-images/coca-cola2.jpeg"],
+    ["This is a picture of me sitting on a couch enjoying a coke drink inside the World of Coca-Cola located in Atlanta.", "This is a picture of me inside of the World of Coca-Cola. I thought this looked cool.", "This is an image of me jumping outside of the World of Coca Cola sign."],
+    ["May 06, 2018", "May 06, 2018", "May 06, 2018"],
+    ["This is a picture of me sitting on a couch enjoying a coke drink inside the World of Coca-Cola located in Atlanta.", "This is a picture of me inside of the World of Coca-Cola. I thought this looked cool.", "This is an image of me jumping outside of the World of Coca Cola sign."],
+    ["Inside the World of Coca-Cola", "Inside the World of Coca-Cola", "Outside of the World of Coca-Cola"],
+    ["mid-wide", "mid-wide", "not-wide"]
+  );
+  sections("World of Coca-Cola", coca.image, coca.imageAlt, coca.date, coca.description, coca.title, coca.imageWidth);
+  imagesView(coca.image, imagediv);
+  const georgia = new ImageSet(
+    ["../states-images/georgia-images/airport.jpeg", "../states-images/georgia-images/dinner.jpeg", "../states-images/georgia-images/pool.jpeg", "../states-images/georgia-images/hotel.jpeg"],
+    ["This is a picture of my sister's national team for gymnastics. She is part of the special olympics and I was there to help coach the boys. We took a group picture in the airport and I believe this airport ranks in the United States for being one of the biggest airports in the United States.", "This is a picture of me standing outside of the Marietta Diner which was where we ate for dinner.", "This is a picture of me sitting pool side by my hotel", "This is a mirror picture of me in the hotel."],
+    ["May 04, 2018", "May 04, 2018", "May 04, 2018", "May 06, 2018"],
+    ["This is a picture of my sister's national team for gymnastics. She is part of the special olympics and I was there to help coach the boys. We took a group picture in the airport and I believe this airport ranks in the United States for being one of the biggest airports in the United States.", "This is a picture of me standing outside of the Marietta Diner which was where we ate for dinner.", "This is a picture of me sitting pool side by my hotel", "This is a mirror picture of me in the hotel."],
+    ["Airport", "Marietta Diner", "Pool", "Mirror Picture"],
+    ["mid-wide", "mid-wide", "not-wide", "not-wide"]
+  );
+  sections("Other Georgia Pictures", georgia.image, georgia.imageAlt, georgia.date, georgia.description, georgia.title, georgia.imageWidth);
+  imagesView(georgia.image, imagediv);
+
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x == "Atlanta") 
@@ -70,77 +58,74 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       } 
-      document.getElementById("demo").appendChild(sections("Atlanta", atlantaImages, atlantaImagesAlt, atlantaDates, atlantaDescription, atlantaTitle, atlantaImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Atlanta", atlanta.image, atlanta.imageAlt, atlanta.date, atlanta.description, atlanta.title, atlanta.imageWidth)); 
     }
     else if(x == "Cnn") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("CNN", cnnImages, cnnImagesAlt, cnnDates, cnnDescription, cnnTitle, cnnImageWidth)); 
+      document.getElementById("demo").appendChild(sections("CNN", cnn.image, cnn.imageAlt, cnn.date, cnn.description, cnn.title, cnn.imageWidth)); 
     }
     else if(x == "Coca") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("World of Coca-Cola", cocaImages, cocaImagesAlt, cocaDates, cocaDescription, cocaTitle, cocaImageWidth)); 
+      document.getElementById("demo").appendChild(sections("World of Coca-Cola", coca.image, coca.imageAlt, coca.date, coca.description, coca.title, coca.imageWidth)); 
   
     }
     else if(x == "Other") {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Other Georgia Pictures", georgiaImages, georgiaImagesAlt, georgiaDates, georgiaDescription, georgiaTitle, georgiaImageWidth));  
+      document.getElementById("demo").appendChild(sections("Other Georgia Pictures", georgia.image, georgia.imageAlt, georgia.date, georgia.description, georgia.title, georgia.imageWidth));  
     }
     else if(x == "all") {
   
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Atlanta", atlantaImages, atlantaImagesAlt, atlantaDates, atlantaDescription, atlantaTitle, atlantaImageWidth);
-      sections("CNN", cnnImages, cnnImagesAlt, cnnDates, cnnDescription, cnnTitle, cnnImageWidth);
-      sections("World of Coca-Cola", cocaImages, cocaImagesAlt, cocaDates, cocaDescription, cocaTitle, cocaImageWidth);
-      sections("Other Georgia Pictures", georgiaImages, georgiaImagesAlt, georgiaDates, georgiaDescription, georgiaTitle, georgiaImageWidth);
+      sections("Atlanta", atlanta.image, atlanta.imageAlt, atlanta.date, atlanta.description, atlanta.title, atlanta.imageWidth);
+      sections("CNN", cnn.image, cnn.imageAlt, cnn.date, cnn.description, cnn.title, cnn.imageWidth);
+      sections("World of Coca-Cola", coca.image, coca.imageAlt, coca.date, coca.description, coca.title, coca.imageWidth);
+      sections("Other Georgia Pictures", georgia.image, georgia.imageAlt, georgia.date, georgia.description, georgia.title, georgia.imageWidth);
     }
   }
-  var imagediv = document.createElement("div"); 
-  imagediv.classList.add('view-div');
-  document.getElementById("image-view-demo").appendChild(imagediv);    
+var imageList = [];
+var descriptionList = [];
 
+for(var a = 0; a < atlanta.image.length; a++) {
+  imageList.push(atlanta.image[a]);
+  descriptionList.push(atlanta.description[a]);
+}
+for(var b = 0; b < cnn.image.length; b++) {
+  imageList.push(cnn.image[b]);
+  descriptionList.push(cnn.description[b]);
+}
+for(var c = 0; c < coca.image.length; c++) {
+  imageList.push(coca.image[c]);
+  descriptionList.push(coca.description[c]);
+}
+for(var d = 0; d < georgia.image.length; d++) {
+  imageList.push(georgia.image[d]);
+  descriptionList.push(georgia.description[d]);
+}
     function images() {
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
     }
-    for(var a = 0; a < atlantaImages.length; a++) {
+    function imagesView(image, imagediv) {
+      for(var i = 0; i < image.length; i++) {
         var viewImages = document.createElement("img");
         viewImages.classList.add('view-images');
-        viewImages.src = atlantaImages[a];
+        viewImages.src = image[i];
         imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
+        viewImages.onclick = images;
+      }
     }
-    for(var b = 0; b <  cnnImages.length; b++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = cnnImages[b];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var c = 0; c < cocaImages.length; c++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = cocaImages[c];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var d = 0; d < georgiaImages.length; d++) {
-      var viewImages = document.createElement("img");
-      viewImages.classList.add('view-images');
-      viewImages.src = georgiaImages[d];
-      imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
-  }
+
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0;
     
@@ -242,10 +227,41 @@ var captionText = document.getElementById("caption");
       count = count + 2.0;
     }
   }
+  var currentIndex = 0; 
+    function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+    }      
+    prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+    });
+    nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+    });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+      if(substringIndex !== -1) {
+          var newUrl = "../" + this.src.substring(substringIndex);
+      }
+
+      for(var i = 0; i < imageList.length; i++) {
+          if(newUrl === imageList[i]) {
+            currentIndex = i;
+            imageIndex(i);
+          }
+      }
   }
   for(var i = 0; i < img.length; i++)
   {
