@@ -3,41 +3,28 @@ var img = document.getElementsByClassName("indiana-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-  
-  /**
-   * Indiana Lists 
-   */
-  const indianaImages = ["../states-images/indiana-images/nikki-sami.jpeg", "../states-images/indiana-images/nikki-sami2.jpeg", "../states-images/indiana-images/nikki.jpeg", "../states-images/indiana-images/kelleys.jpeg", "../states-images/indiana-images/bears.jpeg", "../states-images/indiana-images/sean.jpeg", "../states-images/indiana-images/upstairs.jpeg", "../states-images/indiana-images/street.jpeg", "../states-images/indiana-images/la-una.jpeg", "../states-images/indiana-images/la-una2.jpeg"];
-  const indianaImageAlt = ["This is a picture of me and my friends Nikki and Sami inside of Nikki's room at Indiana University for her move in day.",
-  "This is the picture of my friends Nikki, Sami, and I standing outside an Indiana University sign.",
-  "This is the picture of my friend Nikki and I in a Halloween costume posing before going out to a party.",
-  "This is a picture of me standing outside of the Kelley's School of Business at Indiana University.",
-  "This is an image of me standing outside of Bear's Place.",
-  "This is an image of my friend Sean and I at Indiana University.",
-  "This is a picture of me at the Upstairs Pub located in Bloomington Indiana. My friend who attends school there took me out after a long day of helping her move out.",
-  "This is a picture of me on the street in Bloomington Indiana. I thought the scenery was good, however it appears that it looks better in person than on camera.",
-  "This is an image inside of a restaurant in Bloomington with cool wall art and a sign that says 'Make Tacos Not War', which is a message I enjoy.",
-  "This is a picture of me standing in front of a grassy wall art that I always wanted to take in my lifetime. I was never able to find a place that had such thing, but found it inside La Una Cantina and had the urge to make my friend take a picture of me."];
-  const indianaDates = ["August 22, 2019", "August 22, 2019", "November 1, 2019", "May 30, 2020", "May 31, 2020", "May 31, 2020", "July 21, 2022", "July 21, 2022", "July 21, 2022", "July 21, 2022"];
-  const indianaDescription = ["This is a picture of me and my friends <br> Nikki and Sami inside of Nikki's room at <br> Indiana University for her move in day.",
-  "This is the picture of my friends Nikki, <br> Sami, and I standing outside an <br> Indiana University sign.",
-  "This is the picture of my friend Nikki and I <br> in a Halloween costume posing before <br> going out to a party.",
-  "This is a picture of me standing outside of the Kelley's School of Business <br> at Indiana University.",
-  "This is an image of me standing outside of Bear's Place.",
-  "This is an image of my friend Sean <br> and I at Indiana University.",
-  "This is a picture of me at the Upstairs <br> Pub located in Bloomington Indiana. <br> My friend who attends school there <br> took me out after a long day of helping <br> her move out.",
-  "This is a picture of me on the street in <br> Bloomington Indiana. I thought the <br> scenery was good, however it appears <br> that it looks better in person than on <br> camera.",
-  "This is an image inside of a restaurant <br> in Bloomington with cool wall art and <br> a sign that says 'Make Tacos Not War', <br> which is a message I enjoy.",
-  "This is a picture of me standing in front <br> of a grassy wall art that I always wanted <br> to take in my lifetime. I was never able to <br> find a place that had such thing, but <br> found it inside La Una Cantina and had <br> the urge to make my friend take a picture <br> of me."];
-  const indianaTitle = ["Nikki's Dorm", "Indiana University", "Nikki's Dorm", "Kelley's School of Business", "Bear's Place", "Indiana University", "Upstairs Pub (Indiana University)", "Bloomington Indiana", "La Una Cantina", "La Una Cantina"];
-  const indianaImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
-  sections("Indiana University", indianaImages, indianaImageAlt, indianaDates, indianaDescription, indianaTitle, indianaImageWidth);
-  
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
+
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);   
+
+const indiana = new ImageSet(
+  ["../states-images/indiana-images/nikki-sami.jpeg", "../states-images/indiana-images/nikki-sami2.jpeg", "../states-images/indiana-images/nikki.jpeg", "../states-images/indiana-images/kelleys.jpeg", "../states-images/indiana-images/bears.jpeg", "../states-images/indiana-images/sean.jpeg", "../states-images/indiana-images/upstairs.jpeg", "../states-images/indiana-images/street.jpeg", "../states-images/indiana-images/la-una.jpeg", "../states-images/indiana-images/la-una2.jpeg", "../states-images/indiana-images/graduation.jpeg"],
+  ["This is a picture of me and my friends Nikki and Sami inside of Nikki's room at Indiana University for her move in day.", "This is the picture of my friends Nikki, Sami, and I standing outside an Indiana University sign.", "This is the picture of my friend Nikki and I in a Halloween costume posing before going out to a party.", "This is a picture of me standing outside of the Kelley's School of Business at Indiana University.", "This is an image of me standing outside of Bear's Place.", "This is an image of my friend Sean and I at Indiana University.", "This is a picture of me at the Upstairs Pub located in Bloomington Indiana. My friend who attends school there took me out after a long day of helping her move out.", "This is a picture of me on the street in Bloomington Indiana. I thought the scenery was good, however it appears that it looks better in person than on camera.", "This is an image inside of a restaurant in Bloomington with cool wall art and a sign that says 'Make Tacos Not War', which is a message I enjoy.", "This is a picture of me standing in front of a grassy wall art that I always wanted to take in my lifetime. I was never able to find a place that had such thing, but found it inside La Una Cantina and had the urge to make my friend take a picture of me.", "This is a picture of my friend Nikki's graduation from Indiana University."],
+  ["August 22, 2019", "August 22, 2019", "November 1, 2019", "May 30, 2020", "May 31, 2020", "May 31, 2020", "July 21, 2022", "July 21, 2022", "July 21, 2022", "July 21, 2022", "May 6, 2023"],
+  ["This is a picture of me and my friends Nikki and Sami inside of Nikki's room at Indiana University for her move in day.", "This is the picture of my friends Nikki, Sami, and I standing outside an Indiana University sign.", "This is the picture of my friend Nikki and I in a Halloween costume posing before going out to a party.", "This is a picture of me standing outside of the Kelley's School of Business at Indiana University.", "This is an image of me standing outside of Bear's Place.", "This is an image of my friend Sean and I at Indiana University.", "This is a picture of me at the Upstairs Pub located in Bloomington Indiana. My friend who attends school there took me out after a long day of helping her move out.", "This is a picture of me on the street in Bloomington Indiana. I thought the scenery was good, however it appears that it looks better in person than on camera.", "This is an image inside of a restaurant in Bloomington with cool wall art and a sign that says 'Make Tacos Not War', which is a message I enjoy.", "This is a picture of me standing in front of a grassy wall art that I always wanted to take in my lifetime. I was never able to find a place that had such thing, but found it inside La Una Cantina and had the urge to make my friend take a picture of me.", "This is a picture of my friend Nikki's graduation from Indiana University."],
+  ["Nikki's Dorm", "Indiana University", "Nikki's Dorm", "Kelley's School of Business", "Bear's Place", "Indiana University", "Upstairs Pub (Indiana University)", "Bloomington Indiana", "La Una Cantina", "La Una Cantina", "Indiana University football stadium"],
+  ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"]
+);
+sections("Indiana University", indiana.image, indiana.imageAlt, indiana.date, indiana.description, indiana.title, indiana.imageWidth);
+imagesView(indiana.image, imagediv);
   function yearSelected() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2019") 
     {
-      var indianaYear =  yearCollections(y, "Indiana University", indianaImages, indianaImageAlt, indianaDates, indianaDescription, indianaTitle, indianaImageWidth);
+      var indianaYear =  yearCollections(y, "Indiana University", indiana.image, indiana.imageAlt, indiana.date, indiana.description, indiana.title, indiana.imageWidth);
   
       const yearImages = indianaYear[1];
       const yearImageAlt = indianaYear[2];
@@ -53,7 +40,7 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2020") 
     {
-      var indianaYear =  yearCollections(y, "Indiana University", indianaImages, indianaImageAlt, indianaDates, indianaDescription, indianaTitle, indianaImageWidth);
+      var indianaYear =  yearCollections(y, "Indiana University", indiana.image, indiana.imageAlt, indiana.date, indiana.description, indiana.title, indiana.imageWidth);
   
       const yearImages = indianaYear[1];
       const yearImageAlt = indianaYear[2];
@@ -69,7 +56,7 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2022") 
     {
-      var indianaYear =  yearCollections(y, "Indiana University", indianaImages, indianaImageAlt, indianaDates, indianaDescription, indianaTitle, indianaImageWidth);
+      var indianaYear =  yearCollections(y, "Indiana University", indiana.image, indiana.imageAlt, indiana.date, indiana.description, indiana.title, indiana.imageWidth);
   
       const yearImages = indianaYear[1];
       const yearImageAlt = indianaYear[2];
@@ -87,7 +74,7 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Indiana University", indianaImages, indianaImageAlt, indianaDates, indianaDescription, indianaTitle, indianaImageWidth); 
+      sections("Indiana University", indiana.image, indiana.imageAlt, indiana.date, indiana.description, indiana.title, indiana.imageWidth); 
     }
   }
   function yearCollections(year, ySection, yImage, yImageAlt, yDates, yDescription, yTitle, yImageWidth) {
@@ -118,21 +105,28 @@ var captionText = document.getElementById("caption");
     }
       return[sect, yearImage, yearImageAlt, yearDates, yearDescription, yearTitle, yearImageWidth];
     }
-    var imagediv = document.createElement("div"); 
-    imagediv.classList.add('view-div');
-    document.getElementById("image-view-demo").appendChild(imagediv);    
+ 
+    var imageList = [];
+    var descriptionList = [];
+
+    for(var a = 0; a < indiana.image.length; a++) {
+      imageList.push(indiana.image[a]);
+      descriptionList.push(indiana.description[a]);
+    }
   
     function images() {
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
     }
-    for(var a = 0; a < indianaImages.length; a++) {
+    function imagesView(image, imagediv) {
+      for(var i = 0; i < image.length; i++) {
         var viewImages = document.createElement("img");
-          viewImages.classList.add('view-images');
-          viewImages.src = indianaImages[a];
-          imagediv.appendChild(viewImages);
-          viewImages.onclick = images; 
+        viewImages.classList.add('view-images');
+        viewImages.src = image[i];
+        imagediv.appendChild(viewImages);
+        viewImages.onclick = images;
+      }
     }
     
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
@@ -237,10 +231,41 @@ var captionText = document.getElementById("caption");
       count = count + 2.0;
     }
   }
+  var currentIndex = 0; 
+  function imageIndex(delta) {
+      modal.style.display = "block";
+      modalImg.src = imageList[delta];
+      captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+    if(currentIndex > 0) {
+        currentIndex--;
+    }
+    imageIndex(currentIndex);
+  });
+  nextButton.addEventListener('click', function() {
+    if (currentIndex < imageList.length - 1) {
+        currentIndex++;
+    }
+    imageIndex(currentIndex);
+  });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+        if(substringIndex !== -1) {
+            var newUrl = "../" + this.src.substring(substringIndex);
+        }
+
+        for(var i = 0; i < imageList.length; i++) {
+          if(newUrl === imageList[i]) {
+              currentIndex = i;
+          imageIndex(i);
+        }
+      }
   }
   for(var i = 0; i < img.length; i++)
   {
