@@ -3,55 +3,53 @@ var img = document.getElementsByClassName("missouri-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-  
-  /**
-   * Mizzou Lists
-   */
-  const mizzouImages = ["../states-images/missouri-images/sami.jpeg", "../states-images/missouri-images/me.jpeg", "../states-images/missouri-images/mikayla.jpeg", "../states-images/missouri-images/sami3.jpeg", "../states-images/missouri-images/sami2.jpeg", "../states-images/missouri-images/sami-rise.jpeg", "../states-images/missouri-images/stadium.jpeg"];
-  const mizzouImagesAlt = ["This is a picture of my friend Sami and I at the Mizzou commons.", 
-  "This is the picture of me holding a 'Fight Tiger' sign at the commons at the University of Missouri.",
-  "This is the picture of my friend Mikayla and I at the University of Missouri commons holding a 'Fight Tiger' sign.",
-  "This is a picture of my friend Sami and I holding a cat inside of her dorm.",
-  "This is a picture of my friend Sami and I at the University of Missouri.",
-  "This is a picture of my friend Sami and I at the University of Missouri.",
-  "This is a picture of me standing outside of the University of Missouri football stadium."];
-  const mizzouDates = ["August 20, 2020", "August 20, 2020", "August 20, 2020", "August 22, 2020", "September 12, 2020", "September 12, 2020", "May 11, 2021"];
-  const mizzouDescription = ["This is a picture of my friend Sami and I <br> at the Mizzou commons.",
-  "This is the picture of me holding a <br> 'Fight Tiger' sign at the commons <br> at the University of Missouri.",
-  "This is the picture of my friend Mikayla and I <br> at the University of Missouri commons <br> holding a 'Fight Tiger' sign.",
-  "This is a picture of my friend Sami and I <br> holding a cat inside of her dorm.",
-  "This is a picture of my friend Sami and I <br> at the University of Missouri.",
-  "This is a picture of my friend Sami and I <br> at the University of Missouri.",
-  "This is a picture of me standing outside <br> of the University of Missouri football <br> stadium."];
-  const mizzouTitle = ["University of Missouri", "University of Missouri", "University of Missouri", "The Rise", "University of Missouri", "The Rise", "Mizzou Stadium"];
-  const mizzouImageWidth = ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
-  
-  sections("University of Missouri", mizzouImages, mizzouImagesAlt, mizzouDates, mizzouDescription, mizzouTitle, mizzouImageWidth);
-  
-  /**
-   * Eldon Caves Lists
-   */
-  const eldonImages = ["../states-images/missouri-images/cave.jpeg", "../states-images/missouri-images/cave2.jpeg", "../states-images/missouri-images/sami-cave.jpeg", "../states-images/missouri-images/cesar.jpeg", "../states-images/missouri-images/sami-nikki.jpeg", "../states-images/missouri-images/group.jpeg", "../states-images/missouri-images/cave-red.jpeg"];
-  const eldonImagesAlt = ["This is a picture of the cave that we went to visit while we were in Missouri.",
-  "This is a picture of the cave that we went to visit while we were in Missouri.",
-  "This is the picture of my friend Sami and I inside the cave that we went to visit while in Missouri.",
-  "This is the picture of my friend Cesar and I inside the cave that we went to visit while in Missouri.",
-  "This is the picture of my friends Nikki, Sami, and I inside the cave that we went to visit while in Missouri.",
-  "This is a group picture of my friends Nikki, Sami, Cesar, and I inside the cave that we went to visit while in Missouri.",
-  "This is the picture of the cave that we went to visit while in Missouri."];
-  const eldonDates = ["May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021"];
-  const eldonDescription = ["This is a picture of the cave that we went to visit while we were <br> in Missouri.",
-  "This is a picture of the cave that we went to visit while we were <br> in Missouri.",
-  "This is the picture of my friend Sami and I <br> inside the cave that we went to visit while <br> in Missouri.",
-  "This is the picture of my friend Cesar and I <br> inside the cave that we went to visit while <br> in Missouri.",
-  "This is the picture of my friends Nikki, Sami, <br> and I inside the cave that we went to visit <br> while in Missouri.",
-  "This is a group picture of my friends Nikki, <br> Sami, Cesar, and I inside the cave that <br> we went to visit while in Missouri.",
-  "This is the picture of the cave that we went <br> to visit while in Missouri."];
-  const eldonTitle = ["Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves"];
-  const eldonImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"];
-  
-  sections("Eldon Caves", eldonImages, eldonImagesAlt, eldonDates, eldonDescription, eldonTitle, eldonImageWidth);
-  
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
+
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);
+ 
+const mizzou = new ImageSet(
+  ["../states-images/missouri-images/sami.jpeg", "../states-images/missouri-images/me.jpeg", "../states-images/missouri-images/mikayla.jpeg", "../states-images/missouri-images/sami3.jpeg", "../states-images/missouri-images/sami2.jpeg", "../states-images/missouri-images/sami-rise.jpeg", "../states-images/missouri-images/stadium.jpeg"],
+  ["This is a picture of my friend Sami and I at the Mizzou commons.", "This is the picture of me holding a 'Fight Tiger' sign at the commons at the University of Missouri.", "This is the picture of my friend Mikayla and I at the University of Missouri commons holding a 'Fight Tiger' sign.", "This is a picture of my friend Sami and I holding a cat inside of her dorm.", "This is a picture of my friend Sami and I at the University of Missouri.", "This is a picture of my friend Sami and I at the University of Missouri.", "This is a picture of me standing outside of the University of Missouri football stadium."],
+  ["August 20, 2020", "August 20, 2020", "August 20, 2020", "August 22, 2020", "September 12, 2020", "September 12, 2020", "May 11, 2021"],
+  ["This is a picture of my friend Sami and I at the Mizzou commons.", "This is the picture of me holding a 'Fight Tiger' sign at the commons at the University of Missouri.", "This is the picture of my friend Mikayla and I at the University of Missouri commons holding a 'Fight Tiger' sign.", "This is a picture of my friend Sami and I holding a cat inside of her dorm.", "This is a picture of my friend Sami and I at the University of Missouri.", "This is a picture of my friend Sami and I at the University of Missouri.", "This is a picture of me standing outside of the University of Missouri football stadium."],
+  ["University of Missouri", "University of Missouri", "University of Missouri", "The Rise", "University of Missouri", "The Rise", "Mizzou Stadium"],
+  ["not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"]
+);
+sections("University of Missouri", mizzou.image, mizzou.imageAlt, mizzou.date, mizzou.description, mizzou.title, mizzou.imageWidth);
+imagesView(mizzou.image, imagediv);
+const eldon = new ImageSet(
+    ["../states-images/missouri-images/cave.jpeg", "../states-images/missouri-images/cave2.jpeg", "../states-images/missouri-images/sami-cave.jpeg", "../states-images/missouri-images/cesar.jpeg", "../states-images/missouri-images/sami-nikki.jpeg", "../states-images/missouri-images/group.jpeg", "../states-images/missouri-images/cave-red.jpeg"],
+    ["This is a picture of the cave that we went to visit while we were in Missouri.", "This is a picture of the cave that we went to visit while we were in Missouri.", "This is the picture of my friend Sami and I inside the cave that we went to visit while in Missouri.", "This is the picture of my friend Cesar and I inside the cave that we went to visit while in Missouri.", "This is the picture of my friends Nikki, Sami, and I inside the cave that we went to visit while in Missouri.", "This is a group picture of my friends Nikki, Sami, Cesar, and I inside the cave that we went to visit while in Missouri.", "This is the picture of the cave that we went to visit while in Missouri."],
+    ["May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021", "May 11, 2021"],
+    ["This is a picture of the cave that we went to visit while we were in Missouri.", "This is a picture of the cave that we went to visit while we were in Missouri.", "This is the picture of my friend Sami and I inside the cave that we went to visit while in Missouri.", "This is the picture of my friend Cesar and I inside the cave that we went to visit while in Missouri.", "This is the picture of my friends Nikki, Sami, and I inside the cave that we went to visit while in Missouri.", "This is a group picture of my friends Nikki, Sami, Cesar, and I inside the cave that we went to visit while in Missouri.", "This is the picture of the cave that we went to visit while in Missouri."],
+    ["Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves", "Eldon Caves"],
+    ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "not-wide", "not-wide"]
+);
+sections("Eldon Caves", eldon.image, eldon.imageAlt, eldon.date, eldon.description, eldon.title, eldon.imageWidth);
+imagesView(eldon.image, imagediv);
+var imageList = [];
+var descriptionList = [];
+
+for(var a = 0; a < mizzou.image.length; a++) {
+    imageList.push(mizzou.image[a]);
+    descriptionList.push(mizzou.description[a]); 
+}
+for(var b = 0; b < eldon.image.length; b++) {
+    imageList.push(eldon.image[b]);
+    descriptionList.push(eldon.description[b]);
+}
+function imagesView(image, imagediv) {
+  for(var i = 0; i < image.length; i++) {
+    var viewImages = document.createElement("img");
+    viewImages.classList.add('view-images');
+    viewImages.src = image[i];
+    imagediv.appendChild(viewImages);
+    viewImages.onclick = images;
+  }
+}
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x == "Mizzou") 
@@ -59,29 +57,29 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       } 
-      document.getElementById("demo").appendChild(sections("University of Missouri", mizzouImages, mizzouImagesAlt, mizzouDates, mizzouDescription, mizzouTitle, mizzouImageWidth)); 
+      document.getElementById("demo").appendChild(sections("University of Missouri", mizzou.image, mizzou.imageAlt, mizzou.date, mizzou.description, mizzou.title, mizzou.imageWidth)); 
     }
     else if(x == "Eldon") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Eldon Caves", eldonImages, eldonImagesAlt, eldonDates, eldonDescription, eldonTitle, eldonImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Eldon Caves", eldon.image, eldon.imageAlt, eldon.date, eldon.description, eldon.title, eldon.imageWidth)); 
     }
     else if(x == "all") {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("University of Missouri", mizzouImages, mizzouImagesAlt, mizzouDates, mizzouDescription, mizzouTitle, mizzouImageWidth);
-      sections("Eldon Caves", eldonImages, eldonImagesAlt, eldonDates, eldonDescription, eldonTitle, eldonImageWidth); 
-    }
+      sections("University of Missouri", mizzou.image, mizzou.imageAlt, mizzou.date, mizzou.description, mizzou.title, mizzou.imageWidth);
+      sections("Eldon Caves", eldon.image, eldon.imageAlt, eldon.date, eldon.description, eldon.title, eldon.imageWidth);
   }
+}
   function yearSelected() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2020") 
     {
-      var mizzouYear =  yearCollections(y, "mizzou", mizzouImages, mizzouImagesAlt, mizzouDates, mizzouDescription, mizzouTitle, mizzouImageWidth);
-      var eldonYear =  yearCollections(y, "eldon", eldonImages, eldonImagesAlt, eldonDates, eldonDescription, eldonTitle, eldonImageWidth);
+      var mizzouYear =  yearCollections(y, "mizzou", mizzou.image, mizzou.imageAlt, mizzou.date, mizzou.description, mizzou.title, mizzou.imageWidth);
+      var eldonYear =  yearCollections(y, "eldon", eldon.image, eldon.imageAlt, eldon.date, eldon.description, eldon.title, eldon.imageWidth);
   
       const yearImages = mizzouYear[1];
       const yearImageAlt = mizzouYear[2];
@@ -104,8 +102,8 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2021") 
     {
-      var mizzouYear =  yearCollections(y, "mizzou", mizzouImages, mizzouImagesAlt, mizzouDates, mizzouDescription, mizzouTitle, mizzouImageWidth);
-      var eldonYear =  yearCollections(y, "eldon", eldonImages, eldonImagesAlt, eldonDates, eldonDescription, eldonTitle, eldonImageWidth);
+      var mizzouYear =  yearCollections(y, "mizzou", mizzou.image, mizzou.imageAlt, mizzou.date, mizzou.description, mizzou.title, mizzou.imageWidth);
+      var eldonYear =  yearCollections(y, "eldon", eldon.image, eldon.imageAlt, eldon.date, eldon.description, eldon.title, eldon.imageWidth);
   
       const yearImages = mizzouYear[1];
       const yearImageAlt = mizzouYear[2];
@@ -130,8 +128,8 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("mizzou", mizzouImages, mizzouImagesAlt, mizzouDates, mizzouDescription, mizzouTitle, mizzouImageWidth);
-      sections("eldon", eldonImages, eldonImagesAlt, eldonDates, eldonDescription, eldonTitle, eldonImageWidth);
+      sections("University of Missouri", mizzou.image, mizzou.imageAlt, mizzou.date, mizzou.description, mizzou.title, mizzou.imageWidth);
+      sections("Eldon Caves", eldon.image, eldon.imageAlt, eldon.date, eldon.description, eldon.title, eldon.imageWidth);
     }
   } 
   function yearCollections(year, ySection, yImage, yImageAlt, yDates, yDescription, yTitle, yImageWidth) {
@@ -289,10 +287,41 @@ var captionText = document.getElementById("caption");
       count = count + 2.0;
     }
   }
+  var currentIndex = 0; 
+  function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+  });
+  nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+  });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+    if(substringIndex !== -1) {
+            var newUrl = "../" + this.src.substring(substringIndex);
+          }
+
+          for(var i = 0; i < imageList.length; i++) {
+            if(newUrl === imageList[i]) {
+              currentIndex = i;
+              imageIndex(i);
+            }
+          }
   }
   for(var i = 0; i < img.length; i++)
   {
