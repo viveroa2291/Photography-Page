@@ -3,57 +3,73 @@ var img = document.getElementsByClassName("minnesota-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
+
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);    
+
+const minneapolis = new ImageSet(
+  ["../states-images/minnesota-images/minneapolis-self.jpeg", "../states-images/minnesota-images/minneapolis.jpeg", "../states-images/minnesota-images/minneapolis-self2.jpeg", "../states-images/minnesota-images/us-bank.jpeg", "../states-images/minnesota-images/minneapolis-self3.jpeg"],
+  ["This is an image of me in downtown Minneapolis. My friends and I were doing a photoshoot.", "This is an image of my friends and I in downtown Minneapolis during our photoshoot.", "This is an image of me in downtown Minneapolis during a photoshoot.", "This is an image of me at U.S Bank Stadium, where the Minnesota Vikings play.", "This is another image of me in downtown Minneapolis during a walk around the city."],
+  ["August 15, 2020", "August 15, 2020", "August 15, 2020", "August 15, 2020", "June 12, 2021"],
+  ["This is an image of me in downtown Minneapolis. My friends and I were doing a photoshoot.", "This is an image of my friends and I in downtown Minneapolis during our photoshoot.", "This is an image of me in downtown Minneapolis during a photoshoot.", "This is an image of me at U.S Bank Stadium, where the Minnesota Vikings play.", "This is another image of me in downtown Minneapolis during a walk around the city."],
+  ["Downtown Minneapolis", "Downtown Minneapolis", "Downtown Minneapolis", "US Bank Stadium Minneapolis", "Downtown Minneapolis"],
+  ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"]
+);
+  sections("Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth);
+imagesView(minneapolis.image, imagediv);
+  const arcade = new ImageSet(
+    ["../states-images/minnesota-images/rooftop.jpeg", "../states-images/minnesota-images/arcade.jpeg", "../states-images/minnesota-images/arcade-self.jpeg"],
+    ["This is an image of my friends and I at an arcade in the outskirts of Minneapolis.", "This is an image of my friends and I at an arcade in the outskirts of Minneapolis.", "This is an image of me at an arcade in the outskirts of Minneapolis with a wall of art."],
+    ["November 6, 2021", "April 29, 2022", "April 29, 2022"],
+    ["This is an image of my friends and I at an arcade in the outskirts of Minneapolis.", "This is an image of my friends and I at an arcade in the outskirts of Minneapolis.", "This is an image of me at an arcade in the outskirts of Minneapolis with a wall of art."],
+    ["Minneapolis Arcade (Rooftop)","Minneapolis Arcade", "Minneapolis Arcade"],
+    ["mid-wide", "mid-wide", "not-wide"]
+  );
+  sections("Minneapolis Arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth);
+  imagesView(arcade.image, imagediv);
+  const minnesota = new ImageSet(
+    ["../states-images/minnesota-images/mallofamerica.jpeg", "../states-images/minnesota-images/george-floyd.jpeg", "../states-images/minnesota-images/minnesota-friends.jpeg", "../states-images/minnesota-images/skiing.jpeg"],
+    ["This is an image of me at the Mall of America in Saint Paul Minnesota.", "This is an image of a George Floyd mural located in the outskirts of Minneapolis.", "This is an image of my friends in Eden Prarie Minnesota. One of my friends is from Ohio and we haven't seen each other in years and was in town, therefore we met up and merged our friend groups together.", "This is an image of me skiing at Afton Alps in Minnesota. I enjoyed skiing here very much and would recommend to give this place a visit if you like to ski or snowboard."],
+    ["April 20, 2019", "August 15, 2020", "June 19, 2021", "December 18, 2021"],
+    ["This is an image of me at the Mall of America in Saint Paul Minnesota.", "This is an image of a George Floyd mural located in the outskirts of Minneapolis.", "This is an image of my friends in Eden Prarie Minnesota. One of my friends is from Ohio and we haven't seen each other in years and was in town, therefore we met up and merged our friend groups together.", "This is an image of me skiing at Afton Alps in Minnesota. I enjoyed skiing here very much and would recommend to give this place a visit if you like to ski or snowboard."],
+    ["Mall of America", "Minneapolis", "Eden Prarie, Minnesota", "Afton Alps"],
+    ["mid-wide", "mid-wide", "mid-wide", "mid-wide"]
+  );
+  sections("Other Minnesota Parts", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth);
+  imagesView(minnesota.image, imagediv);
+  var imageList = [];
+  var descriptionList = [];
+
+  for(var a = 0; a < minneapolis.image.length; a++) {
+    imageList.push(minneapolis.image[a]);
+    descriptionList.push(minneapolis.description[a]);
+  }
+  for(var b = 0; b < arcade.image.length; b++) {
+    imageList.push(arcade.image[a]);
+    descriptionList.push(arcade.description[b]);
+  }
+  for(var c = 0; c < minnesota.image.length; c++) {
+    imageList.push(minnesota.image[c]);
+    descriptionList.push(minnesota.description[c]);
+  }
   
-  /**
-   * Minneapolis Lists
-   */
-  const minneapolisImages = ["../states-images/minnesota-images/minneapolis-self.jpeg", "../states-images/minnesota-images/minneapolis.jpeg", "../states-images/minnesota-images/minneapolis-self2.jpeg", "../states-images/minnesota-images/us-bank.jpeg", "../states-images/minnesota-images/minneapolis-self3.jpeg"];
-  const minneapolisImageAlt = ["This is an image of me in downtown Minneapolis. My friends and I were doing a photoshoot.", 
-  "This is an image of my friends and I in downtown Minneapolis during our photoshoot.",
-  "This is an image of me in downtown Minneapolis during a photoshoot.",
-  "This is an image of me at U.S Bank Stadium, where the Minnesota Vikings play.", 
-  "This is another image of me in downtown Minneapolis during a walk around the city."];
-  const minneapolisDates = ["August 15, 2020", "August 15, 2020", "August 15, 2020", "August 15, 2020", "June 12, 2021"];
-  const minneapolisDescription = ["This is an image of me in downtown Minneapolis. <br> My friends and I were doing a photoshoot.",
-  "This is an image of my friends and I in downtown Minneapolis <br> during our photoshoot.",
-  "This is an image of me in downtown <br>Minneapolis during a photoshoot.",
-  "This is an image of me at U.S Bank Stadium, <br> where the Minnesota Vikings play.",
-  "This is another image of me in downtown <br> Minneapolis during a walk around the city."];
-  const minneapolisTitle = ["Downtown Minneapolis", "Downtown Minneapolis", "Downtown Minneapolis", "US Bank Stadium Minneapolis", "Downtown Minneapolis"];
-  const minneapolisImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"];
-  sections("Minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
-  /**
-   * Minneapolis Arcade Lists
-   */
-  const arcadeImages = ["../states-images/minnesota-images/rooftop.jpeg", "../states-images/minnesota-images/arcade.jpeg", "../states-images/minnesota-images/arcade-self.jpeg"];
-  const arcadeImageAlt = ["This is an image of my friends and I at an arcade in the outskirts of Minneapolis.",
-  "This is an image of my friends and I at an arcade in the outskirts of Minneapolis.",
-  "This is an image of me at an arcade in the outskirts of Minneapolis with a wall of art."];
-  const arcadeDates = ["November 6, 2021", "April 29, 2022", "April 29, 2022"];
-  const arcadeDescription = ["This is an image of my friends and I at an arcade in the <br> outskirts of Minneapolis.",
-  "This is an image of my friends and I at an arcade in the <br> outskirts of Minneapolis.", 
-  "This is an image of me at an arcade in the <br> outskirts of Minneapolis with a wall of art."];
-  const arcadeTitle = ["Minneapolis Arcade (Rooftop)","Minneapolis Arcade", "Minneapolis Arcade"];
-  const arcadeImageWidth = ["mid-wide", "mid-wide", "not-wide"];
-  sections("Minneapolis Arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
-  /**
-   * Other Minnesota Lists
-   */
-  
-  const minnesotaImages = ["../states-images/minnesota-images/mallofamerica.jpeg", "../states-images/minnesota-images/george-floyd.jpeg", "../states-images/minnesota-images/minnesota-friends.jpeg", "../states-images/minnesota-images/skiing.jpeg"];
-  const minnesotaImageAlt = ["This is an image of me at the Mall of America in Saint Paul Minnesota.", 
-  "This is an image of a George Floyd mural located in the outskirts of Minneapolis.",
-  "This is an image of my friends in Eden Prarie Minnesota. One of my friends is from Ohio and we haven't seen each other in years and was in town, therefore we met up and merged our friend groups together.",
-  "This is an image of me skiing at Afton Alps in Minnesota. I enjoyed skiing here very much and would recommend to give this place a visit if you like to ski or snowboard."];
-  const minnesotaDates = ["April 20, 2019", "August 15, 2020", "June 19, 2021", "December 18, 2021"];
-  const minnesotaDescription = ["This is an image of me at the Mall of America in Saint Paul <br> Minnesota.",
-  "This is an image of a George Floyd mural located in the <br> outskirts of Minneapolis.", 
-  "This is an image of my friends in Eden Prarie Minnesota. <br> One of my friends is from Ohio and we haven't seen each <br> other in years and was in town, therefore we met up and <br> merged our friend groups together.", 
-  "This is an image of me skiing at Afton Alps in Minnesota. <br> I enjoyed skiing here very much and would recommend <br> to give this place a visit if you like to ski or snowboard."];
-  const minnesotaTitle = ["Mall of America", "Minneapolis", "Eden Prarie, Minnesota", "Afton Alps"];
-  const minnesotaImageWidth = ["mid-wide", "mid-wide", "mid-wide", "mid-wide"];
-  sections("Other Minnesota Parts", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
-  
+  function images() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+  }
+  function imagesView(image, imagediv) {
+    for(var i = 0; i < image.length; i++) {
+      var viewImages = document.createElement("img");
+      viewImages.classList.add('view-images');
+      viewImages.src = image[i];
+      imagediv.appendChild(viewImages);
+      viewImages.onclick = images;
+    }
+  }
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x == "Minneapolis") 
@@ -61,39 +77,39 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       } 
-      document.getElementById("demo").appendChild(sections("Minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth)); 
     }
     else if(x == "Arcade") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Minneapolis Arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Minneapolis Arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth)); 
     }
     else if(x == "Other") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Other Minnesota Parts", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Other Minnesota Parts", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth)); 
     }
     else if(x == "all") {
   
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
-      sections("Minneapolis Arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
-      sections("Other Minnesota Parts", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
+      sections("Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth);
+      sections("Minneapolis Arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth);
+      sections("Other Minnesota Parts", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth);
     }
   }
   function yearSelected() {
     var y = document.getElementById("year-selector").value; 
     if(y =="2019") 
     {
-      var minneapolisYear =  yearCollections(y, "Minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
-      var arcadeYear =  yearCollections(y, "arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
-      var minnesotaYear = yearCollections(y, "minnesota State University", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
+      var minneapolisYear =  yearCollections(y, "Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth);
+      var arcadeYear =  yearCollections(y, "arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth);
+      var minnesotaYear = yearCollections(y, "minnesota State University", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth);
   
       const yearImages = minneapolisYear[1];
       const yearImageAlt = minneapolisYear[2];
@@ -123,9 +139,9 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2020") 
     {
-      var minneapolisYear =  yearCollections(y, "minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
-      var arcadeYear =  yearCollections(y, "arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
-      var minnesotaYear = yearCollections(y, "minnesota State University", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
+      var minneapolisYear =  yearCollections(y, "Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth);
+      var arcadeYear =  yearCollections(y, "arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth);
+      var minnesotaYear = yearCollections(y, "minnesota State University", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth);
   
       const yearImages = minneapolisYear[1];
       const yearImageAlt = minneapolisYear[2];
@@ -155,9 +171,9 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2021") 
     {
-      var minneapolisYear =  yearCollections(y, "Minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
-      var arcadeYear =  yearCollections(y, "Minneapolis Arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
-      var minnesotaYear = yearCollections(y, "Other Parts of Minnesota", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
+      var minneapolisYear =  yearCollections(y, "Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth);
+      var arcadeYear =  yearCollections(y, "arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth);
+      var minnesotaYear = yearCollections(y, "minnesota State University", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth);
   
       const yearImages = minneapolisYear[1];
       const yearImageAlt = minneapolisYear[2];
@@ -187,9 +203,9 @@ var captionText = document.getElementById("caption");
     }
     else if(y == "2022") 
     {
-      var minneapolisYear =  yearCollections(y, "minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
-      var arcadeYear =  yearCollections(y, "arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
-      var minnesotaYear = yearCollections(y, "minnesota State University", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
+      var minneapolisYear =  yearCollections(y, "Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth);
+      var arcadeYear =  yearCollections(y, "arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth);
+      var minnesotaYear = yearCollections(y, "minnesota State University", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth);
   
       const yearVImages = minneapolisYear[1];
       const yearVImageAlt = minneapolisYear[2];
@@ -221,9 +237,9 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("minneapolis", minneapolisImages, minneapolisImageAlt, minneapolisDates, minneapolisDescription, minneapolisTitle, minneapolisImageWidth);
-      sections("arcade", arcadeImages, arcadeImageAlt, arcadeDates, arcadeDescription, arcadeTitle, arcadeImageWidth);
-      sections("minnesota State University", minnesotaImages, minnesotaImageAlt, minnesotaDates, minnesotaDescription, minnesotaTitle, minnesotaImageWidth);
+      sections("Minneapolis", minneapolis.image, minneapolis.imageAlt, minneapolis.date, minneapolis.description, minneapolis.title, minneapolis.imageWidth);
+      sections("Minneapolis Arcade", arcade.image, arcade.imageAlt, arcade.date, arcade.description, arcade.title, arcade.imageWidth);
+      sections("Other Minnesota Parts", minnesota.image, minnesota.imageAlt, minnesota.date, minnesota.description, minnesota.title, minnesota.imageWidth);
     }
   } 
   function yearCollections(year, ySection, yImage, yImageAlt, yDates, yDescription, yTitle, yImageWidth) {
@@ -255,37 +271,7 @@ var captionText = document.getElementById("caption");
     }
       return[sect, yearImage, yearImageAlt, yearDates, yearDescription, yearTitle, yearImageWidth];
     }
-    var imagediv = document.createElement("div"); 
-  imagediv.classList.add('view-div');
-  document.getElementById("image-view-demo").appendChild(imagediv);    
-
-    function images() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    for(var a = 0; a < minneapolisImages.length; a++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = minneapolisImages[a];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var b = 0; b <  arcadeImages.length; b++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = arcadeImages[b];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-    for(var c = 0; c < minnesotaImages.length; c++) {
-        var viewImages = document.createElement("img");
-        viewImages.classList.add('view-images');
-        viewImages.src = minnesotaImages[c];
-        imagediv.appendChild(viewImages);
-        viewImages.onclick = images; 
-    }
-  
+    
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
   let count = 0.0; 
   var element_text = document.createElement("h3");
@@ -387,10 +373,41 @@ var captionText = document.getElementById("caption");
       count = count + 2.0;
     }
   }
+  var currentIndex = 0; 
+  function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+  });
+  nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+  });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+          if(substringIndex !== -1) {
+            var newUrl = "../" + this.src.substring(substringIndex);
+          }
+
+          for(var i = 0; i < imageList.length; i++) {
+            if(newUrl === imageList[i]) {
+              currentIndex = i;
+              imageIndex(i);
+            }
+          }
   }
   for(var i = 0; i < img.length; i++)
   {
@@ -404,7 +421,7 @@ var captionText = document.getElementById("caption");
   span.onclick = function() { 
     modal.style.display = "none";
   }
-  }
+}
   function yearSections(image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
     var element_div = document.createElement("div");
