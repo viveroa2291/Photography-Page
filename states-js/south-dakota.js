@@ -23,80 +23,88 @@ var img = document.getElementsByClassName("south-dakota-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
 
-/**
- * Mount Rushmore Lists
- */
-const rushmoreImage = ["../states-images/south-dakota-images/heads-group.jpeg", "../states-images/south-dakota-images/heads-me.jpeg", "../states-images/south-dakota-images/heads.jpeg", "../states-images/south-dakota-images/heads-eagle.jpeg", "../states-images/south-dakota-images/heads-two.jpeg", "../states-images/south-dakota-images/heads-cesar-sean.jpeg"];
-const rushmoreImageAlt = ["This is a picture of my friends and I at Mount Rushmore.",
-"This is a picture of me at the Mount Rushmore monument.",
-"This is a picture of me at the Mount Rushmore monument.",
-"This is a picture of the Mount Rushmore monument.",
-"This is a picture of the Mount Rushmore monument from a different angle.",
-"This is a picture of my friends Sean and Cesar at the Mount Rushmore monument."];
-const rushmoreDates = ["August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020"];
-const rushmoreDescription = ["This is a picture of my friends and I <br> at Mount Rushmore.",
-"This is a picture of me at the <br>Mount Rushmore monument.",
-"This is a picture of me at the <br>Mount Rushmore monument.", 
-"This is a picture of the Mount Rushmore monument.", 
-"This is a picture of the Mount Rushmore monument from a different angle.",
-"This is a picture of my friends Sean and Cesar at the Mount Rushmore <br> monument."];
-const rushmoreTitle = ["Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument"];
-const rushmoreImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"];
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv);    
 
-/**
- * Custer State Park Lists
- */
-const custerImage = ["../states-images/south-dakota-images/custer-tree.jpeg", "../states-images/south-dakota-images/buffalos-me.jpeg", "../states-images/south-dakota-images/sean-me.jpeg", "../states-images/south-dakota-images/buffalos.jpeg", "../states-images/south-dakota-images/buffalo-field.jpeg", "../states-images/south-dakota-images/custer-me.jpeg"];
-const custerImageAlt = ["This is a picture of me at Custer State Park with a nice background setting.",
-"This is a picture of me at Custer State Park with buffalos in the background.",
-"This is a picture of my friend Sean and I at Custer State Park.", 
-"This is a picture of Buffalos that we saw while riding through Custer State Park",
-"This is a picture of a field of Custer State Park with a buffalo in the frame.",
-"This is a picture of me on top of a rock at a peak of Custer State Park. I am unsure if I was intentionally trying to pose or if this was a candid picture."];
-const custerDates = ["August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020"];
-const custerDescription = ["This is a picture of me at Custer State <br>Park with a nice background setting.",
-"This is a picture of me at Custer State <br> Park with buffalos in the background.",
-"This is a picture of my friend Sean and I <br> at Custer State Park.",
-"This is a picture of Buffalos that we saw while riding through Custer State Park",
-"This is a picture of a field of Custer State Park with a buffalo in the frame.", 
-"This is a picture of me on top of a rock at a peak of Custer State Park. <br> I am unsure if I was intentionally trying to pose or if this was a candid picture."];
-const custerTitle = ["Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park"];
-const custerImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"];
+const rushmore = new ImageSet(
+  ["../states-images/south-dakota-images/heads-group.jpeg", "../states-images/south-dakota-images/heads-me.jpeg", "../states-images/south-dakota-images/heads.jpeg", "../states-images/south-dakota-images/heads-eagle.jpeg", "../states-images/south-dakota-images/heads-two.jpeg", "../states-images/south-dakota-images/heads-cesar-sean.jpeg"], 
+  ["This is a picture of my friends and I at Mount Rushmore.", "This is a picture of me at the Mount Rushmore monument.", "This is a picture of me at the Mount Rushmore monument.", "This is a picture of the Mount Rushmore monument.", "This is a picture of the Mount Rushmore monument from a different angle.", "This is a picture of my friends Sean and Cesar at the Mount Rushmore monument."],
+  ["August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020"],
+  ["This is a picture of my friends and I at Mount Rushmore.", "This is a picture of me at the Mount Rushmore monument.", "This is a picture of me at the Mount Rushmore monument.", "This is a picture of the Mount Rushmore monument.", "This is a picture of the Mount Rushmore monument from a different angle.", "This is a picture of my friends Sean and Cesar at the Mount Rushmore monument."],
+  ["Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument", "Mount Rushmore Monument"],
+  ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"]
+);
+const custer = new ImageSet(
+  ["../states-images/south-dakota-images/custer-tree.jpeg", "../states-images/south-dakota-images/buffalos-me.jpeg", "../states-images/south-dakota-images/sean-me.jpeg", "../states-images/south-dakota-images/buffalos.jpeg", "../states-images/south-dakota-images/buffalo-field.jpeg", "../states-images/south-dakota-images/custer-me.jpeg"],
+  ["This is a picture of me at Custer State Park with a nice background setting.", "This is a picture of me at Custer State Park with buffalos in the background.", "This is a picture of my friend Sean and I at Custer State Park.", "This is a picture of Buffalos that we saw while riding through Custer State Park", "This is a picture of a field of Custer State Park with a buffalo in the frame.", "This is a picture of me on top of a rock at a peak of Custer State Park. I am unsure if I was intentionally trying to pose or if this was a candid picture."],
+  ["August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020"],
+  ["This is a picture of me at Custer State Park with a nice background setting.", "This is a picture of me at Custer State Park with buffalos in the background.", "This is a picture of my friend Sean and I at Custer State Park.",  "This is a picture of Buffalos that we saw while riding through Custer State Park", "This is a picture of a field of Custer State Park with a buffalo in the frame.", "This is a picture of me on top of a rock at a peak of Custer State Park. I am unsure if I was intentionally trying to pose or if this was a candid picture."],
+  ["Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park", "Custer State Park"],
+  ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "mid-wide"]
+);
+const rapid = new ImageSet(
+  ["../states-images/south-dakota-images/podium.jpeg", "../states-images/south-dakota-images/thumbs-up.jpeg", "../states-images/south-dakota-images/high-five.jpeg", "../states-images/south-dakota-images/rapid-city.jpeg"],
+  ["This is a picture of my friend Sean and I pointing DX style.", "This is a picture of me doing a thumbs up with a statue in Downtown Rapid City.", "This is a picture of me giving a president who I believe is Jimmy Carter a high five.", "This is a picture of my friend Cesar and Sean and I in some alley of Downtown Rapid City."],
+  ["August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020"],
+  ["This is a picture of my friend Sean and I pointing DX style.", "This is a picture of me doing a thumbs up with a statue in Downtown Rapid City.", "This is a picture of me giving a president who I believe is Jimmy Carter a high five.", "This is a picture of my friend Cesar and Sean and I in some alley of Downtown Rapid City."],
+  ["Downtown Rapid City", "Downtown Rapid City", "Downtown Rapid City", "Downtown Rapid City"],
+  ["not-wide", "not-wide", "not-wide", "mid-wide"]
+);
+const dakota = new ImageSet(
+  ["../states-images/south-dakota-images/water-me.jpeg", "../states-images/south-dakota-images/crazy-horse.jpeg"],
+  ["This is a picture of me at a lake in Keystone on our way to the Mount Rushmore Monument.", "This is a picture of a project that they're working on in Crazy Horse. The final project looks spectactular but won't be complete for decades to come. It would be nice to visit when I'm older."],
+  ["August 13, 2020", "August 13, 2020"],
+  ["This is a picture of me at a lake in Keystone on our way to the Mount Rushmore Monument.", "This is a picture of a project that they're working on in Crazy Horse. The final project looks spectactular but won't be complete for decades to come. It would be nice to visit when I'm older."],
+  ["Keystone", "Crazy Horse"],
+  ["not-wide", "mid-wide"]
+);
+sections("Mount Rushmore", rushmore.image, rushmore.imageAlt, rushmore.date, rushmore.description, rushmore.title, rushmore.imageWidth);
+sections("Custer State Park", custer.image, custer.imageAlt, custer.date, custer.description, custer.title, custer.imageWidth);
+sections("Downtown Rapid City", rapid.image, rapid.imageAlt, rapid.date, rapid.description, rapid.title, rapid.imageWidth);
+sections("Other Parts of South Dakota", dakota.image, dakota.imageAlt, dakota.date, dakota.description, dakota.title, dakota.imageWidth);  
 
-/**
- * Rapid City Lists
- */
-const rapidImage = ["../states-images/south-dakota-images/podium.jpeg", "../states-images/south-dakota-images/thumbs-up.jpeg", "../states-images/south-dakota-images/high-five.jpeg", "../states-images/south-dakota-images/rapid-city.jpeg"];
-const rapidImageAlt = ["This is a picture of my friend Sean and I pointing DX style.",
-"This is a picture of me doing a thumbs up with a statue in Downtown Rapid City.", 
-"This is a picture of me giving a president who I believe is Jimmy Carter a high five.", 
-"This is a picture of my friend Cesar and Sean and I in some alley of Downtown Rapid City."];
-const rapidDates = ["August 13, 2020", "August 13, 2020", "August 13, 2020", "August 13, 2020"];
-const rapidDescription = ["This is a picture of my friend Sean and I <br>pointing DX style.",
-"This is a picture of me doing a thumbs up <br>with a statue in Downtown Rapid City.",
-"This is a picture of me giving a president <br>who I believe is Jimmy Carter a high five.",
-"This is a picture of my friend Cesar and Sean and I in some alley of <br> Downtown Rapid City."];
-const rapidTitle = ["Downtown Rapid City", "Downtown Rapid City", "Downtown Rapid City", "Downtown Rapid City"];
-const rapidImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide"];
+imagesView(rushmore.image, imagediv);
+imagesView(custer.image, imagediv);
+imagesView(rapid.image, imagediv);
+imagesView(dakota.image, imagediv);
 
-/**
- * Other South Dakota Lists
- */
+var imageList = [];
+var descriptionList = [];
 
-const dakotaImage = ["../states-images/south-dakota-images/water-me.jpeg", "../states-images/south-dakota-images/crazy-horse.jpeg"];
-const dakotaImageAlt = ["This is a picture of me at a lake in Keystone on our way to the Mount Rushmore Monument.",
-"This is a picture of a project that they're working on in Crazy Horse. The final project looks spectactular but won't be complete for decades to come. It would be nice to visit when I'm older."];
-const dakotaDates = ["August 13, 2020", "August 13, 2020"];
-const dakotaDescription = ["This is a picture of me at a lake in <br> Keystone on our way to the <br> Mount Rushmore Monument.", 
-"This is a picture of a project that they're working on in Crazy Horse. <br> The final project looks spectactular but won't be complete for decades to come. <br> It would be nice to visit when I'm older."];
-const dakotaTitle = ["Keystone", "Crazy Horse"];
-const dakotaImageWidth = ["not-wide", "mid-wide"];
-
-sections("Mount Rushmore", rushmoreImage, rushmoreImageAlt, rushmoreDates, rushmoreDescription, rushmoreTitle, rushmoreImageWidth);
-sections("Custer State Park", custerImage, custerImageAlt, custerDates, custerDescription, custerTitle, custerImageWidth);
-sections("Downtown Rapid City", rapidImage, rapidImageAlt, rapidDates, rapidDescription, rapidTitle, rapidImageWidth);
-sections("Other Parts of South Dakota", dakotaImage, dakotaImageAlt, dakotaDates, dakotaDescription, dakotaTitle, dakotaImageWidth);
+for(var a = 0; a < rushmore.image.length; a++) {
+  imageList.push(rushmore.image[a]);
+  descriptionList.push(rushmore.description[a]);
+}
+for(var b = 0; b < custer.image.length; b++) {
+  imageList.push(custer.image[b]);
+  descriptionList.push(custer.description[b]);
+}
+for(var c = 0; c < rapid.image.length; c++) {
+  imageList.push(rapid.image[c]);
+  descriptionList.push(rapid.description[c]);
+}
+for(var d = 0; d < dakota.image.length; d++) {
+  imageList.push(dakota.image[d]);
+  descriptionList.push(dakota.description[d]);
+}
+function images() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+function imagesView(image, imagediv) {
+  for(var i = 0; i < image.length; i++) {
+    var viewImages = document.createElement("img");
+    viewImages.classList.add('view-images');
+    viewImages.src = image[i];
+    imagediv.appendChild(viewImages);
+    viewImages.onclick = images;
+  }
+}
 function sectionSelected() {
   var x = document.getElementById("area-selector").value;
   if(x =="Rushmore") 
@@ -104,21 +112,21 @@ function sectionSelected() {
     while(document.getElementById("demo").firstChild) {
       document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
     } 
-    document.getElementById("demo").appendChild(sections("Mount Rushmore",rushmoreImage, rushmoreImageAlt, rushmoreDates, rushmoreDescription, rushmoreTitle, rushmoreImageWidth)); 
+    document.getElementById("demo").appendChild(sections("Mount Rushmore",rushmore.image, rushmore.imageAlt, rushmore.date, rushmore.description, rushmore.title, rushmore.imageWidth)); 
   }
   else if(x == "Custer") 
   {
     while(document.getElementById("demo").firstChild) {
       document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
     }
-    document.getElementById("demo").appendChild(sections("Custer State Park", custerImage, custerImageAlt, custerDates, custerDescription, custerTitle, custerImageWidth)); 
+    document.getElementById("demo").appendChild(sections("Custer State Park", custer.image, custer.imageAlt, custer.date, custer.description, custer.title, custer.imageWidth)); 
   }
   else if(x == "Rapid") 
   {
     while(document.getElementById("demo").firstChild) {
       document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
     }
-    document.getElementById("demo").appendChild(sections("Downtown Rapid City", rapidImage, rapidImageAlt, rapidDates, rapidDescription, rapidTitle, rapidImageWidth)); 
+    document.getElementById("demo").appendChild(sections("Downtown Rapid City", rapid.image, rapid.imageAlt, rapid.date, rapid.description, rapid.title, rapid.imageWidth)); 
 
   }
   else if(x == "Other") 
@@ -126,54 +134,17 @@ function sectionSelected() {
     while(document.getElementById("demo").firstChild) {
       document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
     }
-    document.getElementById("demo").appendChild(sections("Other Parts of South Dakota", dakotaImage, dakotaImageAlt, dakotaDates, dakotaDescription, dakotaTitle, dakotaImageWidth));
+    document.getElementById("demo").appendChild(sections("Other Parts of South Dakota", dakota.image, dakota.imageAlt, dakota.date, dakota.description, dakota.title, dakota.imageWidth));
   }
   else if(x == "all") {
     while(document.getElementById("demo").firstChild) {
       document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
     }
-    sections("Mount Rushmore", rushmoreImage, rushmoreImageAlt, rushmoreDates, rushmoreDescription, rushmoreTitle, rushmoreImageWidth);
-    sections("Custer State Park", custerImage, custerImageAlt, custerDates, custerDescription, custerTitle, custerImageWidth);
-    sections("Downtown Rapid City", rapidImage, rapidImageAlt, rapidDates, rapidDescription, rapidTitle, rapidImageWidth);
-    sections("Other Parts of South Dakota", dakotaImage, dakotaImageAlt, dakotaDates, dakotaDescription, dakotaTitle, dakotaImageWidth);
+    sections("Mount Rushmore", rushmore.image, rushmore.imageAlt, rushmore.date, rushmore.description, rushmore.title, rushmore.imageWidth);
+    sections("Custer State Park", custer.image, custer.imageAlt, custer.date, custer.description, custer.title, custer.imageWidth);
+    sections("Downtown Rapid City", rapid.image, rapid.imageAlt, rapid.date, rapid.description, rapid.title, rapid.imageWidth);
+    sections("Other Parts of South Dakota", dakota.image, dakota.imageAlt, dakota.date, dakota.description, dakota.title, dakota.imageWidth);
   }
-}
-var imagediv = document.createElement("div"); 
-imagediv.classList.add('view-div');
-document.getElementById("image-view-demo").appendChild(imagediv);    
-
-  function images() {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = this.alt;
-  }
-  for(var a = 0; a < rushmoreImage.length; a++) {
-      var viewImages = document.createElement("img");
-      viewImages.classList.add('view-images');
-      viewImages.src = rushmoreImage[a];
-      imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
-  }
-  for(var b = 0; b <  custerImage.length; b++) {
-      var viewImages = document.createElement("img");
-      viewImages.classList.add('view-images');
-      viewImages.src = custerImage[b];
-      imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
-  }
-  for(var c = 0; c < rapidImage.length; c++) {
-      var viewImages = document.createElement("img");
-      viewImages.classList.add('view-images');
-      viewImages.src = rapidImage[c];
-      imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
-  }
-  for(var d = 0; d < dakotaImage.length; d++) {
-    var viewImages = document.createElement("img");
-    viewImages.classList.add('view-images');
-    viewImages.src = dakotaImage[d];
-    imagediv.appendChild(viewImages);
-    viewImages.onclick = images; 
 }
 function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
@@ -284,10 +255,41 @@ function sections(section, image, imageAlt, dates, description, title, imageWidt
           count = count + 2.0; 
       }   
       }
+      var currentIndex = 0; 
+      function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+      }      
+      prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+      });
+      nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+      });
       function images() {
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
+
+        var substringIndex = this.src.indexOf("states");
+
+        if(substringIndex !== -1) {
+          var newUrl = "../" + this.src.substring(substringIndex);
+        }
+
+        for(var i = 0; i < imageList.length; i++) {
+          if(newUrl === imageList[i]) {
+            currentIndex = i;
+            imageIndex(i);
+          }
+        }
       }
       for(var i = 0; i < img.length; i++)
       { 
