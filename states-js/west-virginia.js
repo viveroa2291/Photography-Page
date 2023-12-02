@@ -3,50 +3,43 @@ var img = document.getElementsByClassName("west-virginia-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-  
-  /**
-   * West-Virginia Lists
-   */
-  const westVirginiaImages = ["../states-images/west-virginia-images/me.jpeg", "../states-images/west-virginia-images/Lewis-and-Clark.jpeg", "../states-images/west-virginia-images/me2.jpeg", "../states-images/west-virginia-images/mountain.jpeg", "../states-images/west-virginia-images/alex-sean.jpeg", "../states-images/west-virginia-images/sean.jpeg", "../states-images/west-virginia-images/mountain2.jpeg", "../states-images/west-virginia-images/views.jpeg"];
-  const westVirginiaImageAlt = ["This is the picture of me on top of a mountain at Harpers Ferry striking a pose.", 
-  "This is a picture of me standing next to the Lewis and Clark sign.",
-  "This is the picture of me on top of a mountain at Harpers Ferry striking a pose.",
-  "This is an image of Harpers Ferry mountain.",
-  "This is a picture of my friends and I at Harpers Ferry on our boys trip to Washington D.C.",
-  "This is a picture of my friend Sean and I at Harpers Ferry.",
-  "This is an image of Harpers Ferry mountain.",
-  "This is a picture of a different view of Harpers Ferry in West Virginia."];
-  const westVirginiaDates = ["July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019"];
-  const westVirginiaDescription = ["This is the picture of me on top of a <br> mountain at Harpers Ferry striking a pose.",
-  "This is a picture of me standing next to <br> the Lewis and Clark sign.",
-  "This is the picture of me on top of a <br> mountain at Harpers Ferry striking a pose.",
-  "This is an image of Harpers Ferry mountain.",
-  "This is a picture of my friends and I at Harpers Ferry on our boys trip <br> to Washington D.C.",
-  "This is a picture of my friend Sean and I <br> at Harpers Ferry.",
-  "This is an image of Harpers Ferry mountain.",
-  "This is a picture of a different view of Harpers Ferry in West Virginia."];
-  const westVirginiaTitle = ["Harpers Ferry", "Lewis and Clark sign", "Harpers Ferry", "Harpers Ferry Mountain", "Harpers Ferry", "Harpers Ferry", "Harpers Ferry", "Harpers Ferry Views"];
-  const westVirginiaImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "wide"];
-  
-  sections("Harper's Ferry", westVirginiaImages, westVirginiaImageAlt, westVirginiaDates, westVirginiaDescription, westVirginiaTitle, westVirginiaImageWidth);
- 
-  var imagediv = document.createElement("div"); 
+   
+var imagediv = document.createElement("div"); 
 imagediv.classList.add('view-div');
 document.getElementById("image-view-demo").appendChild(imagediv);    
 
+const westVirginia = new ImageSet(
+  ["../states-images/west-virginia-images/me.jpeg", "../states-images/west-virginia-images/Lewis-and-Clark.jpeg", "../states-images/west-virginia-images/me2.jpeg", "../states-images/west-virginia-images/mountain.jpeg", "../states-images/west-virginia-images/alex-sean.jpeg", "../states-images/west-virginia-images/sean.jpeg", "../states-images/west-virginia-images/mountain2.jpeg", "../states-images/west-virginia-images/views.jpeg"],
+  ["This is the picture of me on top of a mountain at Harpers Ferry striking a pose.", "This is a picture of me standing next to the Lewis and Clark sign.", "This is the picture of me on top of a mountain at Harpers Ferry striking a pose.", "This is an image of Harpers Ferry mountain.", "This is a picture of my friends and I at Harpers Ferry on our boys trip to Washington D.C.", "This is a picture of my friend Sean and I at Harpers Ferry.", "This is an image of Harpers Ferry mountain.", "This is a picture of a different view of Harpers Ferry in West Virginia."],
+  ["July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019", "July 2, 2019"],
+  ["This is the picture of me on top of a mountain at Harpers Ferry striking a pose.", "This is a picture of me standing next to the Lewis and Clark sign.", "This is the picture of me on top of a mountain at Harpers Ferry striking a pose.", "This is an image of Harpers Ferry mountain.", "This is a picture of my friends and I at Harpers Ferry on our boys trip to Washington D.C.", "This is a picture of my friend Sean and I at Harpers Ferry.", "This is an image of Harpers Ferry mountain.", "This is a picture of a different view of Harpers Ferry in West Virginia."],
+  ["Harpers Ferry", "Lewis and Clark sign", "Harpers Ferry", "Harpers Ferry Mountain", "Harpers Ferry", "Harpers Ferry", "Harpers Ferry", "Harpers Ferry Views"],
+  ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide", "not-wide", "wide"]
+);
+sections("Harper's Ferry", westVirginia.image, westVirginia.imageAlt, westVirginia.date, westVirginia.description, westVirginia.title, westVirginia.imageWidth);
+imagesView(westVirginia.image, imagediv);
+
+var imageList = [];
+var descriptionList = [];
+
+for(var a = 0; a < westVirginia.image.length; a++) {
+  imageList.push(westVirginia.image[a]);
+  descriptionList.push(westVirginia.description[a]);
+}
   function images() {
       modal.style.display = "block";
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
   }
-  for(var a = 0; a < westVirginiaImages.length; a++) {
+  function imagesView(image, imagediv) {
+    for(var i = 0; i < image.length; i++) {
       var viewImages = document.createElement("img");
       viewImages.classList.add('view-images');
-      viewImages.src = westVirginiaImages[a];
+      viewImages.src = image[i];
       imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
+      viewImages.onclick = images;
+    }
   }
-
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
   
@@ -208,11 +201,41 @@ document.getElementById("image-view-demo").appendChild(imagediv);
       modal.style.display = "none";
     }
   }
-  
+  var currentIndex = 0; 
+  function imageIndex(delta) {
+        modal.style.display = "block";
+        modalImg.src = imageList[delta];
+        captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+    if(currentIndex > 0) {
+      currentIndex--;
+    }
+    imageIndex(currentIndex);
+  });
+  nextButton.addEventListener('click', function() {
+    if (currentIndex < imageList.length - 1) {
+      currentIndex++;
+    }
+    imageIndex(currentIndex);
+  });
   function images(){
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+    if(substringIndex !== -1) {
+      var newUrl = "../" + this.src.substring(substringIndex);
+    }
+
+    for(var i = 0; i < imageList.length; i++) {
+      if(newUrl === imageList[i]) {
+        currentIndex = i;
+        imageIndex(i);
+      }
+    }
   }
   for(var i = 0; i < img.length; i++)
   {

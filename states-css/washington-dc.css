@@ -62,17 +62,6 @@
     opacity: .7;
     border: white solid 1px;
 }
-.not-wide {
-    margin: auto;
-    margin-bottom: 3px;
-    display: block;
-    width: 80%;
-    max-width: 450px;  
-}
-.not-wide-card {
-  width: 25%;
-  height: 550px;
-}
 .wide-card {
   height: 550px;
 }
@@ -100,6 +89,26 @@
     opacity: .7;
     border: white solid 1px;
     cursor: zoom-in;
+}
+.not-wide {
+    margin: auto;
+    margin-bottom: 1px;
+    display: block;
+    width: auto;
+    max-width: 450px;  
+}
+.not-wide-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 550px;
+    max-width: 350px;
+}
+.mid-wide {
+    width: auto;
+    max-width: 550px;
+}
+.mid-wide-card {
+    max-width: 550px;
 }
 @media (max-width: 890px) {
     .washington-dc-header {

@@ -3,85 +3,53 @@ var img = document.getElementsByClassName("utah-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-  
-  /**
-   * Salt Lake City Lists
-   */
-  const saltImages = ["../states-images/utah-images/church-me.jpeg", "../states-images/utah-images/church.jpeg", "../states-images/utah-images/church-mom.jpeg", "../states-images/utah-images/salt-lake-city2.jpeg", "../states-images/utah-images/salt-lake-city3.jpeg"];
-  const saltImageAlt = ["This is a picture of me in front of a mormon church in Salt Lake City.",
-  "This is an image of a mormon church in Salt Lake City.",
-  "This is a picture of my mother and I at a mormon church in Salt Lake City.",
-   "This is an image of a mormon church in downtown Salt Lake City.",
-   "This is an image of downtown Salt Lake City."];
-  const saltDates = ["March 22, 2018", "March 22, 2018", "March 22, 2018", "March 22, 2018", "March 22, 2018"];
-  const saltDescription = ["This is a picture of me in front of a <br> mormon church in Salt Lake City.", 
-  "This is an image of a mormon church in <br> Salt Lake City.", 
-  "This is a picture of my mother and I <br> at a mormon church in Salt Lake City.",
-  "This is an image of a mormon church in downtown Salt Lake City.",
-  "This is an image of downtown Salt Lake City."];
-  const saltTitle = ["Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Downtown Salt Lake City"];
-  const saltImageWidth = ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide"];
-  
-  sections("Salt Lake City", saltImages, saltImageAlt, saltDates, saltDescription, saltTitle, saltImageWidth);
-  /**
-   * Arches lists
-   */
-  const archesImages = ["../states-images/utah-images/arches-sign.jpeg", "../states-images/utah-images/arches2.jpeg", "../states-images/utah-images/arches.jpeg", "../states-images/utah-images/big-arch.jpeg", "../states-images/utah-images/small-arch.jpeg", "../states-images/utah-images/arch-field.jpeg", "../states-images/utah-images/arches4.jpeg", "../states-images/utah-images/arches3.jpeg" ];
-  const archesImageAlt = ["This is an image of me on the sign of the Arches National Park.",
-  "This is an image of me at the Arches National Park.",
-  "This is an image of me at the Arches National Park.",
-  "This is an image of me at the heart of the arch of the Arches National Park.",
-  "This is an image of me inside a small arch with a view of the big arch at the Arches National Park.",
-  "This is an image of me looking at a field at the Arches National Park. It was a gigantic field and it was pretty cool.",
-  "This is an image of me at the Arches National Park.",
-  "This is an image of me at an open area at the Arches National Park."];
-  const archesDates = ["March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018"];
-  const archesDescription = ["This is an image of me on the sign of the Arches National Park.",
-  "This is an image of me at the Arches National Park.",
-  "This is an image of me at the Arches <br> National Park.", 
-  "This is an image of me at the heart of the <br> arch of the Arches National Park.",
-  "This is an image of me inside a small arch <br> with a view of the big arch at the Arches <br> National Park.",
-  "This is an image of me looking at a field at the Arches National Park. <br> It was a gigantic field and it was pretty cool.",
-  "This is an image of me at the Arches National Park.",
-  "This is an image of me at an open area <br> at the Arches National Park."];
-  const archesTitle = ["Arches National Park Sign", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park"];
-  const archesImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide"];
-  
-  sections("Arches National Park", archesImages, archesImageAlt, archesDates, archesDescription, archesTitle, archesImageWidth);
-  /**
-   * Springville Lists
-   */
-  const springvilleImages = ["../states-images/utah-images/mountains.jpeg", "../states-images/utah-images/mountains3.jpeg", "../states-images/utah-images/mountains2.jpeg", "../states-images/utah-images/mountains4.jpeg", "../states-images/utah-images/mountains5.jpeg"];
-  const springvilleImageAlt = ["This is an image of me at Springville Utah standing at the middle of a mountain.",
-  "This is an image of me at Springville Utah standing at the middle of a mountain.",
-  "This is an image of me at Springville Utah standing at the bottom of the mountains.",
-  "This is an image of me at Springville Utah standing at the center of the mountains.",
-  "This is an image of me at Springville Utah standing at the bottom of the mountains."];
-  const springvilleDates = ["March 25, 2018", "March 25, 2018", "March 25, 2018", "March 25, 2018", "March 25, 2018"];
-  const springvilleDescription = ["This is an image of me at Springville Utah standing at the middle <br> of a mountain.", 
-  "This is an image of me at Springville Utah standing at the middle <br> of a mountain.",
-  "This is an image of me at Springville Utah <br> standing at the bottom of the mountains.",
-  "This is an image of me at Springville Utah <br> standing at the center of the mountains.",
-  "This is an image of me at Springville Utah <br> standing at the bottom of the mountains."];
-  const springvilleTitle = ["Springville, Utah", "Springville, Utah", "Springville, Utah", "Springville, Utah", "Springville, Utah"];
-  const springvilleImageWidth = ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"];
-  
-  sections("Springville, Utah", springvilleImages, springvilleImageAlt, springvilleDates, springvilleDescription, springvilleTitle, springvilleImageWidth);
-  /**
-   * Other Utah lists
-   */
-  const utahImages = ["../states-images/utah-images/draper.jpeg", "../states-images/utah-images/outside.jpeg", "../states-images/utah-images/pauls-house.jpeg"];
-  const utahImageAlt = ["This is an image of me at Draper, Utah which was a nice view of the city.",
-  "This is an image of me standing outside of my cousins house in Utah. I really like the cool view of the mountains.",
-  "This is an image of me standing outside my other cousins house in Utah. Again, I really find the mountains a view cool view right outside their house."];
-  const utahDates = ["March 23, 2018", "March 26, 2018", "March 24, 2018"];
-  const utahDescription = ["This is an image of me at Draper, Utah <br> which was a nice view of the city.",
-  "This is an image of me standing outside <br> of my cousins house in Utah. I really like <br> the cool view of the mountains.",
-  "This is an image of me standing outside my other cousins house <br> in Utah. Again, I really find the mountains a view cool view right <br> outside their house."];
-  const utahTitle = ["Draper, Utah", "Utah", "Utah"];
-  const utahImageWidth = ["not-wide", "not-wide", "mid-wide"];
-  
-  sections("Other parts of Utah", utahImages, utahImageAlt, utahDates, utahDescription, utahTitle, utahImageWidth);
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
+
+var imagediv = document.createElement("div"); 
+imagediv.classList.add('view-div');
+document.getElementById("image-view-demo").appendChild(imagediv); 
+
+const salt = new ImageSet(
+  ["../states-images/utah-images/church-me.jpeg", "../states-images/utah-images/church.jpeg", "../states-images/utah-images/church-mom.jpeg", "../states-images/utah-images/salt-lake-city2.jpeg", "../states-images/utah-images/salt-lake-city3.jpeg"],
+  ["This is a picture of me in front of a mormon church in Salt Lake City.", "This is an image of a mormon church in Salt Lake City.", "This is a picture of my mother and I at a mormon church in Salt Lake City.", "This is an image of a mormon church in downtown Salt Lake City.", "This is an image of downtown Salt Lake City."],
+  ["March 22, 2018", "March 22, 2018", "March 22, 2018", "March 22, 2018", "March 22, 2018"],
+  ["This is a picture of me in front of a mormon church in Salt Lake City.", "This is an image of a mormon church in Salt Lake City.", "This is a picture of my mother and I at a mormon church in Salt Lake City.", "This is an image of a mormon church in downtown Salt Lake City.", "This is an image of downtown Salt Lake City."],
+  ["Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Salt Lake City Mormon Church", "Downtown Salt Lake City"],
+  ["not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide"]
+);
+  sections("Salt Lake City", salt.image, salt.imageAlt, salt.date, salt.description, salt.title, salt.imageWidth);
+  imagesView(salt.image, imagediv);
+  const arches = new ImageSet(
+    ["../states-images/utah-images/arches-sign.jpeg", "../states-images/utah-images/arches2.jpeg", "../states-images/utah-images/arches.jpeg", "../states-images/utah-images/big-arch.jpeg", "../states-images/utah-images/small-arch.jpeg", "../states-images/utah-images/arch-field.jpeg", "../states-images/utah-images/arches4.jpeg", "../states-images/utah-images/arches3.jpeg"],
+    ["This is an image of me on the sign of the Arches National Park.", "This is an image of me at the Arches National Park.", "This is an image of me at the Arches National Park.", "This is an image of me at the heart of the arch of the Arches National Park.", "This is an image of me inside a small arch with a view of the big arch at the Arches National Park.", "This is an image of me looking at a field at the Arches National Park. It was a gigantic field and it was pretty cool.", "This is an image of me at the Arches National Park.", "This is an image of me at an open area at the Arches National Park."],
+    ["March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018", "March 24, 2018"],
+    ["This is an image of me on the sign of the Arches National Park.", "This is an image of me at the Arches National Park.", "This is an image of me at the Arches National Park.", "This is an image of me at the heart of the arch of the Arches National Park.", "This is an image of me inside a small arch with a view of the big arch at the Arches National Park.", "This is an image of me looking at a field at the Arches National Park. It was a gigantic field and it was pretty cool.", "This is an image of me at the Arches National Park.", "This is an image of me at an open area at the Arches National Park."],
+    ["Arches National Park Sign", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park", "Arches National Park"],
+    ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide", "mid-wide", "mid-wide", "not-wide"]
+  );
+  sections("Arches National Park", arches.image, arches.imageAlt, arches.date, arches.description, arches.title, arches.imageWidth);
+  imagesView(arches.image, imagediv);
+  const springville = new ImageSet(
+    ["../states-images/utah-images/mountains.jpeg", "../states-images/utah-images/mountains3.jpeg", "../states-images/utah-images/mountains2.jpeg", "../states-images/utah-images/mountains4.jpeg", "../states-images/utah-images/mountains5.jpeg"],
+    ["This is an image of me at Springville Utah standing at the middle of a mountain.", "This is an image of me at Springville Utah standing at the middle of a mountain.", "This is an image of me at Springville Utah standing at the bottom of the mountains.", "This is an image of me at Springville Utah standing at the center of the mountains.", "This is an image of me at Springville Utah standing at the bottom of the mountains."],
+    ["March 25, 2018", "March 25, 2018", "March 25, 2018", "March 25, 2018", "March 25, 2018"],
+    ["This is an image of me at Springville Utah standing at the middle of a mountain.", "This is an image of me at Springville Utah standing at the middle of a mountain.", "This is an image of me at Springville Utah standing at the bottom of the mountains.", "This is an image of me at Springville Utah standing at the center of the mountains.", "This is an image of me at Springville Utah standing at the bottom of the mountains."],
+    ["Springville, Utah", "Springville, Utah", "Springville, Utah", "Springville, Utah", "Springville, Utah"],
+    ["mid-wide", "mid-wide", "not-wide", "not-wide", "not-wide"]
+  );
+  sections("Springville, Utah", springville.image, springville.imageAlt, springville.date, springville.description, springville.title, springville.imageWidth);
+  imagesView(springville.image, imagediv);
+  const utah = new ImageSet(
+    ["../states-images/utah-images/draper.jpeg", "../states-images/utah-images/outside.jpeg", "../states-images/utah-images/pauls-house.jpeg"],
+    ["This is an image of me at Draper, Utah which was a nice view of the city.", "This is an image of me standing outside of my cousins house in Utah. I really like the cool view of the mountains.", "This is an image of me standing outside my other cousins house in Utah. Again, I really find the mountains a view cool view right outside their house."],
+    ["March 23, 2018", "March 26, 2018", "March 24, 2018"],
+    ["This is an image of me at Draper, Utah which was a nice view of the city.", "This is an image of me standing outside of my cousins house in Utah. I really like the cool view of the mountains.", "This is an image of me standing outside my other cousins house in Utah. Again, I really find the mountains a view cool view right outside their house."],
+    ["Draper, Utah", "Utah", "Utah"],
+    ["not-wide", "not-wide", "mid-wide"]
+  );
+  sections("Other parts of Utah", utah.image, utah.imageAlt, utah.date, utah.description, utah.title, utah.imageWidth);
+  imagesView(utah.image, imagediv);
   function sectionSelected() {
     var x = document.getElementById("area-selector").value;
     if(x == "Salt") 
@@ -89,77 +57,75 @@ var captionText = document.getElementById("caption");
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       } 
-      document.getElementById("demo").appendChild(sections("Salt Lake City", saltImages, saltImageAlt, saltDates, saltDescription, saltTitle, saltImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Salt Lake City", salt.image, salt.imageAlt, salt.date, salt.description, salt.title, salt.imageWidth)); 
     }
     else if(x == "Arches") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Arches National Park", archesImages, archesImageAlt, archesDates, archesDescription, archesTitle, archesImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Arches National Park", arches.image, arches.imageAlt, arches.date, arches.description, arches.title, arches.imageWidth)); 
     }
     else if(x == "Springville") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Springville, Utah", springvilleImages, springvilleImageAlt, springvilleDates, springvilleDescription, springvilleTitle, springvilleImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Springville, Utah", springville.image, springville.imageAlt, springville.date, springville.description, springville.title, springville.imageWidth)); 
     }
     else if(x == "Other") 
     {
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      document.getElementById("demo").appendChild(sections("Other parts of Utah", utahImages, utahImageAlt, utahDates, utahDescription, utahTitle, utahImageWidth)); 
+      document.getElementById("demo").appendChild(sections("Other parts of Utah", utah.image, utah.imageAlt, utah.date, utah.description, utah.title, utah.imageWidth)); 
     }
     else if(x == "all") {
   
       while(document.getElementById("demo").firstChild) {
         document.getElementById("demo").removeChild(document.getElementById("demo").firstChild);
       }
-      sections("Salt Lake City", saltImages, saltImageAlt, saltDates, saltDescription, saltTitle, saltImageWidth);
-      sections("Arches National Park", archesImages, archesImageAlt, archesDates, archesDescription, archesTitle, archesImageWidth);
-      sections("Springville, Utah", springvilleImages, springvilleImageAlt, springvilleDates, springvilleDescription, springvilleTitle, springvilleImageWidth);
-      sections("Other parts of Utah", utahImages, utahImageAlt, utahDates, utahDescription, utahTitle, utahImageWidth);
+      sections("Salt Lake City", salt.image, salt.imageAlt, salt.date, salt.description, salt.title, salt.imageWidth);
+      sections("Arches National Park", arches.image, arches.imageAlt, arches.date, arches.description, arches.title, arches.imageWidth);
+      sections("Springville, Utah", springville.image, springville.imageAlt, springville.date, springville.description, springville.title, springville.imageWidth);
+      sections("Other parts of Utah", utah.image, utah.imageAlt, utah.date, utah.description, utah.title, utah.imageWidth);
     }
   }
-var imagediv = document.createElement("div"); 
-imagediv.classList.add('view-div');
-document.getElementById("image-view-demo").appendChild(imagediv);    
+  
+var imageList = [];
+var descriptionList = [];
 
+for(var a = 0; a < salt.image.length; a++) {
+  imageList.push(salt.image[a]);
+  descriptionList.push(salt.description[a]);
+}
+for(var b = 0; b < arches.image.length; b++) {
+  imageList.push(arches.image[b]);
+  descriptionList.push(arches.description[b]);
+}
+for(var c = 0; c < springville.image.length; c++) {
+  imageList.push(springville.image[c]);
+  descriptionList.push(springville.description[c]);
+}
+for(var d = 0; d < utah.image.length; d++) {
+  imageList.push(utah.image[d]);
+  descriptionList.push(utah.description[d]);
+}
   function images() {
       modal.style.display = "block";
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
   }
-  for(var a = 0; a < saltImages.length; a++) {
+  function imagesView(image, imagediv) {
+    for(var i = 0; i < image.length; i++) {
       var viewImages = document.createElement("img");
       viewImages.classList.add('view-images');
-      viewImages.src = saltImages[a];
+      viewImages.src = image[i];
       imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
+      viewImages.onclick = images;
+    }
   }
-  for(var b = 0; b <  archesImages.length; b++) {
-      var viewImages = document.createElement("img");
-      viewImages.classList.add('view-images');
-      viewImages.src = archesImages[b];
-      imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
-  }
-  for(var c = 0; c < springvilleImages.length; c++) {
-      var viewImages = document.createElement("img");
-      viewImages.classList.add('view-images');
-      viewImages.src = springvilleImages[c];
-      imagediv.appendChild(viewImages);
-      viewImages.onclick = images; 
-  }
-  for(var d = 0; d < utahImages.length; d++) {
-    var viewImages = document.createElement("img");
-    viewImages.classList.add('view-images');
-    viewImages.src = utahImages[d];
-    imagediv.appendChild(viewImages);
-    viewImages.onclick = images; 
-}
+
   function sections(section, image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
     
@@ -303,10 +269,41 @@ document.getElementById("image-view-demo").appendChild(imagediv);
         count = count + 2.0;
       }
     }
+    var currentIndex = 0; 
+    function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+    }      
+    prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+    });
+    nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+    });
     function images() {
       modal.style.display = "block";
       modalImg.src = this.src;
       captionText.innerHTML = this.alt;
+
+      var substringIndex = this.src.indexOf("states");
+
+      if(substringIndex !== -1) {
+        var newUrl = "../" + this.src.substring(substringIndex);
+      }
+
+      for(var i = 0; i < imageList.length; i++) {
+        if(newUrl === imageList[i]) {
+          currentIndex = i;
+          imageIndex(i);
+        }
+      }
     }
     for(var i = 0; i < img.length; i++)
     {
