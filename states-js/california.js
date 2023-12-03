@@ -254,41 +254,10 @@ function imagesView(image, imagediv) {
       count = count + 2.0;
     }
   }
-  var currentIndex = 0; 
-  function imageIndex(delta) {
-      modal.style.display = "block";
-      modalImg.src = imageList[delta];
-      captionText.innerHTML = descriptionList[delta];
-  }      
-  prevButton.addEventListener('click', function() {
-      if(currentIndex > 0) {
-          currentIndex--;
-        }
-        imageIndex(currentIndex);
-  });
-  nextButton.addEventListener('click', function() {
-        if (currentIndex < imageList.length - 1) {
-          currentIndex++;
-        }
-        imageIndex(currentIndex);
-  });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
-
-    var substringIndex = this.src.indexOf("states");
-
-    if(substringIndex !== -1) {
-      var newUrl = "../" + this.src.substring(substringIndex);
-    }
-
-    for(var i = 0; i < imageList.length; i++) {
-      if(newUrl === imageList[i]) {
-        currentIndex = i;
-        imageIndex(i);
-      }
-    }    
   }
   for(var i = 0; i < img.length; i++)
   {
@@ -304,10 +273,45 @@ function imagesView(image, imagediv) {
     modal.style.display = "none";
   }
   }
+  var currentIndex = 0; 
+  function imageIndex(delta) {
+      modal.style.display = "block";
+      modalImg.src = imageList[delta];
+      captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+    console.log("Previous button index: " + currentIndex);
+      if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+  });
+  nextButton.addEventListener('click', function() {
+      console.log("Next button index: " + currentIndex);
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+  });
   function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+    console.log("In the outside Loop");
+
+    var substringIndex = this.src.indexOf("states");
+
+    if(substringIndex !== -1) {
+      var newUrl = "../" + this.src.substring(substringIndex);
+    }
+
+    for(var i = 0; i < imageList.length; i++) {
+      if(newUrl === imageList[i]) {
+        currentIndex = i;
+        console.log("Inside the loop index: " + currentIndex);
+        imageIndex(i);
+      }
+    }    
   }
   for(var i = 0; i < img.length; i++)
   {
@@ -316,6 +320,7 @@ function imagesView(image, imagediv) {
   }
   for(var j = 0; j < img.length; j++)
   {
+    console.log("Second outside loop");
       boxImage[j].onclick = images;
   }
   var span = document.getElementsByClassName("close")[0];

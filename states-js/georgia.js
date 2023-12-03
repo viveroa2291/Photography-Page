@@ -227,6 +227,24 @@ for(var d = 0; d < georgia.image.length; d++) {
       count = count + 2.0;
     }
   }
+  function images() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+  for(var i = 0; i < img.length; i++)
+  {
+      img[i].onclick = images;
+  }
+  for(var j = 0; j < img.length; j++)
+  {
+      boxImage[j].onclick = images;
+  }
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+  }  
   var currentIndex = 0; 
     function imageIndex(delta) {
             modal.style.display = "block";
@@ -245,11 +263,11 @@ for(var d = 0; d < georgia.image.length; d++) {
         }
         imageIndex(currentIndex);
     });
-  function images() {
+  function images(){
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
-
+    
     var substringIndex = this.src.indexOf("states");
 
       if(substringIndex !== -1) {
@@ -262,24 +280,6 @@ for(var d = 0; d < georgia.image.length; d++) {
             imageIndex(i);
           }
       }
-  }
-  for(var i = 0; i < img.length; i++)
-  {
-      img[i].onclick = images;
-  }
-  for(var j = 0; j < img.length; j++)
-  {
-      boxImage[j].onclick = images;
-  }
-  var span = document.getElementsByClassName("close")[0];
-  span.onclick = function() { 
-    modal.style.display = "none";
-  }
-  }
-  function images(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
   }
   for(var i = 0; i < img.length; i++)
   {

@@ -15,7 +15,7 @@ function hide() {
       ar.style.display = "none";
     }
 }
-
+// debug with the image view
 var modal = document.getElementById("myModal");
 var notWideImg = document.getElementsByClassName("illinois not-wide");
 var wideImg = document.getElementsByClassName("illinois-images wide");

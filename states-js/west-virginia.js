@@ -3,6 +3,8 @@ var img = document.getElementsByClassName("west-virginia-images");
 var boxImage = document.getElementsByClassName("box-image");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
+var prevButton = document.getElementById("previous-button");
+var nextButton = document.getElementById("next-button");
    
 var imagediv = document.createElement("div"); 
 imagediv.classList.add('view-div');

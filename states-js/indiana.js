@@ -399,11 +399,42 @@ imagesView(indiana.image, imagediv);
       span.onclick = function() { 
         modal.style.display = "none";
       }
-    }  
+    } 
+  var currentIndex = 0; 
+    function imageIndex(delta) {
+          modal.style.display = "block";
+          modalImg.src = imageList[delta];
+          captionText.innerHTML = descriptionList[delta];
+    }      
+    prevButton.addEventListener('click', function() {
+      if(currentIndex > 0) {
+        currentIndex--;
+      }
+      imageIndex(currentIndex);
+    });
+    nextButton.addEventListener('click', function() {
+      if (currentIndex < imageList.length - 1) {
+        currentIndex++;
+      }
+      imageIndex(currentIndex);
+  }); 
   function images(){
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+
+    var substringIndex = this.src.indexOf("states");
+
+    if(substringIndex !== -1) {
+      var newUrl = "../" + this.src.substring(substringIndex);
+    }
+
+    for(var i = 0; i < imageList.length; i++) {
+      if(newUrl === imageList[i]) {
+        currentIndex = i;
+        imageIndex(i);
+      }
+    }
   }
   for(var i = 0; i < img.length; i++)
   {

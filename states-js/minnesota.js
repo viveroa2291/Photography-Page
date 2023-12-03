@@ -5,7 +5,7 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 var prevButton = document.getElementById("previous-button");
 var nextButton = document.getElementById("next-button");
-
+// Debug
 var imagediv = document.createElement("div"); 
 imagediv.classList.add('view-div');
 document.getElementById("image-view-demo").appendChild(imagediv);    
@@ -48,7 +48,7 @@ imagesView(minneapolis.image, imagediv);
     descriptionList.push(minneapolis.description[a]);
   }
   for(var b = 0; b < arcade.image.length; b++) {
-    imageList.push(arcade.image[a]);
+    imageList.push(arcade.image[b]);
     descriptionList.push(arcade.description[b]);
   }
   for(var c = 0; c < minnesota.image.length; c++) {
@@ -271,157 +271,6 @@ imagesView(minneapolis.image, imagediv);
     }
       return[sect, yearImage, yearImageAlt, yearDates, yearDescription, yearTitle, yearImageWidth];
     }
-    
-  function sections(section, image, imageAlt, dates, description, title, imageWidth) {
-  let count = 0.0; 
-  var element_text = document.createElement("h3");
-  element_text.classList.add('body-headers');
-  element_text.innerHTML = section;
-  
-  var element_hr = document.createElement("hr");
-  element_hr.classList.add('header-hr');
-  document.getElementById("demo").appendChild(element_text);
-  document.getElementById("demo").appendChild(element_hr);
-  
-  var element_div = document.createElement("div");
-  element_div.classList.add('body-images');
-  document.getElementById("demo").appendChild(element_div);
-  
-  var element_image;
-  var element_card;
-  var element_card_body;
-  var element_text;
-  var element_date;
-  var element_date_small;
-  var element_card_body;
-  
-  for(var a = 0; a < image.length; a++) {
-    if(count >= 4.0) {
-      element_div = document.createElement("div");
-      element_div.classList.add('body-images');
-      document.getElementById("demo").appendChild(element_div);
-      count = 0.0;
-    }
-    if(imageWidth[a] != "mid-wide") {
-      var element_content = document.createElement("div");
-      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
-      element_div.appendChild(element_content);
-  
-      element_card = document.createElement("div");
-      element_card.classList.add('card-header', 'text-center');
-      element_card.innerHTML = title[a];
-      element_content.appendChild(element_card);
-  
-      element_image = document.createElement("img");
-      element_image.classList.add('minnesota-images', 'not-wide');
-      element_image.src = image[a];
-      element_image.alt = imageAlt[a];
-      element_content.appendChild(element_image);
-  
-      element_card_body = document.createElement("div");
-      element_card_body.classList.add('card-body', 'm-1');
-      element_content.append(element_card_body);
-  
-      element_text = document.createElement("p");
-      element_text.classList.add('card-text');
-      element_text.innerHTML = description[a];
-      element_card_body.appendChild(element_text);
-  
-      element_date = document.createElement("p");
-      element_date.classList.add('card-text');
-      element_date_small = document.createElement("small");
-      element_date_small.classList.add('text-muted');
-      element_date_small.innerHTML = dates[a];
-      element_date.appendChild(element_date_small);
-  
-      element_card_body.appendChild(element_date);
-      count = count + 1.5;
-    }
-    if(imageWidth[a] === "mid-wide") {
-      var element_content = document.createElement("div");
-      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
-      element_div.appendChild(element_content);
-      
-      element_card = document.createElement("div");
-      element_card.classList.add('card-header', 'text-center');
-      element_card.innerHTML = title[a];
-      element_content.appendChild(element_card);
-  
-      element_image = document.createElement("img");
-      element_image.classList.add('minnesota-images', 'mid-wide');
-      element_image.src = image[a];
-      element_image.alt = imageAlt[a];
-      element_content.appendChild(element_image);
-  
-      element_card_body = document.createElement("div");
-      element_card_body.classList.add('card-body', 'm-1');
-      element_content.append(element_card_body);
-  
-      element_text = document.createElement("p");
-      element_text.classList.add('card-text');
-      element_text.innerHTML = description[a];
-      element_card_body.appendChild(element_text);
-  
-      element_date = document.createElement("p");
-      element_date.classList.add('card-text');
-      element_date_small = document.createElement("small");
-      element_date_small.classList.add('text-muted');
-      element_date_small.innerHTML = dates[a];
-      element_date.appendChild(element_date_small);
-  
-      element_card_body.appendChild(element_date);
-      count = count + 2.0;
-    }
-  }
-  var currentIndex = 0; 
-  function imageIndex(delta) {
-            modal.style.display = "block";
-            modalImg.src = imageList[delta];
-            captionText.innerHTML = descriptionList[delta];
-  }      
-  prevButton.addEventListener('click', function() {
-        if(currentIndex > 0) {
-          currentIndex--;
-        }
-        imageIndex(currentIndex);
-  });
-  nextButton.addEventListener('click', function() {
-        if (currentIndex < imageList.length - 1) {
-          currentIndex++;
-        }
-        imageIndex(currentIndex);
-  });
-  function images() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-
-    var substringIndex = this.src.indexOf("states");
-
-          if(substringIndex !== -1) {
-            var newUrl = "../" + this.src.substring(substringIndex);
-          }
-
-          for(var i = 0; i < imageList.length; i++) {
-            if(newUrl === imageList[i]) {
-              currentIndex = i;
-              imageIndex(i);
-            }
-          }
-  }
-  for(var i = 0; i < img.length; i++)
-  {
-      img[i].onclick = images;
-  }
-  for(var j = 0; j < img.length; j++)
-  {
-      boxImage[j].onclick = images;
-  }
-  var span = document.getElementsByClassName("close")[0];
-  span.onclick = function() { 
-    modal.style.display = "none";
-  }
-}
   function yearSections(image, imageAlt, dates, description, title, imageWidth) {
     let count = 0.0;
     var element_div = document.createElement("div");
@@ -554,12 +403,11 @@ imagesView(minneapolis.image, imagediv);
         element_card_body.appendChild(element_date);
         count = count + 2.0;
       }
-    
-      }
+      }  
       function images() {
         modal.style.display = "block";
         modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
+        captionText.innerHTML = this.alt;    
       }
       for(var i = 0; i < img.length; i++)
       { 
@@ -574,11 +422,162 @@ imagesView(minneapolis.image, imagediv);
       span.onclick = function() { 
         modal.style.display = "none";
       }
-    }  
-  function images(){
+    }    
+function sections(section, image, imageAlt, dates, description, title, imageWidth) {
+  let count = 0.0; 
+  var element_text = document.createElement("h3");
+  element_text.classList.add('body-headers');
+  element_text.innerHTML = section;
+  
+  var element_hr = document.createElement("hr");
+  element_hr.classList.add('header-hr');
+  document.getElementById("demo").appendChild(element_text);
+  document.getElementById("demo").appendChild(element_hr);
+  
+  var element_div = document.createElement("div");
+  element_div.classList.add('body-images');
+  document.getElementById("demo").appendChild(element_div);
+  
+  var element_image;
+  var element_card;
+  var element_card_body;
+  var element_text;
+  var element_date;
+  var element_date_small;
+  var element_card_body;
+  
+  for(var a = 0; a < image.length; a++) {
+    if(count >= 4.0) {
+      element_div = document.createElement("div");
+      element_div.classList.add('body-images');
+      document.getElementById("demo").appendChild(element_div);
+      count = 0.0;
+    }
+    if(imageWidth[a] != "mid-wide") {
+      var element_content = document.createElement("div");
+      element_content.classList.add('card', 'mx-sm-auto', 'not-wide-card');
+      element_div.appendChild(element_content);
+  
+      element_card = document.createElement("div");
+      element_card.classList.add('card-header', 'text-center');
+      element_card.innerHTML = title[a];
+      element_content.appendChild(element_card);
+  
+      element_image = document.createElement("img");
+      element_image.classList.add('minnesota-images', 'not-wide');
+      element_image.src = image[a];
+      element_image.alt = imageAlt[a];
+      element_content.appendChild(element_image);
+  
+      element_card_body = document.createElement("div");
+      element_card_body.classList.add('card-body', 'm-1');
+      element_content.append(element_card_body);
+  
+      element_text = document.createElement("p");
+      element_text.classList.add('card-text');
+      element_text.innerHTML = description[a];
+      element_card_body.appendChild(element_text);
+  
+      element_date = document.createElement("p");
+      element_date.classList.add('card-text');
+      element_date_small = document.createElement("small");
+      element_date_small.classList.add('text-muted');
+      element_date_small.innerHTML = dates[a];
+      element_date.appendChild(element_date_small);
+  
+      element_card_body.appendChild(element_date);
+      count = count + 1.5;
+    }
+    if(imageWidth[a] === "mid-wide") {
+      var element_content = document.createElement("div");
+      element_content.classList.add('card', 'm-5', 'mx-sm-auto', 'mid-wide-card');
+      element_div.appendChild(element_content);
+      
+      element_card = document.createElement("div");
+      element_card.classList.add('card-header', 'text-center');
+      element_card.innerHTML = title[a];
+      element_content.appendChild(element_card);
+  
+      element_image = document.createElement("img");
+      element_image.classList.add('minnesota-images', 'mid-wide');
+      element_image.src = image[a];
+      element_image.alt = imageAlt[a];
+      element_content.appendChild(element_image);
+  
+      element_card_body = document.createElement("div");
+      element_card_body.classList.add('card-body', 'm-1');
+      element_content.append(element_card_body);
+  
+      element_text = document.createElement("p");
+      element_text.classList.add('card-text');
+      element_text.innerHTML = description[a];
+      element_card_body.appendChild(element_text);
+  
+      element_date = document.createElement("p");
+      element_date.classList.add('card-text');
+      element_date_small = document.createElement("small");
+      element_date_small.classList.add('text-muted');
+      element_date_small.innerHTML = dates[a];
+      element_date.appendChild(element_date_small);
+  
+      element_card_body.appendChild(element_date);
+      count = count + 2.0;
+    }
+  }
+  function images() {
     modal.style.display = "block";
     modalImg.src = this.src;
     captionText.innerHTML = this.alt;
+    console.log("Entered");
+  }
+  for(var i = 0; i < img.length; i++)
+  {
+      img[i].onclick = images;
+  }
+  for(var j = 0; j < img.length; j++)
+  {
+      boxImage[j].onclick = images;
+  }
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+}
+var currentIndex = 0; 
+  function imageIndex(delta) {
+            modal.style.display = "block";
+            modalImg.src = imageList[delta];
+            captionText.innerHTML = descriptionList[delta];
+  }      
+  prevButton.addEventListener('click', function() {
+        if(currentIndex > 0) {
+          currentIndex--;
+        }
+        imageIndex(currentIndex);
+  });
+  nextButton.addEventListener('click', function() {
+        if (currentIndex < imageList.length - 1) {
+          currentIndex++;
+        }
+        imageIndex(currentIndex);
+  });
+  function images(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;     
+
+    var substringIndex = this.src.indexOf("states");
+
+          if(substringIndex !== -1) {
+            var newUrl = "../" + this.src.substring(substringIndex);
+          }
+
+          for(var i = 0; i < imageList.length; i++) {
+            if(newUrl === imageList[i]) {
+              currentIndex = i;
+              imageIndex(i);
+            }
+          }
   }
   for(var i = 0; i < img.length; i++)
   {

@@ -5,7 +5,7 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 var prevButton = document.getElementById("previous-button");
 var nextButton = document.getElementById("next-button");
-   
+
 var imagediv = document.createElement("div"); 
 imagediv.classList.add('view-div');
 document.getElementById("image-view-demo").appendChild(imagediv);  
@@ -146,7 +146,25 @@ for(var a = 0; a < tennessee.image.length; a++) {
       count = count + 2.0;
     }
   }
-  var currentIndex = 0; 
+  function images() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+  for(var i = 0; i < img.length; i++)
+  {
+      img[i].onclick = images;
+  }
+  for(var j = 0; j < img.length; j++)
+  {
+      boxImage[j].onclick = images;
+  }
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+  }
+    var currentIndex = 0; 
   function imageIndex(delta) {
         modal.style.display = "block";
         modalImg.src = imageList[delta];
@@ -164,11 +182,11 @@ for(var a = 0; a < tennessee.image.length; a++) {
     }
     imageIndex(currentIndex);
   });
-  function images() {
+  function images(){
     modal.style.display = "block";
     modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-
+    captionText.innerHTML = this.alt;    
+    
     var substringIndex = this.src.indexOf("states");
 
     if(substringIndex !== -1) {
@@ -181,25 +199,6 @@ for(var a = 0; a < tennessee.image.length; a++) {
         imageIndex(i);
       }
     }
-  }
-  for(var i = 0; i < img.length; i++)
-  {
-      img[i].onclick = images;
-  }
-  for(var j = 0; j < img.length; j++)
-  {
-      boxImage[j].onclick = images;
-  }
-  var span = document.getElementsByClassName("close")[0];
-  span.onclick = function() { 
-    modal.style.display = "none";
-  }
-  }
-  
-  function images(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
   }
   for(var i = 0; i < img.length; i++)
   {
