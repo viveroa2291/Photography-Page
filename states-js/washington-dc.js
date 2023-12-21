@@ -15,7 +15,6 @@ function hide() {
       ar.style.display = "none";
     }
 }
-
 var modal = document.getElementById("myModal");
 var notWideImg = document.getElementsByClassName("washington-dc-images not-wide");
 var wideImg = document.getElementsByClassName("washington-dc-images wide");
